@@ -6,16 +6,16 @@ import {
 import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
 
 const s3Client = new S3Client({
-  region: process.env.STM_AWS_REGION,
+  region: process.env.AWS_REGION,
   credentials: {
-    accessKeyId: process.env.STM_AWS_ACCESS_KEY_ID ?? '',
-    secretAccessKey: process.env.STM_AWS_SECRET_ACCESS_KEY ?? '',
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID ?? '',
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY ?? '',
   },
 });
 
 export default async function getImageData(folderName: string) {
   const listCommand = new ListObjectsV2Command({
-    Bucket: process.env.STM_S3_BUCKET_NAME,
+    Bucket: process.env.S3_BUCKET_NAME,
     Prefix: folderName.endsWith('/') ? folderName : `${folderName}/`, // Ensure folder ends with a "/"
   });
 
@@ -37,7 +37,7 @@ export default async function getImageData(folderName: string) {
     sortedContents.map(async (item) => {
       if (item.Key) {
         const getCommand = new GetObjectCommand({
-          Bucket: process.env.STM_S3_BUCKET_NAME,
+          Bucket: process.env.S3_BUCKET_NAME,
           Key: item.Key,
         });
 
