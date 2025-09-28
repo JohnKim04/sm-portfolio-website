@@ -20,9 +20,14 @@ export default async function getContentData(id: string) {
   // Parse JSON strings back to arrays
   const parseJSON = (str: string | null) => {
     try {
-      return str ? JSON.parse(str) : [];
+      if (!str) return [];
+      console.log('Parsing JSON string:', str.substring(0, 100) + '...');
+      const parsed = JSON.parse(str);
+      console.log('Successfully parsed JSON, length:', parsed.length);
+      return parsed;
     } catch (e) {
       console.error('Error parsing JSON:', e);
+      console.error('Failed string:', str?.substring(0, 200));
       return [];
     }
   };
