@@ -13,6 +13,7 @@ import Team from './_components/Sections/Team/Team';
 import DividerLine from '../_components/DividerLine/DividerLine';
 import TableOfContents from '../_components/TableOfContents/TableOfContents';
 import NextCaseStudies from './_components/Sections/NextCaseStudies/NextCaseStudies';
+import getImageData from '@/app/_lib/getImageData';
 
 export default async function Sage() {
   const pageContents = [
@@ -25,13 +26,17 @@ export default async function Sage() {
     { sectionName: 'Reflection', level: 0 },
   ];
 
+  // Get videos from S3
+  const videosRaw = await getImageData('Sage/');
+  const videos = videosRaw.filter((v): v is { key: string; url: string } => v !== undefined);
+
   return (
     <main className="bg-white text-black flex flex-col px-case-study overflow-hidden gap-20">
       <TableOfContents sections={pageContents} />
       <Landing />
       <Summary />
       <DividerLine />
-      <Demo />
+      <Demo videos={videos} />
       <DividerLine />
       <Process />
       <Research />

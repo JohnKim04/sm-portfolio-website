@@ -2,7 +2,18 @@ import { RevealWrapper } from '@/app/(pages)/(index-page)/_components/Reveal/Rev
 import Heading from '../../Heading/Heading';
 import JumpToSolution from './JumpToSolution';
 
-const videoCardContent: VideoTextCardProps[] = [
+type DemoProps = {
+  videos?: { key: string; url: string }[];
+};
+
+export default function Demo({ videos = [] }: DemoProps) {
+  // Map video files from S3 to expected names
+  const getVideoUrl = (filename: string) => {
+    const video = videos.find(v => v.key?.includes(filename));
+    return video?.url || '';
+  };
+
+  const videoCardContent: VideoTextCardProps[] = [
   {
     pageName: 'ONBOARDING',
     heading: 'Personalization from the get-go',
@@ -10,7 +21,7 @@ const videoCardContent: VideoTextCardProps[] = [
       'Users receive personalized suggestions based on which communities they identify with',
       'Users set goals autonomously',
     ],
-    vidSrc: 'https://d1ejtjbpinwbmz.cloudfront.net/Sage/Onboarding.mp4',
+    vidSrc: getVideoUrl('Onboarding.mp4'),
   },
   {
     pageName: 'HOME PAGE',
@@ -19,7 +30,7 @@ const videoCardContent: VideoTextCardProps[] = [
       'Users curate, name, and choose a cover for personal collections',
       'Users have the ability to complete activities such as journaling outside of the app',
     ],
-    vidSrc: 'https://d1ejtjbpinwbmz.cloudfront.net/Sage/Journaling.mp4',
+    vidSrc: getVideoUrl('Journaling.mp4'),
     flipElements: true,
   },
   {
@@ -29,7 +40,7 @@ const videoCardContent: VideoTextCardProps[] = [
       'Users complete activities that are relevant to their identities and goals',
       'Users can schedule and add activities to their calendar for a later time',
     ],
-    vidSrc: 'https://d1ejtjbpinwbmz.cloudfront.net/Sage/SpecialCollection.mp4',
+    vidSrc: getVideoUrl('SpecialCollection.mp4'),
   },
   {
     pageName: 'EXPLORE PAGE',
@@ -38,7 +49,7 @@ const videoCardContent: VideoTextCardProps[] = [
       'Users can discover new activities by feeling, duration, and method',
       'Users can filter and sort search results',
     ],
-    vidSrc: 'https://d1ejtjbpinwbmz.cloudfront.net/Sage/Explore.mp4',
+    vidSrc: getVideoUrl('Explore.mp4'),
     flipElements: true,
   },
   {
@@ -47,7 +58,7 @@ const videoCardContent: VideoTextCardProps[] = [
     bulletPoints: [
       'Users have the flexibility to remove, reschedule, and add planned activities for another day',
     ],
-    vidSrc: 'https://d1ejtjbpinwbmz.cloudfront.net/Sage/Calendar.mp4',
+    vidSrc: getVideoUrl('Calendar.mp4'),
   },
   {
     pageName: 'PROFILE PAGE',
@@ -56,7 +67,7 @@ const videoCardContent: VideoTextCardProps[] = [
       'Users are rewarded for practicing self-care on a monthly basis',
       'Users receive extrinsic motivation to reach their personal goals',
     ],
-    vidSrc: 'https://d1ejtjbpinwbmz.cloudfront.net/Sage/Garden.mp4',
+    vidSrc: getVideoUrl('Garden.mp4'),
     flipElements: true,
   },
   {
@@ -65,11 +76,10 @@ const videoCardContent: VideoTextCardProps[] = [
     bulletPoints: [
       'Users have a more inclusive way to meditate with the ability to view captions',
     ],
-    vidSrc: 'https://d1ejtjbpinwbmz.cloudfront.net/Sage/Meditation.mp4',
+    vidSrc: getVideoUrl('Meditation.mp4'),
   },
 ];
 
-export default function Demo() {
   return (
     <section
       className="flex flex-col justify-center items-center gap-4"

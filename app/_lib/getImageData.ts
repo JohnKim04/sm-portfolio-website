@@ -35,11 +35,7 @@ export default async function getImageData(folderName: string) {
 
   const imageUrls = await Promise.all(
     sortedContents
-      .filter(item => {
-        // Temporarily skip large video files
-        const key = item.Key || '';
-        return !key.endsWith('.mp4')
-      })
+      // Include all files (videos and images)
       .map(async (item) => {
         if (item.Key) {
           const getCommand = new GetObjectCommand({
@@ -47,9 +43,11 @@ export default async function getImageData(folderName: string) {
             Key: item.Key,
           });
 
-          const url = await getSignedUrl(s3Client, getCommand, {
-            expiresIn: 3600,
-          });
+        // Longer expiry for videos, shorter for images
+        const isVideo = item.Key.endsWith('.mp4');
+        const url = await getSignedUrl(s3Client, getCommand, {
+          expiresIn: isVideo ? 7200 : 3600, // 2 hours for videos, 1 hour for images
+        });
           return { key: item.Key, url };
         }
       })
