@@ -34,19 +34,25 @@ export default async function getImageData(folderName: string) {
   });
 
   const imageUrls = await Promise.all(
-    sortedContents.map(async (item) => {
-      if (item.Key) {
-        const getCommand = new GetObjectCommand({
-          Bucket: process.env.S3_BUCKET_NAME,
-          Key: item.Key,
-        });
+    sortedContents
+      .filter(item => {
+        // Temporarily skip large video files
+        const key = item.Key || '';
+        return !key.endsWith('.mp4')
+      })
+      .map(async (item) => {
+        if (item.Key) {
+          const getCommand = new GetObjectCommand({
+            Bucket: process.env.S3_BUCKET_NAME,
+            Key: item.Key,
+          });
 
-        const url = await getSignedUrl(s3Client, getCommand, {
-          expiresIn: 3600,
-        });
-        return { key: item.Key, url };
-      }
-    })
+          const url = await getSignedUrl(s3Client, getCommand, {
+            expiresIn: 3600,
+          });
+          return { key: item.Key, url };
+        }
+      })
   );
   return imageUrls;
 }
