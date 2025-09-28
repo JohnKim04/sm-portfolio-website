@@ -35,7 +35,14 @@ export default async function getImageData(folderName: string) {
 
   const imageUrls = await Promise.all(
     sortedContents
-      // Include all files (videos and images)
+      .filter(item => {
+        // Skip videos larger than 10MB for testing
+        const isLargeVideo = item.Key?.endsWith('.mp4') && item.Size && item.Size > 10 * 1024 * 1024;
+        if (isLargeVideo) {
+          console.log(`Skipping large video: ${item.Key} (${Math.round((item.Size || 0) / 1024 / 1024)}MB)`);
+        }
+        return !isLargeVideo;
+      })
       .map(async (item) => {
         if (item.Key) {
           const getCommand = new GetObjectCommand({
