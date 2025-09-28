@@ -7,10 +7,16 @@ import { ToggleButton } from '@/app/(pages)/(index-page)/(case-studies)/hackdavi
 export default function FinalDesigns(content: contentProps) {
   const [activeDesignButton, setActiveDesignButton] = useState(false);
 
-  // Helper function to find video by filename
-  const getVideoUrl = (filename: string) => {
+  // Comprehensive asset finder functions
+  const getVideoUrl = (platform: 'desktop' | 'mobile', action: 'pip' | 'search' | 'tiles' | 'favorites') => {
+    const filename = `${platform}-${action}.mp4`;
     const video = content.images?.find(img => img.key?.includes(filename));
     return video?.url || '';
+  };
+
+  const getImageUrl = (imageName: string) => {
+    const image = content.images?.find(img => img.key?.includes(imageName));
+    return image?.url || '';
   };
 
   const toggleButtons = [
@@ -27,18 +33,10 @@ export default function FinalDesigns(content: contentProps) {
   ];
 
   const videoLinks = [
-    activeDesignButton === false
-      ? content.images?.at(1)?.url
-      : content.images?.at(5)?.url, // pip
-    activeDesignButton === false
-      ? content.images?.at(3)?.url
-      : content.images?.at(7)?.url, // tiles
-    activeDesignButton === false
-      ? content.images?.at(2)?.url
-      : content.images?.at(6)?.url, // search
-    activeDesignButton === false
-      ? content.images?.at(0)?.url
-      : content.images?.at(4)?.url, // favorites
+    getVideoUrl(activeDesignButton === false ? 'desktop' : 'mobile', 'pip'),
+    getVideoUrl(activeDesignButton === false ? 'desktop' : 'mobile', 'tiles'),
+    getVideoUrl(activeDesignButton === false ? 'desktop' : 'mobile', 'search'),
+    getVideoUrl(activeDesignButton === false ? 'desktop' : 'mobile', 'favorites'),
   ];
 
   return (
@@ -74,11 +72,10 @@ export default function FinalDesigns(content: contentProps) {
             controls
           >
             <source
-              src={
-                activeDesignButton === false
-                  ? getVideoUrl('desktop-pip.mp4')
-                  : getVideoUrl('mobile-pip.mp4')
-              }
+              src={getVideoUrl(
+                activeDesignButton === false ? 'desktop' : 'mobile',
+                'pip'
+              )}
               type="video/mp4"
             />
             <track
