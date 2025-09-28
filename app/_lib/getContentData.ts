@@ -16,5 +16,21 @@ export default async function getContentData(id: string) {
   }
 
   const content = result.rows[0];
-  return [content.body, content.h2, content.h3, content.h4];
+  
+  // Parse JSON strings back to arrays
+  const parseJSON = (str: string | null) => {
+    try {
+      return str ? JSON.parse(str) : [];
+    } catch (e) {
+      console.error('Error parsing JSON:', e);
+      return [];
+    }
+  };
+
+  return [
+    parseJSON(content.body),
+    parseJSON(content.h2), 
+    parseJSON(content.h3),
+    parseJSON(content.h4)
+  ];
 }
