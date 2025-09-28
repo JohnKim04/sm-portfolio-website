@@ -1,6 +1,11 @@
-import { sql } from '@vercel/postgres';
+import { Pool } from 'pg';
 import NextAuth from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
+
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: { rejectUnauthorized: false }
+});
 
 const handler = NextAuth({
   session: {
@@ -17,7 +22,7 @@ const handler = NextAuth({
       },
       async authorize(credentials) {
         const response =
-          await sql`SELECT * FROM page_passwords WHERE hashed_password=${credentials?.password}`;
+          await pool.query('SELECT * FROM page_passwords WHERE hashed_password = $1', [credentials?.password]);
 
         if (1 === response.rowCount) {
           return {

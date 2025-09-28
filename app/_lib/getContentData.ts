@@ -1,9 +1,14 @@
-import { sql } from '@vercel/postgres';
+import { Pool } from 'pg';
+
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: { rejectUnauthorized: false }
+});
 
 export default async function getContentData(id: string) {
   // Construct the query with the validated table name
-  const query = `SELECT * FROM p_project_2 WHERE id = ${id}`;
-  const result = await sql.query(query);
+  const query = `SELECT * FROM p_project_2 WHERE id = $1`;
+  const result = await pool.query(query, [id]);
 
   // If no data is found, return a 404 response
   if (result.rowCount === 0) {

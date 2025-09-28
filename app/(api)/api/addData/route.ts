@@ -1,4 +1,9 @@
-import { sql } from '@vercel/postgres';
+import { Pool } from 'pg';
+
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: { rejectUnauthorized: false }
+});
 
 export async function POST(req: Request) {
   try {
@@ -15,11 +20,10 @@ export async function POST(req: Request) {
     const { body, h2, h3, h4, misc } = await req.json();
 
     // Insert the data into the errorMessagingContent table
-    const result = await sql`
-      INSERT INTO p_project_2 (body, h2, h3, h4, misc)
-      VALUES (${body}, ${h2}, ${h3}, ${h4}, ${misc})
-      RETURNING id;
-    `;
+    const result = await pool.query(
+      'INSERT INTO p_project_2 (body, h2, h3, h4, misc) VALUES ($1, $2, $3, $4, $5) RETURNING id',
+      [body, h2, h3, h4, misc]
+    );
 
     // Return a success response with the inserted record's id
     return new Response(JSON.stringify({ id: result.rows[0].id }), {
