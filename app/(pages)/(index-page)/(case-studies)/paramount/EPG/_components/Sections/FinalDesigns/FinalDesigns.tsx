@@ -7,6 +7,12 @@ import { ToggleButton } from '@/app/(pages)/(index-page)/(case-studies)/hackdavi
 export default function FinalDesigns(content: contentProps) {
   const [activeDesignButton, setActiveDesignButton] = useState(false);
 
+  // Helper function to find video by filename
+  const getVideoUrl = (filename: string) => {
+    const video = content.images?.find(img => img.key?.includes(filename));
+    return video?.url || '';
+  };
+
   const toggleButtons = [
     {
       label: 'Desktop',
@@ -70,8 +76,8 @@ export default function FinalDesigns(content: contentProps) {
             <source
               src={
                 activeDesignButton === false
-                  ? content.images?.at(1)?.url
-                  : content.images?.at(5)?.url
+                  ? getVideoUrl('desktop-pip.mp4')
+                  : getVideoUrl('mobile-pip.mp4')
               }
               type="video/mp4"
             />
