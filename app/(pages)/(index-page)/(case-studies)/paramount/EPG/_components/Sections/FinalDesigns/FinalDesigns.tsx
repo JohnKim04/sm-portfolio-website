@@ -24,16 +24,16 @@ export default function FinalDesigns(content: contentProps) {
   const videoLinks = [
     activeDesignButton === false
       ? getImageUrl(content.images, 'optimized-desktop-pip.mp4')
-      : getImageUrl(content.images, 'mobile-pip.mp4'), // pip
+      : getImageUrl(content.images, 'optimized-mobile-pip.mp4'), // pip
     activeDesignButton === false
       ? getImageUrl(content.images, 'optimized-desktop-tiles.mp4')
-      : getImageUrl(content.images, 'mobile-tiles.mp4'), // tiles
+      : getImageUrl(content.images, 'optimized-mobile-tiles.mp4'), // tiles
     activeDesignButton === false
       ? getImageUrl(content.images, 'optimized-desktop-search.mp4')
-      : getImageUrl(content.images, 'mobile-search.mp4'), // search
+      : getImageUrl(content.images, 'optimized-mobile-search.mp4'), // search
     activeDesignButton === false
       ? getImageUrl(content.images, 'optimized-desktop-favorites.mp4')
-      : getImageUrl(content.images, 'mobile-favorites.mp4'), // favorites
+      : getImageUrl(content.images, 'optimized-mobile-favorites.mp4'), // favorites
   ];
 
   return (
