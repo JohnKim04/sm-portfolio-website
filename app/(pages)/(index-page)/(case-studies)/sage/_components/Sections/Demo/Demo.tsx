@@ -21,7 +21,7 @@ export default function Demo({ videos = [] }: DemoProps) {
       'Users receive personalized suggestions based on which communities they identify with',
       'Users set goals autonomously',
     ],
-    vidSrc: getVideoUrl('Onboarding.mp4'),
+    vidSrc: getVideoUrl('optimized-Onboarding.mp4'),
   },
   {
     pageName: 'HOME PAGE',
@@ -30,7 +30,7 @@ export default function Demo({ videos = [] }: DemoProps) {
       'Users curate, name, and choose a cover for personal collections',
       'Users have the ability to complete activities such as journaling outside of the app',
     ],
-    vidSrc: getVideoUrl('Journaling.mp4'),
+    vidSrc: getVideoUrl('optimized-Journaling.mp4'),
     flipElements: true,
   },
   {
@@ -40,7 +40,7 @@ export default function Demo({ videos = [] }: DemoProps) {
       'Users complete activities that are relevant to their identities and goals',
       'Users can schedule and add activities to their calendar for a later time',
     ],
-    vidSrc: getVideoUrl('SpecialCollection.mp4'),
+    vidSrc: getVideoUrl('optimized-SpecialCollection.mp4'),
   },
   {
     pageName: 'EXPLORE PAGE',
@@ -49,7 +49,7 @@ export default function Demo({ videos = [] }: DemoProps) {
       'Users can discover new activities by feeling, duration, and method',
       'Users can filter and sort search results',
     ],
-    vidSrc: getVideoUrl('Explore.mp4'),
+    vidSrc: getVideoUrl('optimized-Explore.mp4'),
     flipElements: true,
   },
   {
@@ -58,7 +58,7 @@ export default function Demo({ videos = [] }: DemoProps) {
     bulletPoints: [
       'Users have the flexibility to remove, reschedule, and add planned activities for another day',
     ],
-    vidSrc: getVideoUrl('Calendar.mp4'),
+    vidSrc: getVideoUrl('optimized-Calendar.mp4'),
   },
   {
     pageName: 'PROFILE PAGE',
@@ -67,7 +67,7 @@ export default function Demo({ videos = [] }: DemoProps) {
       'Users are rewarded for practicing self-care on a monthly basis',
       'Users receive extrinsic motivation to reach their personal goals',
     ],
-    vidSrc: getVideoUrl('Garden.mp4'),
+    vidSrc: getVideoUrl('optimized-Garden.mp4'),
     flipElements: true,
   },
   {
@@ -76,7 +76,7 @@ export default function Demo({ videos = [] }: DemoProps) {
     bulletPoints: [
       'Users have a more inclusive way to meditate with the ability to view captions',
     ],
-    vidSrc: getVideoUrl('Meditation.mp4'),
+    vidSrc: getVideoUrl('optimized-Meditation.mp4'),
   },
 ];
 
