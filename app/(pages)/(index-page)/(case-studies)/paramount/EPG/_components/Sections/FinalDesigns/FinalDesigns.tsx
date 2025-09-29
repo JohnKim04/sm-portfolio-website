@@ -4,6 +4,7 @@ import HeadingBody from '../../../../../_components/HeadingBody/HeadingBody';
 import { contentProps } from '../../../../errorMessaging/page';
 import { useState } from 'react';
 import { ToggleButton } from '@/app/(pages)/(index-page)/(case-studies)/hackdavis/_components/Sections/FinalSolution/FinalSolution';
+import { getImageUrl } from '../../../_utils/getImageUrl';
 export default function FinalDesigns(content: contentProps) {
   const [activeDesignButton, setActiveDesignButton] = useState(false);
 
@@ -22,16 +23,16 @@ export default function FinalDesigns(content: contentProps) {
 
   const videoLinks = [
     activeDesignButton === false
-      ? content.images?.at(1)?.url
+      ? getImageUrl(content.images, 'desktop-pip.mp4')
       : content.images?.at(5)?.url, // pip
     activeDesignButton === false
-      ? content.images?.at(3)?.url
+      ? getImageUrl(content.images, 'desktop-tiles.mp4')
       : content.images?.at(7)?.url, // tiles
     activeDesignButton === false
-      ? content.images?.at(2)?.url
+      ? getImageUrl(content.images, 'desktop-search.mp4')
       : content.images?.at(6)?.url, // search
     activeDesignButton === false
-      ? content.images?.at(0)?.url
+      ? getImageUrl(content.images, 'desktop-favorites.mp4')
       : content.images?.at(4)?.url, // favorites
   ];
 
@@ -67,14 +68,7 @@ export default function FinalDesigns(content: contentProps) {
             className={`${activeDesignButton === false ? 'w-full' : 'w-[35%]'}`}
             controls
           >
-            <source
-              src={
-                activeDesignButton === false
-                  ? content.images?.at(1)?.url
-                  : content.images?.at(5)?.url
-              }
-              type="video/mp4"
-            />
+            <source src={videoLinks.at(0)} type="video/mp4" />
             <track
               src="/path/to/captions.vtt"
               kind="subtitles"

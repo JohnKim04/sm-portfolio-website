@@ -3,13 +3,9 @@ import HeadingBody from '../../../../../_components/HeadingBody/HeadingBody';
 import { contentProps } from '../../../../errorMessaging/page';
 import Image from 'next/image';
 import { ImageWithModal } from '@/app/(pages)/_components/ImageModal/ImageModal';
+import { getImageUrl } from '../../../_utils/getImageUrl';
 
 export default function Navigation(content: contentProps) {
-  // Helper function to get image URL by filename
-  const getImageUrl = (filename: string) => {
-    const image = content.images?.find(img => img.key?.includes(filename));
-    return image?.url || '';
-  };
   return (
     <section className="flex flex-col gap-10">
       <RevealWrapper>
@@ -22,14 +18,14 @@ export default function Navigation(content: contentProps) {
           <div className="flex flex-col items-center gap-2">
             <div className="flex gap-8 w-full">
               <ImageWithModal
-                src={getImageUrl('nav1.svg')}
+                src={getImageUrl(content.images, 'nav1.svg')}
                 alt="Navigation Design 1"
                 width={1000}
                 height={1000}
                 className="w-[260px]"
               />
               <ImageWithModal
-                src={getImageUrl('nav2.svg')}
+                src={getImageUrl(content.images, 'nav2.svg')}
                 alt="Navigation Design 2"
                 width={1000}
                 height={1000}
@@ -47,7 +43,7 @@ export default function Navigation(content: contentProps) {
           />
           <div className="flex flex-col items-center gap-2">
             <ImageWithModal
-              src={getImageUrl('navFinal.svg')}
+              src={getImageUrl(content.images, 'navFinal.svg')}
               alt="Navigation Final Design"
               width={1000}
               height={1000}

@@ -3,13 +3,9 @@ import HeadingBody from '../../../../../_components/HeadingBody/HeadingBody';
 import { contentProps } from '../../../../errorMessaging/page';
 import Image from 'next/image';
 import { ImageWithModal } from '@/app/(pages)/_components/ImageModal/ImageModal';
+import { getImageUrl } from '../../../_utils/getImageUrl';
 
 export default function Personalization(content: contentProps) {
-  // Helper function to get image URL by filename
-  const getImageUrl = (filename: string) => {
-    const image = content.images?.find(img => img.key?.includes(filename));
-    return image?.url || '';
-  };
   return (
     <section className="flex flex-col gap-10">
       <RevealWrapper>
@@ -22,14 +18,14 @@ export default function Personalization(content: contentProps) {
           <div className="flex flex-col items-center gap-2">
             <div className="flex gap-8 w-full">
               <ImageWithModal
-                src={getImageUrl('bottom1.svg')}
+                src={getImageUrl(content.images, 'bottom1.svg')}
                 alt="Bottom Sheet Design 1"
                 width={1000}
                 height={1000}
                 className="w-[260px]"
               />
               <ImageWithModal
-                src={getImageUrl('bottom2.svg')}
+                src={getImageUrl(content.images, 'bottom2.svg')}
                 alt="Bottom Sheet Design 2"
                 width={1000}
                 height={1000}
@@ -47,7 +43,7 @@ export default function Personalization(content: contentProps) {
           />
           <div className="flex flex-col items-center gap-2">
             <ImageWithModal
-              src={getImageUrl('bottomFinal.svg')}
+              src={getImageUrl(content.images, 'bottomFinal.svg')}
               alt="Bottom Sheet Final Design"
               width={1000}
               height={1000}

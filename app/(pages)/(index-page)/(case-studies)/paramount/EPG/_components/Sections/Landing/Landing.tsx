@@ -5,16 +5,11 @@ import Image from 'next/image';
 import ScrollArrow, {
   ScrollArrowProps,
 } from '@/app/(pages)/(index-page)/_components/Landing/ScrollArrow';
+import { getImageUrl } from '../../../_utils/getImageUrl';
 
 export default function Landing(content: contentProps) {
   const scrollArrowProps: ScrollArrowProps = {
     sectionId: 'Context',
-  };
-
-  // Helper function to get image URL by filename
-  const getImageUrl = (filename: string) => {
-    const image = content.images?.find(img => img.key?.includes(filename));
-    return image?.url || '';
   };
 
   return (
@@ -44,20 +39,20 @@ export default function Landing(content: contentProps) {
       <h4 className="text-white text-center">7 min read</h4>
 
       <div className="relative z-10 -mb-[10px]">
-        <LoadingImage
-          src={getImageUrl('heroDesktop.svg')}
-          alt="EPG Hero Desktop"
-          width={1000}
-          height={1000}
-          className="w-[1027px]"
-        />
-        <Image
-          src={getImageUrl('heroMobile.svg')}
-          alt="EPG Hero Mobile"
-          width={1000}
-          height={1000}
-          className="w-[301px] absolute bottom-[0%] right-[-10%]"
-        />
+               <LoadingImage
+                 src={getImageUrl(content.images, 'heroDesktop.svg')}
+                 alt="EPG Hero Desktop"
+                 width={1000}
+                 height={1000}
+                 className="w-[1027px]"
+               />
+               <Image
+                 src={getImageUrl(content.images, 'heroMobile.svg')}
+                 alt="EPG Hero Mobile"
+                 width={1000}
+                 height={1000}
+                 className="w-[301px] absolute bottom-[0%] right-[-10%]"
+               />
       </div>
       <div className="absolute top-[85vh] z-50">
         <ScrollArrow {...scrollArrowProps} />

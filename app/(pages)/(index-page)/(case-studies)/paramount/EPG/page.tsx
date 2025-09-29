@@ -74,7 +74,7 @@ export default async function ParamountP1() {
         body={bodyData.slice(17, 21)}
         h3={h3Data.slice(17, 21)}
         h4={h4Data.slice(18, 22)}
-        images={images.slice(28, 39)}
+        images={images}
       />
       <DividerLine />
       <Reflection

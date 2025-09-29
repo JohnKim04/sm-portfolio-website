@@ -2,13 +2,9 @@ import { RevealWrapper } from '@/app/(pages)/(index-page)/_components/Reveal/Rev
 import HeadingBody from '../../../../../_components/HeadingBody/HeadingBody';
 import { contentProps } from '../../../../errorMessaging/page';
 import { ImageWithModal } from '@/app/(pages)/_components/ImageModal/ImageModal';
+import { getImageUrl } from '../../../_utils/getImageUrl';
 
 export default function Visibility(content: contentProps) {
-  // Helper function to get image URL by filename
-  const getImageUrl = (filename: string) => {
-    const image = content.images?.find(img => img.key?.includes(filename));
-    return image?.url || '';
-  };
   return (
     <section className="flex flex-col gap-10">
       <RevealWrapper>
@@ -20,7 +16,7 @@ export default function Visibility(content: contentProps) {
         <div className="flex w-full gap-8 items-center">
           <div className="flex flex-col items-center gap-2 flex-grow">
             <ImageWithModal
-              src={getImageUrl('videoPlayerText.svg')}
+              src={getImageUrl(content.images, 'videoPlayerText.svg')}
               alt="Video Player with Text"
               width={1000}
               height={1000}
@@ -30,7 +26,7 @@ export default function Visibility(content: contentProps) {
           </div>
           <div className="flex flex-col items-center gap-2 flex-grow">
             <ImageWithModal
-              src={getImageUrl('videoPlayerPeek.svg')}
+              src={getImageUrl(content.images, 'videoPlayerPeek.svg')}
               alt="Video Player with Peek View"
               width={1000}
               height={1000}
@@ -42,7 +38,7 @@ export default function Visibility(content: contentProps) {
         <p>{content.body?.at(1)}</p>
         <div className="flex flex-col items-center gap-2">
           <ImageWithModal
-            src={getImageUrl('videoPlayerFinal.svg')}
+            src={getImageUrl(content.images, 'videoPlayerFinal.svg')}
             alt="Video Player Final Design"
             width={1000}
             height={1000}

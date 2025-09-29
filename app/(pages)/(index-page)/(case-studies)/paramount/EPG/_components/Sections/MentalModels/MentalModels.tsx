@@ -3,13 +3,9 @@ import HeadingBody from '../../../../../_components/HeadingBody/HeadingBody';
 import { contentProps } from '../../../../errorMessaging/page';
 import { ImageWithModal } from '@/app/(pages)/_components/ImageModal/ImageModal';
 import Image from 'next/image';
+import { getImageUrl } from '../../../_utils/getImageUrl';
 
 export default function MentalModels(content: contentProps) {
-  // Helper function to get image URL by filename
-  const getImageUrl = (filename: string) => {
-    const image = content.images?.find(img => img.key?.includes(filename));
-    return image?.url || '';
-  };
   return (
     <section className="flex flex-col gap-20" id="Iterations">
       <RevealWrapper>
@@ -22,7 +18,7 @@ export default function MentalModels(content: contentProps) {
           <div className="flex justify-between gap-8">
             <div className="flex flex-col items-center gap-2">
               <ImageWithModal
-                src={getImageUrl('tubiGuide.svg')}
+                src={getImageUrl(content.images, 'tubiGuide.svg')}
                 alt="Tubi TV Guide"
                 width={1000}
                 height={1000}
@@ -32,7 +28,7 @@ export default function MentalModels(content: contentProps) {
             </div>
             <div className="flex flex-col items-center gap-2">
               <ImageWithModal
-                src={getImageUrl('pluteGuide.svg')}
+                src={getImageUrl(content.images, 'pluteGuide.svg')}
                 alt="Pluto TV Guide"
                 width={1000}
                 height={1000}
@@ -42,7 +38,7 @@ export default function MentalModels(content: contentProps) {
             </div>
             <div className="flex flex-col items-center gap-2">
               <ImageWithModal
-                src={getImageUrl('huluGuide.svg')}
+                src={getImageUrl(content.images, 'huluGuide.svg')}
                 alt="Hulu TV Guide"
                 width={1000}
                 height={1000}
@@ -62,14 +58,14 @@ export default function MentalModels(content: contentProps) {
           <div className="flex flex-col items-center gap-2">
             <div className="flex gap-8 w-full">
               <ImageWithModal
-                src={getImageUrl('sports1.svg')}
+                src={getImageUrl(content.images, 'sports1.svg')}
                 alt="Sports Design 1"
                 width={1000}
                 height={1000}
                 className="w-[260px]"
               />
               <ImageWithModal
-                src={getImageUrl('sports2.svg')}
+                src={getImageUrl(content.images, 'sports2.svg')}
                 alt="Sports Design 2"
                 width={1000}
                 height={1000}
@@ -87,7 +83,7 @@ export default function MentalModels(content: contentProps) {
           />
           <div className="flex flex-col items-center gap-2">
             <ImageWithModal
-              src={getImageUrl('sportsFinal.svg')}
+              src={getImageUrl(content.images, 'sportsFinal.svg')}
               alt="Sports Final Design"
               width={1000}
               height={1000}
