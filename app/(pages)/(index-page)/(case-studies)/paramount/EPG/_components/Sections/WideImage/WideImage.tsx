@@ -2,6 +2,11 @@ import { contentProps } from '../../../../errorMessaging/page';
 import { ImageWithModal } from '@/app/(pages)/_components/ImageModal/ImageModal';
 
 export default function WideImage(content: contentProps) {
+  // Helper function to get image URL by filename
+  const getImageUrl = (filename: string) => {
+    const image = content.images?.find(img => img.key?.includes(filename));
+    return image?.url || '';
+  };
   return (
     <section
       className="flex flex-col items-center gap-10 pt-[130px] -mx-[40%]"
@@ -13,22 +18,22 @@ export default function WideImage(content: contentProps) {
     >
       <div className="flex justify-center">
         <ImageWithModal
-          src={content.images?.at(0)?.url}
-          alt=""
+          src={getImageUrl('wideImg1.svg')}
+          alt="Wide Image 1"
           width={1000}
           height={1000}
           className="w-[363px] h-[600px]"
         />
         <ImageWithModal
-          src={content.images?.at(1)?.url}
-          alt=""
+          src={getImageUrl('wideImg2.svg')}
+          alt="Wide Image 2"
           width={1000}
           height={1000}
           className="w-[363px] h-[600px]"
         />
         <ImageWithModal
-          src={content.images?.at(2)?.url}
-          alt=""
+          src={getImageUrl('wideImg3.svg')}
+          alt="Wide Image 3"
           width={1000}
           height={1000}
           className="w-[363px] h-[600px]"

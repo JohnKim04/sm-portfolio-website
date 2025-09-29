@@ -4,6 +4,11 @@ import { contentProps } from '../../../../errorMessaging/page';
 import { ImageWithModal } from '@/app/(pages)/_components/ImageModal/ImageModal';
 
 export default function MarketBehavior(content: contentProps) {
+  // Helper function to get image URL by filename
+  const getImageUrl = (filename: string) => {
+    const image = content.images?.find(img => img.key?.includes(filename));
+    return image?.url || '';
+  };
   return (
     <section className="flex flex-col gap-10">
       <RevealWrapper>
@@ -12,8 +17,8 @@ export default function MarketBehavior(content: contentProps) {
         <div className="flex justify-between items-end gap-10">
           <div className="flex w-[717px] flex-col items-center gap-2 self-start">
             <ImageWithModal
-              src={content.images?.at(0)?.url}
-              alt=""
+              src={getImageUrl('marketTV.svg')}
+              alt="Market TV Guide"
               width={1000}
               height={1000}
               className="h-[429px]"
@@ -22,8 +27,8 @@ export default function MarketBehavior(content: contentProps) {
           </div>
           <div className="flex w-[243px] flex-col items-center gap-2 self-end">
             <ImageWithModal
-              src={content.images?.at(1)?.url}
-              alt=""
+              src={getImageUrl('tvGuideMobile.svg')}
+              alt="TV Guide Mobile"
               width={1000}
               height={1000}
               className="w-full h-[429px]"

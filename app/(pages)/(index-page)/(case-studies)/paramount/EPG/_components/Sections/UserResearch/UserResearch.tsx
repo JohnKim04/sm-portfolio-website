@@ -4,14 +4,19 @@ import { contentProps } from '../../../../errorMessaging/page';
 import { ImageWithModal } from '@/app/(pages)/_components/ImageModal/ImageModal';
 
 export default function UserResearch(content: contentProps) {
+  // Helper function to get image URL by filename
+  const getImageUrl = (filename: string) => {
+    const image = content.images?.find(img => img.key?.includes(filename));
+    return image?.url || '';
+  };
   return (
     <section className="flex flex-col gap-20" id="Research">
       <RevealWrapper>
         <HeadingBody h={content.h3?.at(0)} p={content.body?.at(0)} />
 
         <ImageWithModal
-          src={content.images?.at(4)?.url}
-          alt=""
+          src={getImageUrl('stickyNotes.svg')}
+          alt="Sticky Notes Overview"
           width={1000}
           height={1000}
           className="w-full"
@@ -20,29 +25,29 @@ export default function UserResearch(content: contentProps) {
           <h3 className="text-center">{content.h3?.at(1)}</h3>
           <div className="flex gap-8">
             <ImageWithModal
-              src={content.images?.at(0)?.url}
-              alt=""
+              src={getImageUrl('note1.svg')}
+              alt="Note 1"
               width={1000}
               height={1000}
               className="w-full"
             />
             <ImageWithModal
-              src={content.images?.at(1)?.url}
-              alt=""
+              src={getImageUrl('note2.svg')}
+              alt="Note 2"
               width={1000}
               height={1000}
               className="w-full"
             />
             <ImageWithModal
-              src={content.images?.at(2)?.url}
-              alt=""
+              src={getImageUrl('note3.svg')}
+              alt="Note 3"
               width={1000}
               height={1000}
               className="w-full"
             />
             <ImageWithModal
-              src={content.images?.at(3)?.url}
-              alt=""
+              src={getImageUrl('note4.svg')}
+              alt="Note 4"
               width={1000}
               height={1000}
               className="w-full"

@@ -29,45 +29,45 @@ export default async function ParamountP1() {
   return (
     <main className="flex flex-col gap-20 px-case-study overflow-clip">
       <TableOfContents sections={pageContents} />
-      <Landing h2={h2Data.slice(0, 1)} images={images.slice(1, 3)} />
+      <Landing h2={h2Data.slice(0, 1)} images={images} />
       <Summary body={bodyData.slice(0, 7)} h3={h3Data.slice(0, 7)} />
-      <WideImage images={images.slice(3, 6)} />
+      <WideImage images={images} />
       <DividerLine />
       <MarketBehavior
         body={bodyData.slice(7, 8)}
         h3={h3Data.slice(7, 8)}
         h4={h4Data.slice(0, 2)}
-        images={images.slice(6, 8)}
+        images={images}
       />
       <UserResearch
         body={bodyData.slice(8, 9)}
         h3={h3Data.slice(8, 10)}
-        images={images.slice(8, 13)}
+        images={images}
       />
       <DividerLine />
       <MentalModels
         body={bodyData.slice(9, 13)}
         h3={h3Data.slice(10, 14)}
         h4={h4Data.slice(2, 8)}
-        images={images.slice(13, 19)}
+        images={images}
       />
       <Navigation
         body={bodyData.slice(13, 14)}
         h3={h3Data.slice(14, 15)}
         h4={h4Data.slice(8, 11)}
-        images={images.slice(19, 22)}
+        images={images}
       />
       <Personalization
         body={bodyData.slice(14, 15)}
         h3={h3Data.slice(15, 16)}
         h4={h4Data.slice(11, 14)}
-        images={images.slice(22, 25)}
+        images={images}
       />
       <Visibility
         body={bodyData.slice(15, 17)}
         h3={h3Data.slice(16, 17)}
         h4={h4Data.slice(14, 18)}
-        images={images.slice(25, 28)}
+        images={images}
       />
       <FinalDesigns
         h2={h2Data.slice(1, 2)}

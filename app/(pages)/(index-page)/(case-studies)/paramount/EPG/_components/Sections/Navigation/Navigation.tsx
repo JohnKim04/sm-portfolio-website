@@ -5,6 +5,11 @@ import Image from 'next/image';
 import { ImageWithModal } from '@/app/(pages)/_components/ImageModal/ImageModal';
 
 export default function Navigation(content: contentProps) {
+  // Helper function to get image URL by filename
+  const getImageUrl = (filename: string) => {
+    const image = content.images?.find(img => img.key?.includes(filename));
+    return image?.url || '';
+  };
   return (
     <section className="flex flex-col gap-10">
       <RevealWrapper>
@@ -17,15 +22,15 @@ export default function Navigation(content: contentProps) {
           <div className="flex flex-col items-center gap-2">
             <div className="flex gap-8 w-full">
               <ImageWithModal
-                src={content.images?.at(0)?.url}
-                alt=""
+                src={getImageUrl('nav1.svg')}
+                alt="Navigation Design 1"
                 width={1000}
                 height={1000}
                 className="w-[260px]"
               />
               <ImageWithModal
-                src={content.images?.at(1)?.url}
-                alt=""
+                src={getImageUrl('nav2.svg')}
+                alt="Navigation Design 2"
                 width={1000}
                 height={1000}
                 className="w-[260px]"
@@ -42,8 +47,8 @@ export default function Navigation(content: contentProps) {
           />
           <div className="flex flex-col items-center gap-2">
             <ImageWithModal
-              src={content.images?.at(2)?.url}
-              alt=""
+              src={getImageUrl('navFinal.svg')}
+              alt="Navigation Final Design"
               width={1000}
               height={1000}
               className="w-[337px]"

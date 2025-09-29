@@ -4,6 +4,11 @@ import { contentProps } from '../../../../errorMessaging/page';
 import { ImageWithModal } from '@/app/(pages)/_components/ImageModal/ImageModal';
 
 export default function Visibility(content: contentProps) {
+  // Helper function to get image URL by filename
+  const getImageUrl = (filename: string) => {
+    const image = content.images?.find(img => img.key?.includes(filename));
+    return image?.url || '';
+  };
   return (
     <section className="flex flex-col gap-10">
       <RevealWrapper>
@@ -15,8 +20,8 @@ export default function Visibility(content: contentProps) {
         <div className="flex w-full gap-8 items-center">
           <div className="flex flex-col items-center gap-2 flex-grow">
             <ImageWithModal
-              src={content.images?.at(2)?.url}
-              alt=""
+              src={getImageUrl('videoPlayerText.svg')}
+              alt="Video Player with Text"
               width={1000}
               height={1000}
               className="w-full"
@@ -25,8 +30,8 @@ export default function Visibility(content: contentProps) {
           </div>
           <div className="flex flex-col items-center gap-2 flex-grow">
             <ImageWithModal
-              src={content.images?.at(1)?.url}
-              alt=""
+              src={getImageUrl('videoPlayerPeek.svg')}
+              alt="Video Player with Peek View"
               width={1000}
               height={1000}
               className="w-full"
@@ -37,8 +42,8 @@ export default function Visibility(content: contentProps) {
         <p>{content.body?.at(1)}</p>
         <div className="flex flex-col items-center gap-2">
           <ImageWithModal
-            src={content.images?.at(0)?.url}
-            alt=""
+            src={getImageUrl('videoPlayerFinal.svg')}
+            alt="Video Player Final Design"
             width={1000}
             height={1000}
             className="w-full"

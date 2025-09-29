@@ -11,6 +11,12 @@ export default function Landing(content: contentProps) {
     sectionId: 'Context',
   };
 
+  // Helper function to get image URL by filename
+  const getImageUrl = (filename: string) => {
+    const image = content.images?.find(img => img.key?.includes(filename));
+    return image?.url || '';
+  };
+
   return (
     <section
       className="flex flex-col h-[100vh] items-center justify-end gap-6 -mx-[40%] relative overflow-clip"
@@ -39,15 +45,15 @@ export default function Landing(content: contentProps) {
 
       <div className="relative z-10 -mb-[10px]">
         <LoadingImage
-          src={content.images?.at(0)?.url}
-          alt=""
+          src={getImageUrl('heroDesktop.svg')}
+          alt="EPG Hero Desktop"
           width={1000}
           height={1000}
           className="w-[1027px]"
         />
         <Image
-          src={content.images?.at(1)?.url}
-          alt=""
+          src={getImageUrl('heroMobile.svg')}
+          alt="EPG Hero Mobile"
           width={1000}
           height={1000}
           className="w-[301px] absolute bottom-[0%] right-[-10%]"
