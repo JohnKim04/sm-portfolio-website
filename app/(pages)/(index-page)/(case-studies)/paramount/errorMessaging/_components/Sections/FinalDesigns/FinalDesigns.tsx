@@ -4,6 +4,7 @@ import { RevealWrapper } from '@/app/(pages)/(index-page)/_components/Reveal/Rev
 import { ToggleButton } from '../../../../../hackdavis/_components/Sections/FinalSolution/FinalSolution';
 import { useState } from 'react';
 import { ImageWithModal } from '@/app/(pages)/_components/ImageModal/ImageModal';
+import { getImageUrl } from '../../../_utils/getImageUrl';
 
 export default function FinalDesigns(content: contentProps) {
   const [activeDesignButton, setActiveDesignButton] = useState(0);
@@ -28,13 +29,13 @@ export default function FinalDesigns(content: contentProps) {
 
   const tvDesigns = [
     {
-      img: content.images?.at(2).url,
+      img: getImageUrl(content.images, 'tvFinalGen.svg'),
       h4: content.h4?.at(0),
       h3: content.h3?.at(0),
       body: content.body?.at(0),
     },
     {
-      img: content.images?.at(3).url,
+      img: getImageUrl(content.images, 'tvFinalSpec.svg'),
       h4: content.h4?.at(0),
       h3: content.h3?.at(1),
       body: content.body?.at(1),
@@ -43,13 +44,13 @@ export default function FinalDesigns(content: contentProps) {
 
   const mobileDesigns = [
     {
-      img: content.images?.at(0).url,
+      img: getImageUrl(content.images, 'mobileFinalGen.png'),
       h4: content.h4?.at(2),
       h3: content.h3?.at(0),
       body: content.body?.at(2),
     },
     {
-      img: content.images?.at(1).url,
+      img: getImageUrl(content.images, 'mobileFinalSpec.png'),
       h4: content.h4?.at(2),
       h3: content.h3?.at(1),
       body: content.body?.at(3),
@@ -58,13 +59,13 @@ export default function FinalDesigns(content: contentProps) {
 
   const webDesigns = [
     {
-      img: content.images?.at(4).url,
+      img: getImageUrl(content.images, 'webFinalGen.svg'),
       h4: content.h4?.at(1),
       h3: content.h3?.at(0),
       body: content.body?.at(2),
     },
     {
-      img: content.images?.at(5).url,
+      img: getImageUrl(content.images, 'webFinalSpec.svg'),
       h4: content.h4?.at(1),
       h3: content.h3?.at(1),
       body: content.body?.at(3),

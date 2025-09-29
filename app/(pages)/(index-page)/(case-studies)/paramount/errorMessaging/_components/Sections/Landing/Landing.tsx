@@ -5,6 +5,7 @@ import ScrollArrow, {
   ScrollArrowProps,
 } from '@/app/(pages)/(index-page)/_components/Landing/ScrollArrow';
 import Image from 'next/image';
+import { getImageUrl } from '../../../_utils/getImageUrl';
 
 export default function Landing(content: contentProps) {
   const scrollArrowProps: ScrollArrowProps = {
@@ -31,29 +32,29 @@ export default function Landing(content: contentProps) {
       <h4 className="text-[#ECF1FC]">5 min read</h4>
       <div className="relative">
         <LoadingImage
-          src={content.images?.at(0)?.url}
-          alt=""
+          src={getImageUrl(content.images, 'tvFinalSpec.svg')}
+          alt="TV Final Specification"
           width={1000}
           height={1000}
           className="w-[754px]"
         />
         <Image
-          src={content.images?.at(1)?.url}
-          alt=""
+          src={getImageUrl(content.images, 'tvRemote.svg')}
+          alt="TV Remote"
           width={1000}
           height={1000}
           className="w-[105px] absolute bottom-0 right-[-5%]"
         />
         <Image
-          src={content.images?.at(2)?.url}
-          alt=""
+          src={getImageUrl(content.images, 'macbookImage.svg')}
+          alt="MacBook Image"
           width={1000}
           height={1000}
           className="w-[573px] absolute bottom-0 right-[-80%]"
         />
         <Image
-          src={content.images?.at(3)?.url}
-          alt=""
+          src={getImageUrl(content.images, 'mobileFinalSpec.png')}
+          alt="Mobile Final Specification"
           width={1000}
           height={1000}
           className="w-[408px] absolute bottom-0 left-[-57%]"

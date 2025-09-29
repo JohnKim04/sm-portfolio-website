@@ -37,28 +37,28 @@ export default async function ParamountP2() {
     <main className="flex flex-col gap-20 px-case-study overflow-clip">
       <TableOfContents sections={pageContents} />
 
-      <Landing h2={h2Data.slice(0, 1)} images={images.slice(2, 6)} />
+      <Landing h2={h2Data.slice(0, 1)} images={images} />
       <Summary body={bodyData.slice(0, 7)} h3={h3Data.slice(0, 7)} />
-      <CouchImage images={images.slice(1, 2)} />
+      <CouchImage images={images} />
       <DividerLine />
       <BreakDown
         body={bodyData.slice(7, 11)}
         h3={h3Data.slice(7, 11)}
         h4={h4Data.slice(0, 7)}
-        images={images.slice(6, 13)}
+        images={images}
       />
       <Iterations
         body={bodyData.slice(11, 14)}
         h3={h3Data.slice(11, 14)}
         h4={h4Data.slice(7, 14)}
-        images={images.slice(23, 27)}
+        images={images}
       />
       <FinalDesigns
         body={bodyData.slice(14, 20)}
         h2={h2Data.slice(1, 2)}
         h3={h3Data.slice(14, 16)}
         h4={h4Data.slice(14, 17)}
-        images={images.slice(17, 23)}
+        images={images}
       />
       <DividerLine />
       <Results

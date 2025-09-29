@@ -3,6 +3,7 @@ import HeadingBody from '../../../../../_components/HeadingBody/HeadingBody';
 import { contentProps } from '../../../page';
 import { RevealWrapper } from '@/app/(pages)/(index-page)/_components/Reveal/RevealWrapper';
 import { ImageWithModal } from '@/app/(pages)/_components/ImageModal/ImageModal';
+import { getImageUrl } from '../../../_utils/getImageUrl';
 
 export default function BreakDown(content: contentProps) {
   return (
@@ -14,8 +15,8 @@ export default function BreakDown(content: contentProps) {
           <div className="flex w-full gap-8">
             <div className="flex flex-col items-center gap-2 flex-grow">
               <ImageWithModal
-                src={content.images?.at(1)?.url}
-                alt=""
+                src={getImageUrl(content.images, 'currWebMessage.svg')}
+                alt="Current Web Message"
                 width={1000}
                 height={1000}
                 className="h-full"
@@ -24,8 +25,8 @@ export default function BreakDown(content: contentProps) {
             </div>
             <div className="flex flex-col items-center gap-2 flex-grow">
               <ImageWithModal
-                src={content.images?.at(0)?.url}
-                alt=""
+                src={getImageUrl(content.images, 'currTVMessage.svg')}
+                alt="Current TV Message"
                 width={1000}
                 height={1000}
                 className="h-full"
@@ -42,8 +43,8 @@ export default function BreakDown(content: contentProps) {
         <div className="flex w-full gap-8">
           <div className="flex flex-col items-center gap-2 flex-grow">
             <ImageWithModal
-              src={content.images?.at(4)?.url}
-              alt=""
+              src={getImageUrl(content.images, 'peacockMessage.svg')}
+              alt="Peacock Error Message"
               width={1000}
               height={1000}
               className="h-full"
@@ -52,8 +53,8 @@ export default function BreakDown(content: contentProps) {
           </div>
           <div className="flex flex-col items-center gap-2 flex-grow">
             <ImageWithModal
-              src={content.images?.at(3)?.url}
-              alt=""
+              src={getImageUrl(content.images, 'huluMessage.svg')}
+              alt="Hulu Error Message"
               width={1000}
               height={1000}
               className="h-full"
@@ -62,8 +63,8 @@ export default function BreakDown(content: contentProps) {
           </div>
           <div className="flex flex-col items-center gap-2 flex-grow">
             <ImageWithModal
-              src={content.images?.at(2)?.url}
-              alt=""
+              src={getImageUrl(content.images, 'hboMessage.svg')}
+              alt="HBO Max Error Message"
               width={1000}
               height={1000}
               className="h-full"
@@ -78,8 +79,8 @@ export default function BreakDown(content: contentProps) {
           <div className="flex w-full gap-8">
             <div className="flex flex-col items-center gap-2 flex-grow">
               <ImageWithModal
-                src={content.images?.at(5)?.url}
-                alt=""
+                src={getImageUrl(content.images, 'paramountResponse.svg')}
+                alt="Paramount Response"
                 width={1000}
                 height={1000}
                 className="h-full"
@@ -88,8 +89,8 @@ export default function BreakDown(content: contentProps) {
             </div>
             <div className="flex flex-col items-center gap-2 flex-grow">
               <ImageWithModal
-                src={content.images?.at(6)?.url}
-                alt=""
+                src={getImageUrl(content.images, 'peacockResponse.svg')}
+                alt="Peacock Response"
                 width={1000}
                 height={1000}
                 className="h-full"

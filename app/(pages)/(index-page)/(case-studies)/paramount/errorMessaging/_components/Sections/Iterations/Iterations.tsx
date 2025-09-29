@@ -3,6 +3,7 @@ import { contentProps } from '../../../page';
 import Image from 'next/image';
 import { RevealWrapper } from '@/app/(pages)/(index-page)/_components/Reveal/RevealWrapper';
 import { ImageWithModal } from '@/app/(pages)/_components/ImageModal/ImageModal';
+import { getImageUrl } from '../../../_utils/getImageUrl';
 
 export default function Iterations(content: contentProps) {
   return (
@@ -17,8 +18,8 @@ export default function Iterations(content: contentProps) {
           <div className="flex w-full items-center gap-8">
             <div className="flex flex-col items-center gap-2 flex-grow w-[47%] self-end">
               <ImageWithModal
-                src={content.images?.at(0)?.url}
-                alt=""
+                src={getImageUrl(content.images, 'centerAlignTV.svg')}
+                alt="Center Aligned TV"
                 width={1000}
                 height={1000}
                 className="w-full"
@@ -34,8 +35,8 @@ export default function Iterations(content: contentProps) {
             />
             <div className="flex flex-col items-center gap-2 flex-grow w-[53%] self-end">
               <ImageWithModal
-                src={content.images?.at(1)?.url}
-                alt=""
+                src={getImageUrl(content.images, 'leftAlignTV.svg')}
+                alt="Left Aligned TV"
                 width={1000}
                 height={1000}
                 className="w-full"
@@ -51,8 +52,8 @@ export default function Iterations(content: contentProps) {
           <div className="flex w-full gap-8">
             <div className="flex flex-col items-center gap-2 self-end flex-grow w-[47%]">
               <ImageWithModal
-                src={content.images?.at(1)?.url}
-                alt=""
+                src={getImageUrl(content.images, 'leftAlignTV.svg')}
+                alt="Left Aligned TV"
                 width={1000}
                 height={1000}
                 className="w-full"
@@ -68,8 +69,8 @@ export default function Iterations(content: contentProps) {
             />
             <div className="flex flex-col items-center gap-2 flex-grow w-[53%] self-end">
               <ImageWithModal
-                src={content.images?.at(2)?.url}
-                alt=""
+                src={getImageUrl(content.images, 'leftAlignTVBlack.svg')}
+                alt="Left Aligned TV Black"
                 width={1000}
                 height={1000}
                 className="w-full"
@@ -85,8 +86,8 @@ export default function Iterations(content: contentProps) {
           <div className="flex w-full gap-8">
             <div className="flex flex-col items-center gap-2 flex-grow w-[47%] self-end">
               <ImageWithModal
-                src={content.images?.at(2)?.url}
-                alt=""
+                src={getImageUrl(content.images, 'leftAlignTVBlack.svg')}
+                alt="Left Aligned TV Black"
                 width={1000}
                 height={1000}
                 className="w-full"
@@ -102,8 +103,8 @@ export default function Iterations(content: contentProps) {
             />
             <div className="flex flex-col items-center gap-2 flex-grow w-[53%] self-end">
               <ImageWithModal
-                src={content.images?.at(3)?.url}
-                alt=""
+                src={getImageUrl(content.images, 'tvFinalGen.svg')}
+                alt="TV Final Generation"
                 width={1000}
                 height={1000}
                 className="w-full"
