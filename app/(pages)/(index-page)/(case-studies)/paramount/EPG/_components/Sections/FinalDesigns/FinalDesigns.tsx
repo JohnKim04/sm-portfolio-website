@@ -4,7 +4,7 @@ import HeadingBody from '../../../../../_components/HeadingBody/HeadingBody';
 import { contentProps } from '../../../../errorMessaging/page';
 import { useState } from 'react';
 import { ToggleButton } from '@/app/(pages)/(index-page)/(case-studies)/hackdavis/_components/Sections/FinalSolution/FinalSolution';
-import { getImageUrl } from '../../../_utils/getImageUrl';
+import { getImageUrl } from '@/app/_lib/getImageUrl';
 export default function FinalDesigns(content: contentProps) {
   const [activeDesignButton, setActiveDesignButton] = useState(false);
 

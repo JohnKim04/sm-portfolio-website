@@ -4,7 +4,7 @@ import { RevealWrapper } from '@/app/(pages)/(index-page)/_components/Reveal/Rev
 import { ToggleButton } from '../../../../../hackdavis/_components/Sections/FinalSolution/FinalSolution';
 import { useState } from 'react';
 import { ImageWithModal } from '@/app/(pages)/_components/ImageModal/ImageModal';
-import { getImageUrl } from '../../../_utils/getImageUrl';
+import { getImageUrl } from '@/app/_lib/getImageUrl';
 
 export default function FinalDesigns(content: contentProps) {
   const [activeDesignButton, setActiveDesignButton] = useState(0);

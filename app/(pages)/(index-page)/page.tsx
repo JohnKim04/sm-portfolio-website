@@ -2,7 +2,7 @@ import getImageData from '@/app/_lib/getImageData';
 import CaseStudy, { CaseStudyProps } from './_components/CaseStudy/CaseStudy';
 import Landing from './_components/Landing/Landing';
 import LoadingCaseStudy from './_components/CaseStudy/LoadingCase';
-import { getImageUrl } from './_utils/getImageUrl';
+import { getImageUrl } from '@/app/_lib/getImageUrl';
 
 export default async function Home() {
   const images = await getImageData('landingPage/');

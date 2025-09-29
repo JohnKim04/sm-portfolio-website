@@ -12,6 +12,7 @@ import Ending from './_components/Sections/Ending/Ending';
 import DividerLine from '../_components/DividerLine/DividerLine';
 import TableOfContents from '../_components/TableOfContents/TableOfContents';
 import NextCaseStudies from './_components/Sections/NextCaseStudies/NextCaseStudies';
+import getImageData from '@/app/_lib/getImageData';
 
 export default async function HackDavis() {
   const pageContents = [
@@ -26,12 +27,14 @@ export default async function HackDavis() {
     { sectionName: 'Reflection', level: 0 },
   ];
 
+  const images = await getImageData('HackDavis/');
+
   return (
     <main className="bg-white text-black flex flex-col gap-20 px-case-study overflow-clip">
       <TableOfContents sections={pageContents} />
       <Landing />
       <Intro />
-      <SolutionPreview />
+      <SolutionPreview images={images} />
       <Results />
       <Venue />
       <Process />
@@ -39,7 +42,7 @@ export default async function HackDavis() {
       <CardSort />
       <DividerLine />
       <Ideation />
-      <FinalSolution />
+      <FinalSolution images={images} />
       <Ending />
       <DividerLine />
       <NextCaseStudies />

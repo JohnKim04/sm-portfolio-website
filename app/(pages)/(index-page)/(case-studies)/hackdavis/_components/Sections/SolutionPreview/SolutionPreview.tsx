@@ -3,8 +3,10 @@ import Link from 'next/link';
 import ScrollToSolution from './ScrollToSolution';
 import { RevealWrapper } from '@/app/(pages)/(index-page)/_components/Reveal/RevealWrapper';
 import { ImageWithModal } from '@/app/(pages)/_components/ImageModal/ImageModal';
+import { getImageUrl } from '@/app/_lib/getImageUrl';
+type Props = { images?: any[] };
 
-export default function SolutionPreview() {
+export default function SolutionPreview({ images }: Props) {
   return (
     <section
       className="flex flex-col justify-center items-center"
@@ -32,7 +34,7 @@ export default function SolutionPreview() {
         <div className="flex items-start justify-center gap-5">
           <div className="flex flex-col w-[33%] items-center gap-2">
             <ImageWithModal
-              src="https://d1ejtjbpinwbmz.cloudfront.net/HackDavis/AboutDesktop.svg"
+              src={getImageUrl(images, 'AboutDesktop.svg')}
               alt="about page"
               width={1000}
               height={1000}
@@ -43,7 +45,7 @@ export default function SolutionPreview() {
 
           <div className="flex flex-col w-[33%] items-center gap-2 pt-1">
             <ImageWithModal
-              src="https://d1ejtjbpinwbmz.cloudfront.net/HackDavis/Landing.svg"
+              src={getImageUrl(images, 'Landing.svg')}
               alt="about page"
               width={1000}
               height={1000}
@@ -54,7 +56,7 @@ export default function SolutionPreview() {
 
           <div className="flex flex-col w-[33%] items-center gap-2">
             <ImageWithModal
-              src="https://d1ejtjbpinwbmz.cloudfront.net/HackDavis/DOE.svg"
+              src={getImageUrl(images, 'DOE.svg')}
               alt="about page"
               width={1000}
               height={1000}

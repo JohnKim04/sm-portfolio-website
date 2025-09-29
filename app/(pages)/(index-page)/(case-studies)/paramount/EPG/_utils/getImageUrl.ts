@@ -1,5 +1,0 @@
-// Helper function to get image/video URL by filename from S3 images array
-export const getImageUrl = (images: { key: string; url: string }[] | undefined, filename: string): string => {
-  const image = images?.find(img => img.key?.includes(filename));
-  return image?.url || '';
-};

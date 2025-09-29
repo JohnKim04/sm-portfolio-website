@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import getImageData from '@/app/_lib/getImageData';
-import { getImageUrl } from '../../../_utils/getImageUrl';
+import { getImageUrl } from '@/app/_lib/getImageUrl';
 
 export default async function EMCaseStudyThumbnail() {
   const images = await getImageData('landingPage/');

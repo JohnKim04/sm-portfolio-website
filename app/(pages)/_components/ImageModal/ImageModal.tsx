@@ -41,6 +41,7 @@ export const ImageWithModal = ({
         className={`cursor-zoom-in ${className}`} // Change cursor to indicate it's clickable
         onClick={openModal}
         onLoad={onLoad}
+        unoptimized
       />
       {isModalOpen && (
         <ImageModal
@@ -91,6 +92,7 @@ const ImageModal = ({
           height={1000}
           loading="eager"
           className={`object-contain w-[90vw] ${removeMaxHeight ? '' : 'max-h-[100vh]'} pt-20 pb-20 cursor-zoom-out`} // Adjust the size of the image inside the modal
+          unoptimized
         />
       </div>
       {/* </TransformComponent> */}

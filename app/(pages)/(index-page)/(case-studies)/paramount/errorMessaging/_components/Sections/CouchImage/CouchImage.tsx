@@ -1,6 +1,6 @@
 import { contentProps } from '../../../page';
 import Image from 'next/image';
-import { getImageUrl } from '../../../_utils/getImageUrl';
+import { getImageUrl } from '@/app/_lib/getImageUrl';
 
 export default function CouchImage(content: contentProps) {
   return (

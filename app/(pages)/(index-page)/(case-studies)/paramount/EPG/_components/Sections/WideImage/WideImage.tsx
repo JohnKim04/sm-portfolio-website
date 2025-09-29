@@ -1,6 +1,6 @@
 import { contentProps } from '../../../../errorMessaging/page';
 import { ImageWithModal } from '@/app/(pages)/_components/ImageModal/ImageModal';
-import { getImageUrl } from '../../../_utils/getImageUrl';
+import { getImageUrl } from '@/app/_lib/getImageUrl';
 
 export default function WideImage(content: contentProps) {
   return (

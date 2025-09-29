@@ -5,7 +5,7 @@ import ScrollArrow, {
   ScrollArrowProps,
 } from '@/app/(pages)/(index-page)/_components/Landing/ScrollArrow';
 import Image from 'next/image';
-import { getImageUrl } from '../../../_utils/getImageUrl';
+import { getImageUrl } from '@/app/_lib/getImageUrl';
 
 export default function Landing(content: contentProps) {
   const scrollArrowProps: ScrollArrowProps = {

@@ -4,9 +4,11 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { RevealWrapper } from '@/app/(pages)/(index-page)/_components/Reveal/RevealWrapper';
 import { ImageWithModal } from '@/app/(pages)/_components/ImageModal/ImageModal';
+import { getImageUrl } from '@/app/_lib/getImageUrl';
+type Props = { images?: any[] };
 
 //TODO: comeback to this later to refactor again maybe ???
-export default function FinalSolution() {
+export default function FinalSolution({ images }: Props) {
   const [activeScrollButton, setActiveScrollButton] = useState(1);
   const [displayDesktop, setDisplayDesktop] = useState(true);
 
@@ -161,8 +163,8 @@ export default function FinalSolution() {
                 <ImageWithModal
                   src={
                     displayDesktop
-                      ? 'https://d1ejtjbpinwbmz.cloudfront.net/HackDavis/AboutDesktop.svg'
-                      : 'https://d1ejtjbpinwbmz.cloudfront.net/HackDavis/AboutMobile.svg'
+                      ? getImageUrl(images, 'AboutDesktop.svg')
+                      : getImageUrl(images, 'AboutMobile.svg')
                   }
                   alt="about page"
                   width={1000}
@@ -203,8 +205,8 @@ export default function FinalSolution() {
                 <ImageWithModal
                   src={
                     displayDesktop
-                      ? 'https://d1ejtjbpinwbmz.cloudfront.net/HackDavis/Landing.svg'
-                      : 'https://d1ejtjbpinwbmz.cloudfront.net/HackDavis/LandingMobile.svg'
+                      ? getImageUrl(images, 'Landing.svg')
+                      : getImageUrl(images, 'LandingMobile.svg')
                   }
                   alt="about page"
                   width={1000}
@@ -240,8 +242,8 @@ export default function FinalSolution() {
                 <ImageWithModal
                   src={
                     displayDesktop
-                      ? 'https://d1ejtjbpinwbmz.cloudfront.net/HackDavis/DOE.svg'
-                      : 'https://d1ejtjbpinwbmz.cloudfront.net/HackDavis/DOEMobile.svg'
+                      ? getImageUrl(images, 'DOE.svg')
+                      : getImageUrl(images, 'DOEMobile.svg')
                   }
                   alt="about page"
                   width={1000}

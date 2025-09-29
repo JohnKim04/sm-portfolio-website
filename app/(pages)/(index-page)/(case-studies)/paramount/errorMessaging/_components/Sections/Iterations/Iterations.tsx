@@ -3,7 +3,7 @@ import { contentProps } from '../../../page';
 import Image from 'next/image';
 import { RevealWrapper } from '@/app/(pages)/(index-page)/_components/Reveal/RevealWrapper';
 import { ImageWithModal } from '@/app/(pages)/_components/ImageModal/ImageModal';
-import { getImageUrl } from '../../../_utils/getImageUrl';
+import { getImageUrl } from '@/app/_lib/getImageUrl';
 
 export default function Iterations(content: contentProps) {
   return (
