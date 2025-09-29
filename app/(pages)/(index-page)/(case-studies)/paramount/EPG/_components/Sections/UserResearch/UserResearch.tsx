@@ -19,34 +19,34 @@ export default function UserResearch(content: contentProps) {
         />
         <div className="flex flex-col gap-8">
           <h3 className="text-center">{content.h3?.at(1)}</h3>
-          <div className="flex gap-8">
+          <div className="flex gap-8 w-full">
             <ImageWithModal
               src={getImageUrl(content.images, 'note1.svg')}
               alt="Note 1"
               width={1000}
               height={1000}
-              className="w-full"
+              className="flex-1 min-w-0"
             />
             <ImageWithModal
               src={getImageUrl(content.images, 'note2.svg')}
               alt="Note 2"
               width={1000}
               height={1000}
-              className="w-full"
+              className="flex-1 min-w-0"
             />
             <ImageWithModal
               src={getImageUrl(content.images, 'note3.svg')}
               alt="Note 3"
               width={1000}
               height={1000}
-              className="w-full"
+              className="flex-1 min-w-0"
             />
             <ImageWithModal
               src={getImageUrl(content.images, 'note4.svg')}
               alt="Note 4"
               width={1000}
               height={1000}
-              className="w-full"
+              className="flex-1 min-w-0"
             />
           </div>
         </div>
