@@ -2,6 +2,7 @@ import getImageData from '@/app/_lib/getImageData';
 import CaseStudy, { CaseStudyProps } from './_components/CaseStudy/CaseStudy';
 import Landing from './_components/Landing/Landing';
 import LoadingCaseStudy from './_components/CaseStudy/LoadingCase';
+import { getImageUrl } from './_utils/getImageUrl';
 
 export default async function Home() {
   const images = await getImageData('landingPage/');
@@ -19,7 +20,7 @@ export default async function Home() {
       org: 'Paramount+',
       purpose: 'Internship',
       desc: 'Reimagining the live television experience',
-      src: images?.at(2)?.url || '',
+      src: getImageUrl(images, 'landingEPG.svg'),
       alt: 'Paramount Logo',
       linkurl: '/paramount/EPG',
     },
@@ -27,7 +28,7 @@ export default async function Home() {
       org: 'Paramount+',
       purpose: 'Internship',
       desc: 'Guiding users to resolution during video playback error',
-      src: images?.at(1)?.url || '',
+      src: getImageUrl(images, 'landingEM.svg'),
       alt: 'Paramount Logo',
       linkurl: '/paramount/errorMessaging',
     },

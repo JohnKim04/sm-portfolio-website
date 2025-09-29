@@ -14,50 +14,58 @@ const s3Client = new S3Client({
 });
 
 export default async function getImageData(folderName: string) {
+  console.log(`[getImageData] Starting fetch for folder: ${folderName}`);
+  console.log(`[getImageData] S3 Config - Region: ${process.env.AWS_REGION}, Bucket: ${process.env.S3_BUCKET_NAME}`);
+  
   const listCommand = new ListObjectsV2Command({
     Bucket: process.env.S3_BUCKET_NAME,
     Prefix: folderName.endsWith('/') ? folderName : `${folderName}/`, // Ensure folder ends with a "/"
   });
 
+  console.log(`[getImageData] Sending S3 ListObjects command...`);
   const { Contents } = await s3Client.send(listCommand);
+  console.log(`[getImageData] S3 ListObjects completed. Found ${Contents?.length || 0} items`);
 
   if (!Contents || Contents.length === 0) {
+    console.log(`[getImageData] ERROR: No contents found in ${folderName}`);
     throw new Error(`Failed to fetch images in ${folderName}`);
   }
 
-  const sortedContents = Contents?.sort((a, b) => {
-    // If either date is undefined, consider it as the latest date for sorting purposes
-    const dateA = a.LastModified ? new Date(a.LastModified).getTime() : 0;
-    const dateB = b.LastModified ? new Date(b.LastModified).getTime() : 0;
+  console.log(`[getImageData] Processing ${Contents.length} items (no sorting needed with filename mapping)...`);
 
-    return dateA - dateB; // Ascending order
-  });
+  console.log(`[getImageData] Starting to process items and generate presigned URLs...`);
+  
+  console.log(`[getImageData] Processing ALL ${Contents.length} items (including large videos for debugging)...`);
 
   const imageUrls = await Promise.all(
-    sortedContents
-      .filter(item => {
-        // Skip videos larger than 10MB for testing
-        const isLargeVideo = item.Key?.endsWith('.mp4') && item.Size && item.Size > 10 * 1024 * 1024;
-        if (isLargeVideo) {
-          console.log(`Skipping large video: ${item.Key} (${Math.round((item.Size || 0) / 1024 / 1024)}MB)`);
-        }
-        return !isLargeVideo;
-      })
-      .map(async (item) => {
-        if (item.Key) {
-          const getCommand = new GetObjectCommand({
-            Bucket: process.env.S3_BUCKET_NAME,
-            Key: item.Key,
-          });
+    Contents.map(async (item, index) => {
+      if (item.Key) {
+        const fileSize = Math.round((item.Size || 0) / 1024 / 1024);
+        console.log(`[getImageData] Generating URL ${index + 1}/${Contents.length} for: ${item.Key} (${fileSize}MB)`);
+        
+        const getCommand = new GetObjectCommand({
+          Bucket: process.env.S3_BUCKET_NAME,
+          Key: item.Key,
+        });
 
         // Longer expiry for videos, shorter for images
         const isVideo = item.Key.endsWith('.mp4');
-        const url = await getSignedUrl(s3Client, getCommand, {
-          expiresIn: isVideo ? 7200 : 3600, // 2 hours for videos, 1 hour for images
-        });
+        console.log(`[getImageData] Item ${item.Key} is ${isVideo ? 'video' : 'image'} (${fileSize}MB), setting expiry...`);
+        
+        try {
+          const url = await getSignedUrl(s3Client, getCommand, {
+            expiresIn: isVideo ? 7200 : 3600, // 2 hours for videos, 1 hour for images
+          });
+          console.log(`[getImageData] ✅ Generated URL for: ${item.Key}`);
           return { key: item.Key, url };
+        } catch (error) {
+          console.error(`[getImageData] ❌ Failed to generate URL for ${item.Key}:`, error);
+          return undefined;
         }
-      })
+      }
+      return undefined;
+    })
   );
+  console.log(`[getImageData] ✅ Successfully processed ${imageUrls.filter(Boolean).length}/${imageUrls.length} items for ${folderName}`);
   return imageUrls;
 }

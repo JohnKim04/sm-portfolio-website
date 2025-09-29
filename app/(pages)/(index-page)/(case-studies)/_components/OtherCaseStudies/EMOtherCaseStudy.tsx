@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import getImageData from '@/app/_lib/getImageData';
+import { getImageUrl } from '../../../_utils/getImageUrl';
 
 export default async function EMCaseStudyThumbnail() {
   const images = await getImageData('landingPage/');
@@ -8,7 +9,7 @@ export default async function EMCaseStudyThumbnail() {
   const org = 'Paramount+';
   const purpose = 'Internship';
   const desc = 'Guiding users towards resolution during video playback error';
-  const src = images?.at(4)?.url || '';
+  const src = getImageUrl(images, 'EMThumbnail2.png');
   const alt = 'Paramount Logo';
   const linkurl = '/paramount/errorMessaging';
 
