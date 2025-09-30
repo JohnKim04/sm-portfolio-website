@@ -36,6 +36,7 @@ export default function LoadingCaseStudy(props: CaseStudyProps) {
         className="w-full h-auto hover:cursor-pointer z-10 group-hover:scale-105 duration-500 origin-bottom"
         onLoad={() => setIsLoading(false)}
         loading="eager"
+        unoptimized
       ></Image>
     </Link>
   );

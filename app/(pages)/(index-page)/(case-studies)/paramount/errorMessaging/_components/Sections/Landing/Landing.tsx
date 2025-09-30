@@ -44,6 +44,7 @@ export default function Landing(content: contentProps) {
           width={1000}
           height={1000}
           className="w-[105px] absolute bottom-0 right-[-5%]"
+          unoptimized
         />
         <Image
           src={getImageUrl(content.images, 'macbookImage.svg')}
@@ -51,6 +52,7 @@ export default function Landing(content: contentProps) {
           width={1000}
           height={1000}
           className="w-[573px] absolute bottom-0 right-[-80%]"
+          unoptimized
         />
         <Image
           src={getImageUrl(content.images, 'mobileFinalSpec.png')}
@@ -58,6 +60,7 @@ export default function Landing(content: contentProps) {
           width={1000}
           height={1000}
           className="w-[408px] absolute bottom-0 left-[-57%]"
+          unoptimized
         />
       </div>
       <div className="absolute top-[85vh]">

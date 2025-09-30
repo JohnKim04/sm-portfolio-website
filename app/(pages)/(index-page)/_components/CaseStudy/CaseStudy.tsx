@@ -30,6 +30,7 @@ export default function CaseStudy(props: CaseStudyProps) {
         height={1000}
         width={1000}
         className="w-full h-auto hover:cursor-pointer z-10 group-hover:scale-105 duration-500 origin-bottom"
+        unoptimized
       ></Image>
     </Link>
   );

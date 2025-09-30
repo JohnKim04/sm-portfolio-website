@@ -33,6 +33,7 @@ export default async function EPGCaseStudyThumbnail() {
           height={1000}
           width={1000}
           className={`w-auto h-[274px] absolute bottom-0 left-[10px] group-hover:scale-105 duration-500 origin-bottom z-10`}
+          unoptimized
         ></Image>
         <Image
           src={desktopImage}
@@ -40,6 +41,7 @@ export default async function EPGCaseStudyThumbnail() {
           height={1000}
           width={1000}
           className={`w-[90%] h-auto absolute bottom-0 right-0 group-hover:scale-105 duration-500 origin-bottom z-0`}
+          unoptimized
         ></Image>
       </div>
     </Link>

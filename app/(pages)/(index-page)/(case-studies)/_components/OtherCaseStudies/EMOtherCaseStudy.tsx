@@ -29,6 +29,7 @@ export default async function EMCaseStudyThumbnail() {
         height={1000}
         width={1000}
         className={`w-full h-auto absolute right-0 bottom-0 group-hover:scale-105 duration-500 origin-bottom mt-auto`}
+        unoptimized
       ></Image>
     </Link>
   );

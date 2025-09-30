@@ -52,6 +52,7 @@ export default function Landing(content: contentProps) {
                  width={1000}
                  height={1000}
                  className="w-[301px] absolute bottom-[0%] right-[-10%]"
+                 unoptimized
                />
       </div>
       <div className="absolute top-[85vh] z-50">

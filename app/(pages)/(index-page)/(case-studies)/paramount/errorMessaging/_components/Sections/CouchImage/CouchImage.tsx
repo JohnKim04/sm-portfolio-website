@@ -12,6 +12,7 @@ export default function CouchImage(content: contentProps) {
         height={1000}
         className="w-full"
         priority={true}
+        unoptimized
       />
     </section>
   );
