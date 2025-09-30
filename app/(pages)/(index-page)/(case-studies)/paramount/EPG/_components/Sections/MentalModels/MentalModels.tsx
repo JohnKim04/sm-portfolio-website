@@ -54,32 +54,32 @@ export default function MentalModels(content: contentProps) {
 
         <HeadingBody h={content.h3?.at(3)} p={content.body?.at(3)} />
 
-        <div className="flex w-full gap-8 items-center justify-between">
+        <div className="flex flex-col lg:flex-row w-full gap-8 items-center justify-center lg:justify-between">
           <div className="flex flex-col items-center gap-2">
-            <div className="flex gap-8 w-full">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 w-full justify-center">
               <ImageWithModal
                 src={getImageUrl(content.images, 'sports1.svg')}
                 alt="Sports Design 1"
                 width={1000}
                 height={1000}
-                className="w-[260px]"
+                className="w-full max-w-[230px] sm:w-[260px]"
               />
               <ImageWithModal
                 src={getImageUrl(content.images, 'sports2.svg')}
                 alt="Sports Design 2"
                 width={1000}
                 height={1000}
-                className="w-[260px]"
+                className="w-full max-w-[230px] sm:w-[260px]"
               />
             </div>
-            <h4>{content.h4?.at(4)}</h4>
+            <h4 className="text-center">{content.h4?.at(4)}</h4>
           </div>
           <Image
             src="/hackdavis/Arrow.svg"
             alt="arrow"
             width={1000}
             height={1000}
-            className="w-12"
+            className="w-8 sm:w-12 rotate-90 lg:rotate-0 my-4 lg:my-0"
           />
           <div className="flex flex-col items-center gap-2">
             <ImageWithModal
@@ -87,9 +87,9 @@ export default function MentalModels(content: contentProps) {
               alt="Sports Final Design"
               width={1000}
               height={1000}
-              className="w-[337px]"
+              className="w-full max-w-[300px] sm:w-[300px]"
             />
-            <h4>{content.h4?.at(5)}</h4>
+            <h4 className="text-center">{content.h4?.at(5)}</h4>
           </div>
         </div>
       </RevealWrapper>

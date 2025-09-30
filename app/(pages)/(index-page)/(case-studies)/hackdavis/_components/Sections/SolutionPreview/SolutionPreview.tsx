@@ -32,7 +32,7 @@ export default function SolutionPreview() {
         <div className="flex items-start justify-center gap-5">
           <div className="flex flex-col w-[33%] items-center gap-2">
             <ImageWithModal
-              src="/hackdavis/solutionPreview/hackDavisAbout.webp"
+              src="/hackdavis/solutionPreview/aboutPage.webp"
               alt="about page"
               width={1000}
               height={1000}
@@ -43,7 +43,7 @@ export default function SolutionPreview() {
 
           <div className="flex flex-col w-[33%] items-center gap-2 pt-1">
             <ImageWithModal
-              src="/hackdavis/solutionPreview/hackDavisLanding.webp"
+              src="/hackdavis/solutionPreview/landingPage.webp"
               alt="about page"
               width={1000}
               height={1000}
@@ -54,7 +54,7 @@ export default function SolutionPreview() {
 
           <div className="flex flex-col w-[33%] items-center gap-2">
             <ImageWithModal
-              src="/hackdavis/solutionPreview/hackDavisDoe.webp"
+              src="/hackdavis/solutionPreview/doePage.webp"
               alt="about page"
               width={1000}
               height={1000}
