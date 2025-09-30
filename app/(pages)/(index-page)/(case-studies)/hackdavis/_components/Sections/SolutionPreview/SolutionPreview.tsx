@@ -3,10 +3,8 @@ import Link from 'next/link';
 import ScrollToSolution from './ScrollToSolution';
 import { RevealWrapper } from '@/app/(pages)/(index-page)/_components/Reveal/RevealWrapper';
 import { ImageWithModal } from '@/app/(pages)/_components/ImageModal/ImageModal';
-import { getImageUrl } from '@/app/_lib/getImageUrl';
-type Props = { images?: any[] };
 
-export default function SolutionPreview({ images }: Props) {
+export default function SolutionPreview() {
   return (
     <section
       className="flex flex-col justify-center items-center"
@@ -34,7 +32,7 @@ export default function SolutionPreview({ images }: Props) {
         <div className="flex items-start justify-center gap-5">
           <div className="flex flex-col w-[33%] items-center gap-2">
             <ImageWithModal
-              src={getImageUrl(images, 'AboutDesktop.svg')}
+              src="/hackdavis/solutionPreview/hackDavisAbout.webp"
               alt="about page"
               width={1000}
               height={1000}
@@ -45,7 +43,7 @@ export default function SolutionPreview({ images }: Props) {
 
           <div className="flex flex-col w-[33%] items-center gap-2 pt-1">
             <ImageWithModal
-              src={getImageUrl(images, 'Landing.svg')}
+              src="/hackdavis/solutionPreview/hackDavisLanding.webp"
               alt="about page"
               width={1000}
               height={1000}
@@ -56,7 +54,7 @@ export default function SolutionPreview({ images }: Props) {
 
           <div className="flex flex-col w-[33%] items-center gap-2">
             <ImageWithModal
-              src={getImageUrl(images, 'DOE.svg')}
+              src="/hackdavis/solutionPreview/hackDavisDoe.webp"
               alt="about page"
               width={1000}
               height={1000}

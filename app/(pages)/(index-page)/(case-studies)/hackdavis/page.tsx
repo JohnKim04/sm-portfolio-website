@@ -34,7 +34,7 @@ export default async function HackDavis() {
       <TableOfContents sections={pageContents} />
       <Landing />
       <Intro />
-      <SolutionPreview images={images} />
+      <SolutionPreview />
       <Results />
       <Venue />
       <Process />

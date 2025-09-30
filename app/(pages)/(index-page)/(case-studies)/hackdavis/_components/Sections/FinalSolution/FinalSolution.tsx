@@ -108,43 +108,17 @@ export default function FinalSolution({ images }: Props) {
   return (
     <section className="flex flex-col items-center -mx-[40%] pt-[146px] pb-[241px] bg-[#F5F5F5]">
       <RevealWrapper>
-        <section>
-          <h2 className="pb-10" id="Final Solution">
+        <div className="w-full px-case-study">
+          <h2 className="pb-10 text-center" id="Final Solution">
             Final Solution
           </h2>
-        </section>
 
-        <div className="flex w-full gap-12 relative">
-          <div className="flex flex-col items-center gap-8 sticky top-20 h-fit">
-            {/* <div className="flex flex-col items-start gap-2">
-              {toggleButtons.map((button, index) => (
-                <ToggleButton
-                  key={index}
-                  label={button.label}
-                  onClick={button.onClick}
-                  isActive={button.isActive}
-                />
-              ))}
-            </div> */}
-
-            {/* {scrollButtons.map((button, index) => (
-              <ScrollButton
-                key={index}
-                sectionId={button.sectionId}
-                activeButton={activeScrollButton}
-                buttonIndex={index + 1}
-                number={button.number}
-                label={button.label}
-                scrollToSection={scrollToSection}
-              />
-            ))} */}
-          </div>
-
-          <div className="flex flex-col w-[70%] ml-[130px] gap-[197px]">
+          <div className="flex flex-col gap-20 w-full">
             <section
               className="flex flex-col relative items-center gap-10"
               id="About Page"
             >
+              <h3>About Page</h3>
               <div className="flex flex-row items-start gap-2">
                 {toggleButtons.map((button, index) => (
                   <ToggleButton
@@ -160,20 +134,27 @@ export default function FinalSolution({ images }: Props) {
                 onPointerOver={() => setActiveScrollButton(1)}
                 onViewportEnter={() => setActiveScrollButton(1)}
               >
-                <ImageWithModal
-                  src={
-                    displayDesktop
-                      ? getImageUrl(images, 'AboutDesktop.svg')
-                      : getImageUrl(images, 'AboutMobile.svg')
-                  }
-                  alt="about page"
-                  width={1000}
-                  height={1000}
-                  removeMaxHeight={true}
-                />
+                {displayDesktop ? (
+                  <video
+                    key={String(displayDesktop)}
+                    className="w-full"
+                    controls
+                  >
+                    <source src={getImageUrl(images, 'optimized-about.mp4')} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                ) : (
+                  <ImageWithModal
+                    src={getImageUrl(images, 'AboutMobile.svg')}
+                    alt="about page"
+                    width={1000}
+                    height={1000}
+                    removeMaxHeight={true}
+                  />
+                )}
               </motion.div>
 
-              {commentsAbout.map((comment, index) => (
+              {!displayDesktop && commentsAbout.map((comment, index) => (
                 <Comment
                   x={comment.x}
                   y={comment.y}
@@ -187,6 +168,7 @@ export default function FinalSolution({ images }: Props) {
               className="flex flex-col relative items-center gap-10"
               id="Registration Page"
             >
+              <h3>Registration Page</h3>
               <div className="flex flex-row items-start gap-2">
                 {toggleButtons.map((button, index) => (
                   <ToggleButton
@@ -202,20 +184,27 @@ export default function FinalSolution({ images }: Props) {
                 onPointerOver={() => setActiveScrollButton(2)}
                 onViewportEnter={() => setActiveScrollButton(2)}
               >
-                <ImageWithModal
-                  src={
-                    displayDesktop
-                      ? getImageUrl(images, 'Landing.svg')
-                      : getImageUrl(images, 'LandingMobile.svg')
-                  }
-                  alt="about page"
-                  width={1000}
-                  height={1000}
-                  removeMaxHeight={true}
-                />
+                {displayDesktop ? (
+                  <video
+                    key={String(displayDesktop)}
+                    className="w-full"
+                    controls
+                  >
+                    <source src={getImageUrl(images, 'optimized-landing.mp4')} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                ) : (
+                  <ImageWithModal
+                    src={getImageUrl(images, 'LandingMobile.svg')}
+                    alt="about page"
+                    width={1000}
+                    height={1000}
+                    removeMaxHeight={true}
+                  />
+                )}
               </motion.div>
 
-              {commentsLanding.map((comment, index) => (
+              {!displayDesktop && commentsLanding.map((comment, index) => (
                 <Comment {...comment} key={index} />
               ))}
             </section>
@@ -224,6 +213,7 @@ export default function FinalSolution({ images }: Props) {
               className="flex flex-col items-center relative gap-10"
               id="Day-of-Event Page"
             >
+              <h3>Day-of-Event Page</h3>
               <div className="flex flex-row items-start gap-2">
                 {toggleButtons.map((button, index) => (
                   <ToggleButton
@@ -239,19 +229,26 @@ export default function FinalSolution({ images }: Props) {
                 onPointerOver={() => setActiveScrollButton(3)}
                 onViewportEnter={() => setActiveScrollButton(3)}
               >
-                <ImageWithModal
-                  src={
-                    displayDesktop
-                      ? getImageUrl(images, 'DOE.svg')
-                      : getImageUrl(images, 'DOEMobile.svg')
-                  }
-                  alt="about page"
-                  width={1000}
-                  height={1000}
-                  removeMaxHeight={true}
-                />
+                {displayDesktop ? (
+                  <video
+                    key={String(displayDesktop)}
+                    className="w-full"
+                    controls
+                  >
+                    <source src={getImageUrl(images, 'optimized-doe.mp4')} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                ) : (
+                  <ImageWithModal
+                    src={getImageUrl(images, 'DOEMobile.svg')}
+                    alt="about page"
+                    width={1000}
+                    height={1000}
+                    removeMaxHeight={true}
+                  />
+                )}
 
-                {commentsDOE.map((comment, index) => (
+                {!displayDesktop && commentsDOE.map((comment, index) => (
                   <Comment {...comment} key={index} />
                 ))}
               </motion.div>

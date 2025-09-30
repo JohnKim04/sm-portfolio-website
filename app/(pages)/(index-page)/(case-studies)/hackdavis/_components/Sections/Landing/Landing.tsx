@@ -33,7 +33,7 @@ export default function Landing() {
       </h2>
       <h4 className="text-white text-center">7 min read</h4>
       <LoadingImage
-        src="/caseStudies/hackdavis.svg"
+        src="/caseStudies/hackDavisHeader.webp"
         width={1000}
         height={1000}
         alt="hackdavis image"
