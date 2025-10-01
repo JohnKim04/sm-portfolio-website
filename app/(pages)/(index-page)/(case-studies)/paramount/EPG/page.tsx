@@ -1,3 +1,5 @@
+export const revalidate = 0;
+export const dynamic = 'force-dynamic';
 import Summary from '../errorMessaging/_components/Sections/Summary/Summary';
 import Landing from './_components/Sections/Landing/Landing';
 import WideImage from './_components/Sections/WideImage/WideImage';

@@ -1,3 +1,5 @@
+export const revalidate = 0;
+export const dynamic = 'force-dynamic';
 import Demo from './_components/Sections/Demo/Demo';
 import Landing from './_components/Sections/Landing/Landing';
 import Summary from './_components/Sections/Summary/Summary';
