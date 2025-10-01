@@ -54,7 +54,8 @@ export default async function getImageData(folderName: string) {
         
         try {
           const url = await getSignedUrl(s3Client, getCommand, {
-            expiresIn: isVideo ? 7200 : 3600, // 2 hours for videos, 1 hour for images
+            // TEMP: Increase TTL to 24h to avoid stale URLs in production while caching is fixed
+            expiresIn: 60 * 60 * 24, // 24 hours for both videos and images
           });
           console.log(`[getImageData] ✅ Generated URL for: ${item.Key}`);
           return { key: item.Key, url };
