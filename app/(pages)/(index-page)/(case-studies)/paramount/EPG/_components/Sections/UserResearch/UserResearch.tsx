@@ -11,7 +11,7 @@ export default function UserResearch(content: contentProps) {
         <HeadingBody h={content.h3?.at(0)} p={content.body?.at(0)} />
 
         <ImageWithModal
-          src={getImageUrl(content.images, 'stickyNotes.svg')}
+          src={getImageUrl(content.images, 'affinityMap.webp')}
           alt="Sticky Notes Overview"
           width={1000}
           height={1000}

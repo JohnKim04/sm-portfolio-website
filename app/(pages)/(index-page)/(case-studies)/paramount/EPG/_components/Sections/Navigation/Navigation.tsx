@@ -18,14 +18,14 @@ export default function Navigation(content: contentProps) {
           <div className="flex flex-col items-center gap-2">
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 w-full justify-center">
               <ImageWithModal
-                src={getImageUrl(content.images, 'nav1.svg')}
+                src={getImageUrl(content.images, 'navIteration1.webp')}
                 alt="Navigation Design 1"
                 width={1000}
                 height={1000}
                 className="w-full max-w-[230px] sm:w-[260px]"
               />
               <ImageWithModal
-                src={getImageUrl(content.images, 'nav2.svg')}
+                src={getImageUrl(content.images, 'navIteration2.webp')}
                 alt="Navigation Design 2"
                 width={1000}
                 height={1000}
@@ -43,7 +43,7 @@ export default function Navigation(content: contentProps) {
           />
           <div className="flex flex-col items-center gap-2">
             <ImageWithModal
-              src={getImageUrl(content.images, 'navFinal.svg')}
+              src={getImageUrl(content.images, 'navIteration3.webp')}
               alt="Navigation Final Design"
               width={1000}
               height={1000}

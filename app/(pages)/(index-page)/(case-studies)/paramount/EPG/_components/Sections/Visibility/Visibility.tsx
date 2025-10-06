@@ -16,7 +16,7 @@ export default function Visibility(content: contentProps) {
         <div className="flex w-full gap-8 items-center">
           <div className="flex flex-col items-center gap-2 flex-grow">
             <ImageWithModal
-              src={getImageUrl(content.images, 'videoPlayerText.svg')}
+              src={getImageUrl(content.images, 'playerIteration1.webp')}
               alt="Video Player with Text"
               width={1000}
               height={1000}
@@ -26,7 +26,7 @@ export default function Visibility(content: contentProps) {
           </div>
           <div className="flex flex-col items-center gap-2 flex-grow">
             <ImageWithModal
-              src={getImageUrl(content.images, 'videoPlayerPeek.svg')}
+              src={getImageUrl(content.images, 'playerIteration2.webp')}
               alt="Video Player with Peek View"
               width={1000}
               height={1000}
@@ -38,7 +38,7 @@ export default function Visibility(content: contentProps) {
         <p>{content.body?.at(1)}</p>
         <div className="flex flex-col items-center gap-2">
           <ImageWithModal
-            src={getImageUrl(content.images, 'videoPlayerFinal.svg')}
+            src={getImageUrl(content.images, 'playerIteration3.webp')}
             alt="Video Player Final Design"
             width={1000}
             height={1000}

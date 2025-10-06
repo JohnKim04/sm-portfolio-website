@@ -18,14 +18,14 @@ export default function Personalization(content: contentProps) {
           <div className="flex flex-col items-center gap-2">
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 w-full justify-center">
               <ImageWithModal
-                src={getImageUrl(content.images, 'bottom1.svg')}
+                src={getImageUrl(content.images, 'sheetIteration1.webp')}
                 alt="Bottom Sheet Design 1"
                 width={1000}
                 height={1000}
                 className="w-full max-w-[230px] sm:w-[260px]"
               />
               <ImageWithModal
-                src={getImageUrl(content.images, 'bottom2.svg')}
+                src={getImageUrl(content.images, 'sheetIteration2.webp')}
                 alt="Bottom Sheet Design 2"
                 width={1000}
                 height={1000}
@@ -43,7 +43,7 @@ export default function Personalization(content: contentProps) {
           />
           <div className="flex flex-col items-center gap-2">
             <ImageWithModal
-              src={getImageUrl(content.images, 'bottomFinal.svg')}
+              src={getImageUrl(content.images, 'sheetIteration3.webp')}
               alt="Bottom Sheet Final Design"
               width={1000}
               height={1000}

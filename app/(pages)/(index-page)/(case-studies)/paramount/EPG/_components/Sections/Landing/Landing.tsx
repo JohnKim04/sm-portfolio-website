@@ -40,14 +40,14 @@ export default function Landing(content: contentProps) {
 
       <div className="relative z-10 -mb-[10px]">
                <LoadingImage
-                 src={getImageUrl(content.images, 'heroDesktop.svg')}
+                 src={getImageUrl(content.images, 'desktopEPG.webp')}
                  alt="EPG Hero Desktop"
                  width={1000}
                  height={1000}
                  className="w-[1027px]"
                />
                <Image
-                 src={getImageUrl(content.images, 'heroMobile.svg')}
+                 src={getImageUrl(content.images, 'mobileEPG.webp')}
                  alt="EPG Hero Mobile"
                  width={1000}
                  height={1000}

@@ -14,21 +14,21 @@ export default function WideImage(content: contentProps) {
     >
       <div className="flex justify-center">
                <ImageWithModal
-                 src={getImageUrl(content.images, 'wideImg1.svg')}
+                 src={getImageUrl(content.images, 'mobile1.webp')}
                  alt="Wide Image 1"
                  width={1000}
                  height={1000}
                  className="w-[363px] h-[600px]"
                />
                <ImageWithModal
-                 src={getImageUrl(content.images, 'wideImg2.svg')}
+                 src={getImageUrl(content.images, 'mobile2.webp')}
                  alt="Wide Image 2"
                  width={1000}
                  height={1000}
                  className="w-[363px] h-[600px]"
                />
                <ImageWithModal
-                 src={getImageUrl(content.images, 'wideImg3.svg')}
+                 src={getImageUrl(content.images, 'mobile3.webp')}
                  alt="Wide Image 3"
                  width={1000}
                  height={1000}

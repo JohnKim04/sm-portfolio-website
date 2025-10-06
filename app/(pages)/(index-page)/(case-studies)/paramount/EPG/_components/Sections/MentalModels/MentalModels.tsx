@@ -18,7 +18,7 @@ export default function MentalModels(content: contentProps) {
           <div className="flex justify-between gap-8">
             <div className="flex flex-col items-center gap-2">
               <ImageWithModal
-                src={getImageUrl(content.images, 'tubiGuide.svg')}
+                src={getImageUrl(content.images, 'tubi.webp')}
                 alt="Tubi TV Guide"
                 width={1000}
                 height={1000}
@@ -28,7 +28,7 @@ export default function MentalModels(content: contentProps) {
             </div>
             <div className="flex flex-col items-center gap-2">
               <ImageWithModal
-                src={getImageUrl(content.images, 'pluteGuide.svg')}
+                src={getImageUrl(content.images, 'plutoTV.webp')}
                 alt="Pluto TV Guide"
                 width={1000}
                 height={1000}
@@ -38,7 +38,7 @@ export default function MentalModels(content: contentProps) {
             </div>
             <div className="flex flex-col items-center gap-2">
               <ImageWithModal
-                src={getImageUrl(content.images, 'huluGuide.svg')}
+                src={getImageUrl(content.images, 'hulu.webp')}
                 alt="Hulu TV Guide"
                 width={1000}
                 height={1000}
@@ -58,14 +58,14 @@ export default function MentalModels(content: contentProps) {
           <div className="flex flex-col items-center gap-2">
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 w-full justify-center">
               <ImageWithModal
-                src={getImageUrl(content.images, 'sports1.svg')}
+                src={getImageUrl(content.images, 'tileIteration1.webp')}
                 alt="Sports Design 1"
                 width={1000}
                 height={1000}
                 className="w-full max-w-[230px] sm:w-[260px]"
               />
               <ImageWithModal
-                src={getImageUrl(content.images, 'sports2.svg')}
+                src={getImageUrl(content.images, 'tileIteration2.webp')}
                 alt="Sports Design 2"
                 width={1000}
                 height={1000}
@@ -83,7 +83,7 @@ export default function MentalModels(content: contentProps) {
           />
           <div className="flex flex-col items-center gap-2">
             <ImageWithModal
-              src={getImageUrl(content.images, 'sportsFinal.svg')}
+              src={getImageUrl(content.images, 'tileIteration3.webp')}
               alt="Sports Final Design"
               width={1000}
               height={1000}

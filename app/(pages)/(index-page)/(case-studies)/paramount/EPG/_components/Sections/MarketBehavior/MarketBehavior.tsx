@@ -13,7 +13,7 @@ export default function MarketBehavior(content: contentProps) {
         <div className="flex justify-between items-end gap-10">
           <div className="flex w-[717px] flex-col items-center gap-2 self-start">
             <ImageWithModal
-              src={getImageUrl(content.images, 'marketTV.svg')}
+              src={getImageUrl(content.images, 'currentDesktop.webp')}
               alt="Market TV Guide"
               width={1000}
               height={1000}
@@ -23,11 +23,11 @@ export default function MarketBehavior(content: contentProps) {
           </div>
           <div className="flex w-[243px] flex-col items-center gap-2 self-end">
             <ImageWithModal
-              src={getImageUrl(content.images, 'tvGuideMobile.svg')}
+              src={getImageUrl(content.images, 'currentMobile.webp')}
               alt="TV Guide Mobile"
               width={1000}
               height={1000}
-              className="w-full h-[429px]"
+              className="w-auto h-[429px]"
             />
             <h4>{content.h4?.at(1)}</h4>
           </div>
