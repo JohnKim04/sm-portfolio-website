@@ -23,7 +23,7 @@ export default async function Home() {
       org: 'Reddit',
       purpose: 'Client Project',
       desc: 'Driving conversation and engagement amongst MLB fans',
-      src: '/reddit/summaryExplorations.webp',
+      src: '/reddit/finalDesigns/desktop10.webp',
       alt: 'Reddit Project',
       linkurl: '/reddit',
     },
