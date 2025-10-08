@@ -11,10 +11,10 @@ export default function Summary() {
   ].join('\n');
 
   const stakeholders = [
-    { title: 'Sr. Media Business Dev. Manager', name: '"Mindy Brack"' },
+    { title: 'Sr. Media Business Dev. Manager', name: 'Mindy Brack' },
     {
       title: 'Head of Sports Content Partnerships',
-      name: '"Christine Wixted"',
+      name: 'Christine Wixted',
     },
   ];
 
