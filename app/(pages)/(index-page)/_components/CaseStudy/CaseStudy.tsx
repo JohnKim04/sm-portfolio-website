@@ -28,37 +28,15 @@ export default function CaseStudy(props: CaseStudyProps) {
       </div>
       <h3 className="pb-20 w-[350px] text-center">{desc}</h3>
       {/* Images */}
-      {srcMobile ? (
-        <div className="relative w-full pb-10">
-          {/* Desktop */}
-          <Image
-            src={src}
-            alt={alt}
-            height={1000}
-            width={1000}
-            className="w-full h-auto hover:cursor-pointer z-0 group-hover:scale-105 duration-500 origin-bottom"
-            unoptimized
-          />
-          {/* Mobile overlay */}
-          <Image
-            src={srcMobile}
-            alt={`${alt} mobile`}
-            height={1000}
-            width={1000}
-            className="absolute right-6 top-1/2 -translate-y-1/2 w-1/3 min-w-[180px] h-auto hover:cursor-pointer z-10 group-hover:scale-105 duration-500 origin-bottom"
-            unoptimized
-          />
-        </div>
-      ) : (
+      <div className="w-full h-[250px] relative overflow-hidden">
         <Image
           src={src}
           alt={alt}
-          height={1000}
-          width={1000}
-          className="w-full h-auto hover:cursor-pointer z-10 group-hover:scale-105 duration-500 origin-bottom"
+          fill
+          className="object-cover hover:cursor-pointer z-10 group-hover:scale-105 duration-500 origin-bottom"
           unoptimized
         />
-      )}
+      </div>
     </Link>
   );
 }

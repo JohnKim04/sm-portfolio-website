@@ -4,6 +4,7 @@ import getImageData from '@/app/_lib/getImageData';
 import CaseStudy, { CaseStudyProps } from './_components/CaseStudy/CaseStudy';
 import Landing from './_components/Landing/Landing';
 import LoadingCaseStudy from './_components/CaseStudy/LoadingCase';
+import PlaceholderTile from './_components/CaseStudy/PlaceholderTile';
 import { getImageUrl } from '@/app/_lib/getImageUrl';
 
 export default async function Home() {
@@ -19,11 +20,18 @@ export default async function Home() {
     //   linkurl: '',
     // },
     {
+      org: 'Reddit',
+      purpose: 'Client Project',
+      desc: 'Driving conversation and engagement amongst MLB fans',
+      src: '/reddit/summaryExplorations.webp',
+      alt: 'Reddit Project',
+      linkurl: '/reddit',
+    },
+    {
       org: 'Paramount+',
       purpose: 'Internship',
       desc: 'Reimagining the live television experience',
       src: '/caseStudies/desktopEPG.webp',
-      srcMobile: '/caseStudies/mobileEPG.webp',
       alt: 'Paramount Logo',
       linkurl: '/paramount/EPG',
     },
@@ -57,7 +65,11 @@ export default async function Home() {
     <main className="flex flex-col px-[15%] pb-20 overflow-clip relative font-dm-sans gap-20">
       <Landing />
 
-      <div className="flex flex-col gap-20" id="Case Studies">
+      {/* Case Studies */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8" id="Case Studies">
+        {/* Placeholder tiles */}
+        <PlaceholderTile />
+
         {caseStudyInformation.map((study, index) => {
           if (index === 0) {
             return <LoadingCaseStudy {...study} key={index} />;

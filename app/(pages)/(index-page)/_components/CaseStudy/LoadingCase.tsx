@@ -3,16 +3,7 @@ import Loader from '@/app/(pages)/_components/Loader/Loader';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
-
-export type CaseStudyProps = {
-  org: string;
-  purpose: string;
-  desc: string;
-  src: string;
-  srcMobile?: string;
-  alt: string;
-  linkurl: string;
-};
+import CaseStudy, { CaseStudyProps } from './CaseStudy';
 
 export default function LoadingCaseStudy(props: CaseStudyProps) {
   const { org, purpose, desc, src, srcMobile, alt, linkurl } = props;
@@ -28,42 +19,16 @@ export default function LoadingCaseStudy(props: CaseStudyProps) {
         <h4 className="font-spaceGrotesk text-black">{org}</h4>
         <h4 className="font-spaceGrotesk">{purpose}</h4>
       </div>
-      <h3 className="pb-20  w-[350px] text-center">{desc}</h3>
-      {srcMobile ? (
-        <div className="relative w-full pb-10">
-          <Image
-            src={src}
-            alt={alt}
-            height={1000}
-            width={1000}
-            className="w-full h-auto hover:cursor-pointer z-0 group-hover:scale-105 duration-500 origin-bottom"
-            onLoad={() => setIsLoading(false)}
-            loading="eager"
-            unoptimized
-          />
-          <Image
-            src={srcMobile}
-            alt={`${alt} mobile`}
-            height={1000}
-            width={1000}
-            className="absolute right-6 top-1/2 -translate-y-1/2 w-1/3 min-w-[180px] h-auto hover:cursor-pointer z-10 group-hover:scale-105 duration-500 origin-bottom"
-            onLoad={() => setIsLoading(false)}
-            loading="eager"
-            unoptimized
-          />
-        </div>
-      ) : (
+      <h3 className="pb-20 w-[350px] text-center">{desc}</h3>
+      <div className="w-full h-[250px] relative overflow-hidden">
         <Image
           src={src}
           alt={alt}
-          height={1000}
-          width={1000}
-          className="w-full h-auto hover:cursor-pointer z-10 group-hover:scale-105 duration-500 origin-bottom"
-          onLoad={() => setIsLoading(false)}
-          loading="eager"
+          fill
+          className="object-cover hover:cursor-pointer z-10 group-hover:scale-105 duration-500 origin-bottom"
           unoptimized
         />
-      )}
+      </div>
     </Link>
   );
 }
