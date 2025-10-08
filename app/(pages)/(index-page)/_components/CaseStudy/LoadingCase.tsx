@@ -20,12 +20,12 @@ export default function LoadingCaseStudy(props: CaseStudyProps) {
         <h4 className="font-spaceGrotesk">{purpose}</h4>
       </div>
       <h3 className="pb-20 w-[350px] text-center">{desc}</h3>
-      <div className="w-full h-[250px] relative overflow-hidden">
+      <div className="w-full h-[250px] relative">
         <Image
           src={src}
           alt={alt}
           fill
-          className="object-cover hover:cursor-pointer z-10 group-hover:scale-105 duration-500 origin-bottom"
+          className="object-contain hover:cursor-pointer z-10 group-hover:scale-105 duration-500 origin-bottom"
           unoptimized
           onLoad={() => setIsLoading(false)}
         />
