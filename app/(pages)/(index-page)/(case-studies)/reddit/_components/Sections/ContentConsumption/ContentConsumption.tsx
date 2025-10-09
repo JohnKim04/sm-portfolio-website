@@ -40,9 +40,9 @@ export default function ContentConsumption() {
             width={800}
             height={400}
           />
-          <p className="text-gray-500">
+          <h4 className="text-gray-500 font-normal">
             Information architecture for game phases
-          </p>
+          </h4>
         </div>
       </RevealWrapper>
     </section>

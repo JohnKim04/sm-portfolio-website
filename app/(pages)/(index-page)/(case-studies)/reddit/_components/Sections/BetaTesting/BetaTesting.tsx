@@ -17,7 +17,9 @@ export default function BetaTesting() {
             width={1000}
             height={800}
           />
-          <p className="text-gray-500">Positive feedback from beta testing!</p>
+          <h4 className="text-gray-500 font-normal">
+            Positive feedback from beta testing!
+          </h4>
         </div>
       </RevealWrapper>
     </section>

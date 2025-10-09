@@ -11,14 +11,14 @@ export default async function Home() {
   const images = await getImageData('landingPage/');
 
   const caseStudyInformation: CaseStudyProps[] = [
-    // {
-    //   org: 'Coinbase',
-    //   purpose: 'Internship',
-    //   desc: 'Building a scalable, lean design system',
-    //   src: '/caseStudies/coinbase.png',
-    //   alt: 'Coinbase Logo',
-    //   linkurl: '',
-    // },
+    {
+      org: 'Coinbase',
+      purpose: 'Internship',
+      desc: 'Creating world class app experiences through high craft, unified, and efficient design systems',
+      src: '/coinbase/landingHeroImage.webp',
+      alt: 'Coinbase case study',
+      linkurl: '/coinbase',
+    },
     {
       org: 'Reddit',
       purpose: 'Client Project',
@@ -67,8 +67,6 @@ export default async function Home() {
 
       {/* Case Studies */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8" id="Case Studies">
-        {/* Placeholder tiles */}
-        <PlaceholderTile />
 
         {caseStudyInformation.map((study, index) => {
           if (index === 0) {

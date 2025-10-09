@@ -17,10 +17,10 @@ export default function TargetAudience() {
             alt="Reddit Snoo"
             width={200}
             height={200}
-            className="w-1/4 h-auto"
+            className="w-1/5 h-auto"
           />
           <div className="flex flex-col gap-4">
-            <p className="text-gray-500">Target Audience</p>
+            <h4 className="text-gray-500 font-normal">Target Audience</h4>
             <h3>The baseball enthusiast</h3>
             <p>
               The typical r/MLB redditor is qualified and familiar with baseball

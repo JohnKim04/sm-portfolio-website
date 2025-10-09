@@ -40,7 +40,7 @@ export default function StrategyKpis() {
             width={800}
             height={400}
           />
-          <p className="text-gray-500">Tech stack and tools</p>
+          <h4 className="text-gray-500 font-normal">Tech stack and tools</h4>
         </div>
         <div className="mt-20">
           <HeadingBody

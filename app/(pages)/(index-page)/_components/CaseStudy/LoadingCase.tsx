@@ -25,7 +25,7 @@ export default function LoadingCaseStudy(props: CaseStudyProps) {
           src={src}
           alt={alt}
           fill
-          className="object-contain hover:cursor-pointer z-10 group-hover:scale-105 duration-500 origin-bottom"
+          className="object-cover object-top hover:cursor-pointer z-10 group-hover:scale-105 duration-500 origin-bottom"
           unoptimized
           onLoad={() => setIsLoading(false)}
         />

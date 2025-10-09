@@ -6,7 +6,7 @@ export default function Summary() {
   const responsibilities = [
     'User & market research',
     'Visual design',
-    'prototyping',
+    'Prototyping',
     'Developer handoff',
   ].join('\n');
 
@@ -26,7 +26,8 @@ export default function Summary() {
           <HeadingBody h="Timeline" p="April - June 2025, 10 weeks" />
           <HeadingBody
             h="Team"
-            p="1 project manager, 5 engineers, 2 designers (incl. me)"
+            p={`1 project manager, 5 engineers,
+2 designers (incl. me)`}
           />
           <div>
             <HeadingBody h="Tools" p="Figma, Figjam, Notion, Devvit" />
@@ -34,8 +35,8 @@ export default function Summary() {
               src="/reddit/tools.webp"
               alt="Tools Used"
               width={200}
-              height={50}
-              className="mt-2"
+              height={40}
+              className="mt-2 h-[40px] w-auto"
             />
           </div>
           <HeadingBody h="Responsibilities" p={responsibilities} />
@@ -44,7 +45,8 @@ export default function Summary() {
             <div>
               {stakeholders.map((s, i) => (
                 <p className="max-w-[80ch] mb-2" key={i}>
-                  <span className="text-gray-500">{s.title} </span>
+                  <span className="text-gray-500">{s.title}</span>
+                  <br />
                   {s.name}
                 </p>
               ))}

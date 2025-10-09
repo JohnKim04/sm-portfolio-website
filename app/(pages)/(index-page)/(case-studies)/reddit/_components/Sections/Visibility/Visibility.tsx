@@ -26,7 +26,9 @@ export default function Visibility() {
               height={2000}
               className="w-full h-auto"
             />
-            <p className="text-gray-500">Summary Page Iterations</p>
+            <h4 className="text-gray-500 font-normal">
+              Summary Page Iterations
+            </h4>
           </div>
           <ImageWithModal
             src="/hackdavis/Arrow.svg"
@@ -42,7 +44,7 @@ export default function Visibility() {
                 height={2000}
                 className="w-3/4 h-auto"
               />
-            <p className="text-gray-500">Final Design on Mobile</p>
+            <h4 className="text-gray-500 font-normal">Final Design on Mobile</h4>
           </div>
         </div>
       </RevealWrapper>

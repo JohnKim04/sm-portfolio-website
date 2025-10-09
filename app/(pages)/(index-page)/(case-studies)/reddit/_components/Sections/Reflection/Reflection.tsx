@@ -6,8 +6,10 @@ export default function Reflection() {
   return (
     <section>
       <RevealWrapper>
-        <div className="flex flex-col gap-8">
-          <HeadingBody h="Reflection: Lessons Learned" p="" />
+        <div className="flex flex-col gap-4">
+          <h4 className="text-gray-500 font-normal">
+            Reflection: Lessons Learned
+          </h4>
           <div>
             <HeadingBody
               h="Possess a strong understanding of technical constraints"
@@ -29,7 +31,9 @@ export default function Reflection() {
                 height={400}
                 className="w-full h-auto"
               />
-              <p className="text-gray-500 text-center">@ the Giants game!</p>
+              <h4 className="text-gray-500 text-center font-normal">
+                @ the Giants game!
+              </h4>
             </div>
             <div className="flex flex-col items-center gap-2">
               <ImageWithModal
@@ -39,7 +43,9 @@ export default function Reflection() {
                 height={400}
                 className="w-full h-auto"
               />
-              <p className="text-gray-500 text-center">Product showcase</p>
+              <h4 className="text-gray-500 text-center font-normal">
+                Product showcase
+              </h4>
             </div>
             <div className="flex flex-col items-center gap-2">
               <ImageWithModal
@@ -49,7 +55,9 @@ export default function Reflection() {
                 height={400}
                 className="w-full h-auto"
               />
-              <p className="text-gray-500 text-center">Team swag</p>
+              <h4 className="text-gray-500 text-center font-normal">
+                Team swag
+              </h4>
             </div>
           </div>
         </div>

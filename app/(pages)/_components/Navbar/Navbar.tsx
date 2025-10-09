@@ -21,7 +21,9 @@ export default function Navbar() {
     pathname === '/hackdavis' ||
     pathname === '/sage' ||
     pathname === '/paramount/EPG' ||
-    pathname === '/paramount/errorMessaging'
+    pathname === '/paramount/errorMessaging' ||
+    pathname === '/reddit' ||
+    pathname === '/coinbase'
       ? bgColor
       : '';
 
@@ -30,7 +32,9 @@ export default function Navbar() {
     pathname === '/hackdavis' ||
     pathname === '/sage' ||
     pathname === '/paramount/EPG' ||
-    pathname === '/paramount/errorMessaging'
+    pathname === '/paramount/errorMessaging' ||
+    pathname === '/reddit' ||
+    pathname === '/coinbase'
       ? 'text-white'
       : 'text-black';
 

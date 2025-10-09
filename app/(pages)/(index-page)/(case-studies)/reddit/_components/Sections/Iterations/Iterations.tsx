@@ -6,7 +6,7 @@ export default function Iterations() {
     <section>
       <RevealWrapper>
         <div className="flex flex-col gap-2">
-          <p className="text-gray-500">Iterations</p>
+          <h4 className="text-gray-500 font-normal">Iterations</h4>
           <h3>Box score pagination</h3>
           <p>
             <strong>Constraint:</strong> Limited interactions including no
@@ -28,7 +28,7 @@ export default function Iterations() {
               height={2000}
               className="w-full h-auto"
             />
-            <p className="text-gray-500">BoxScore Iterations</p>
+            <h4 className="text-gray-500 font-normal">Box Score Iterations</h4>
           </div>
           <ImageWithModal
             src="/hackdavis/Arrow.svg"
@@ -44,7 +44,7 @@ export default function Iterations() {
               height={2000}
               className="w-full h-auto"
             />
-            <p className="text-gray-500">Final Design on Mobile</p>
+            <h4 className="text-gray-500 font-normal">Final Design on Mobile</h4>
           </div>
         </div>
       </RevealWrapper>

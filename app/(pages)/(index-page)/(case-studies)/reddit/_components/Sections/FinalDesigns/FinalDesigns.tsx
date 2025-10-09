@@ -67,7 +67,9 @@ export default function FinalDesigns() {
   const renderImageGroup = (title: string, images: ImageProps[]) => (
     <div className="flex flex-col items-center gap-4 w-full">
       <div className="text-center">
-        <p className="text-gray-500">{isMobile ? 'Mobile' : 'Desktop'}</p>
+        <h4 className="text-gray-500 font-normal">
+          {isMobile ? 'Mobile' : 'Desktop'}
+        </h4>
         <h3>{title}</h3>
       </div>
       <div className="flex justify-center gap-4 flex-wrap">
@@ -85,7 +87,7 @@ export default function FinalDesigns() {
               height={isMobile ? 300 : 450}
               className={!isMobile ? 'w-full h-auto' : ''}
             />
-            <p className="text-gray-500">{image.caption}</p>
+            <h4 className="text-gray-500 font-normal">{image.caption}</h4>
           </div>
         ))}
       </div>

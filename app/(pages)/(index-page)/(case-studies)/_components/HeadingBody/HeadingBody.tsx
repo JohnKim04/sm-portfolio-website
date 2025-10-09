@@ -10,7 +10,7 @@ export default function HeadingBody(props: HeadingBodyProps) {
   return (
     <div className="flex flex-col gap-2">
       <h3>{h}</h3>
-      <FormattedP text={p} />
+      {p && <FormattedP text={p} />}
     </div>
   );
 }
