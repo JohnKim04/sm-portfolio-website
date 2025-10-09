@@ -10,17 +10,17 @@ export default function ContentConsumption() {
     {
       number: '01',
       header: 'Pre-game',
-      body: 'Generating excitement through game predictions and voting, lineups, team season stats',
+      body: 'Generating excitement via game predictions and voting, lineups, team season stats.',
     },
     {
       number: '02',
       header: 'Live game',
-      body: 'Providing users with real-time updates including key plays and live score by inning',
+      body: 'Providing users with real-time updates including key plays and live score by inning.',
     },
     {
       number: '03',
       header: 'Post-game',
-      body: 'Encouraging discussion about final game scores, player performance, and highlights',
+      body: 'Encouraging discussion about final game scores, player performance, and highlights.',
     },
   ];
 

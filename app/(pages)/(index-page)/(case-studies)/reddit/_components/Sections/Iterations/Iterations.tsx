@@ -23,28 +23,28 @@ export default function Iterations() {
           <div className="flex flex-col items-center gap-2 flex-1">
             <ImageWithModal
               src="/reddit/boxScoreExplorations.webp"
-              alt="Box Score Explorations"
+              alt="Box score explorations"
               width={1000}
               height={2000}
-              className="w-full h-auto"
+              className="w-[90%] h-auto"
             />
-            <h4 className="text-gray-500 font-normal">Box Score Iterations</h4>
+            <h4 className="text-gray-500 font-normal">Box score explorations</h4>
           </div>
           <ImageWithModal
             src="/hackdavis/Arrow.svg"
             alt="arrow"
-            width={50}
-            height={50}
+            width={24}
+            height={24}
           />
           <div className="flex flex-col items-center gap-2 flex-1">
             <ImageWithModal
               src="/reddit/boxScoreFinal.webp"
-              alt="Box Score Final Design"
+              alt="Box score final designs"
               width={1000}
               height={2000}
-              className="w-full h-auto"
+              className="w-[100%] h-auto"
             />
-            <h4 className="text-gray-500 font-normal">Final Design on Mobile</h4>
+            <h4 className="text-gray-500 font-normal">Final designs on mobile</h4>
           </div>
         </div>
       </RevealWrapper>

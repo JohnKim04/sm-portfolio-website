@@ -21,30 +21,30 @@ export default function Visibility() {
           <div className="flex flex-col items-center gap-2 flex-1">
             <ImageWithModal
               src="/reddit/summaryExplorations.webp"
-              alt="Summary Page Explorations"
+              alt="Summary page explorations"
               width={1000}
               height={2000}
-              className="w-full h-auto"
+              className="w-[90%] h-auto"
             />
             <h4 className="text-gray-500 font-normal">
-              Summary Page Iterations
+              Summary page explorations
             </h4>
           </div>
           <ImageWithModal
             src="/hackdavis/Arrow.svg"
             alt="arrow"
-            width={50}
-            height={50}
+            width={24}
+            height={24}
           />
           <div className="flex flex-col items-center gap-2 flex-1">
               <ImageWithModal
                 src="/reddit/summaryFinal.webp"
-                alt="Summary Page Final Design"
+                alt="Summary page final designs"
                 width={1000}
                 height={2000}
-                className="w-3/4 h-auto"
+                className="w-[50%] h-auto"
               />
-            <h4 className="text-gray-500 font-normal">Final Design on Mobile</h4>
+            <h4 className="text-gray-500 font-normal">Final designs on mobile</h4>
           </div>
         </div>
       </RevealWrapper>

@@ -6,7 +6,7 @@ export default function AppPreview() {
       <h3 className="text-center">App Preview</h3>
       <div className="flex gap-4">
         <Link href="#final-designs">
-          <button className="bg-[#FF4500] text-white px-6 py-2 rounded-lg font-bold hover:bg-[#ff5a1f] transition-colors">
+          <button className="bg-[#FF4500] text-white px-6 py-2 rounded-lg hover:bg-[#ff5a1f] transition-colors">
             Jump to final designs
           </button>
         </Link>
@@ -15,8 +15,15 @@ export default function AppPreview() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <button className="bg-white text-[#FF4500] border border-[#FF4500] px-6 py-2 rounded-lg font-bold hover:bg-[#fff5f2] transition-colors">
+          <button className="flex items-center gap-2 bg-white text-[#FF4500] border border-[#FF4500] px-6 py-2 rounded-lg hover:bg-[#fff5f2] transition-colors">
             Launch reddit.com
+            <img
+              src="/reddit/linkArrow.svg"
+              alt="link arrow"
+              width={1000}
+              height={1000}
+              className="w-3"
+            />
           </button>
         </a>
       </div>

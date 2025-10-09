@@ -81,26 +81,7 @@ export default function Landing() {
             className="w-[150px] h-auto right-[-45%] top-[-140px] absolute z-0"
           />
         </div>
-        <div className="flex flex-col gap-4">
-          <div className="flex items-center gap-0.5 animate-slide-header-down-delayed">
-            <h4 className="">
-              Currently designing at{' '}
-              <a
-                className="underline underline-offset-2 text-black"
-                href="https://www.coinbase.com/"
-                target="_blank"
-              >
-                Coinbase
-              </a>
-            </h4>
-            <Image
-              src="/navLinkArrow.svg"
-              width={1000}
-              height={1000}
-              alt="down arrow"
-              className="w-[10px] opacity-50"
-            />
-          </div>
+        <div className="flex flex-col gap-4">            
           <div className="flex items-center gap-1 animate-slide-header-down-delayed">
             <h4 className="">
               Recently graduated from{' '}
@@ -121,8 +102,39 @@ export default function Landing() {
             />
           </div>
           <div className="flex items-center gap-0.5 animate-slide-header-down-delayed">
-            <h4 className="">
+            <h4 className="flex gap-1.5">
               Previously at{' '}
+              <a
+                className="underline underline-offset-2 text-black"
+                href="https://www.coinbase.com/"
+                target="_blank"
+              >
+                Coinbase
+              </a>
+              <Image
+              src="/navLinkArrow.svg"
+              width={1000}
+              height={1000}
+              alt="down arrow"
+              className="w-[10px] opacity-50"
+            />
+              ,{' '}
+              <a
+                className="underline underline-offset-2 text-black"
+                href="https://www.reddit.com/"
+                target="_blank"
+              >
+                Reddit
+              </a>
+              <Image
+              src="/navLinkArrow.svg"
+              width={1000}
+              height={1000}
+              alt="down arrow"
+              className="w-[10px] opacity-50"
+            />
+              &{' '}
+
               <a
                 className="underline underline-offset-2 text-black"
                 href="https://www.paramountplus.com/"

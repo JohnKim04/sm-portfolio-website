@@ -76,15 +76,15 @@ export default function FinalDesigns() {
         {images.map((image, index) => (
           <div
             key={index}
-            className={`flex flex-col items-center gap-2 ${
+            className={`flex flex-col items-center ${
               !isMobile ? 'w-[48%]' : ''
             }`}
           >
             <ImageWithModal
               src={image.src}
               alt={image.caption}
-              width={isMobile ? 150 : 800}
-              height={isMobile ? 300 : 450}
+              width={isMobile ? 300 : 1600}
+              height={isMobile ? 600 : 900}
               className={!isMobile ? 'w-full h-auto' : ''}
             />
             <h4 className="text-gray-500 font-normal">{image.caption}</h4>
@@ -110,7 +110,7 @@ export default function FinalDesigns() {
             ))}
           </div>
         </div>
-        <div className="flex flex-col gap-12 mt-12 items-center">
+        <div className="flex flex-col gap-24 mt-12 items-center">
           {isMobile ? (
             <>
               {renderImageGroup('Pre-Game', preGameImages)}

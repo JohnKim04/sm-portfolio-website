@@ -26,7 +26,7 @@ export default function TheWork() {
   return (
     <section>
       <RevealWrapper>
-        <h4 className="text-gray-500 font-normal">The work</h4>
+        <h3>The work</h3>
         <div className="flex gap-8 pt-4">
           {textCardElements.map((card, index) => (
             <TextCard {...card} key={index} />

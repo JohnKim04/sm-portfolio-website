@@ -11,13 +11,13 @@ export default function TargetAudience() {
   return (
     <section>
       <RevealWrapper>
-        <div className="flex gap-10">
+        <div className="flex items-center gap-10">
           <ImageWithModal
             src="/reddit/redditSnoo.webp"
             alt="Reddit Snoo"
-            width={200}
-            height={200}
-            className="w-1/5 h-auto"
+            width={120}
+            height={120}
+            className="w-[120px] h-[120px]"
           />
           <div className="flex flex-col gap-4">
             <h4 className="text-gray-500 font-normal">Target Audience</h4>

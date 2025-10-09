@@ -14,15 +14,15 @@ export default async function Home() {
     {
       org: 'Coinbase',
       purpose: 'Internship',
-      desc: 'Creating world class app experiences through high craft, unified, and efficient design systems',
+      desc: 'Creating world class app experiences through high craft design systems',
       src: '/coinbase/landingHeroImage.webp',
       alt: 'Coinbase case study',
       linkurl: '/coinbase',
     },
     {
       org: 'Reddit',
-      purpose: 'Client Project',
-      desc: 'Driving conversation and engagement amongst MLB fans',
+      purpose: 'Contract Work',
+      desc: 'Driving conversation and engagement amongst Major League Baseball fans',
       src: '/reddit/finalDesigns/desktop10.webp',
       alt: 'Reddit Project',
       linkurl: '/reddit',
@@ -30,7 +30,7 @@ export default async function Home() {
     {
       org: 'Paramount+',
       purpose: 'Internship',
-      desc: 'Reimagining the live television experience',
+      desc: 'Reimagining the live sports streaming experience',
       src: '/caseStudies/desktopEPG.webp',
       alt: 'Paramount Logo',
       linkurl: '/paramount/EPG',
@@ -45,7 +45,7 @@ export default async function Home() {
     },
     {
       org: 'HackDavis 2024',
-      purpose: 'Client Project',
+      purpose: 'Contract Work',
       desc: 'Empowering students to create for social good',
       src: '/caseStudies/hackDavisHeader.webp',
       alt: 'HackDavis Website',

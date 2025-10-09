@@ -10,17 +10,17 @@ export default function StrategyKpis() {
     {
       number: '01',
       header: 'Community',
-      body: 'Provide users with delightful ways to connect with fellow sports fans and community members.',
+      body: 'Provide sports fans with ways to connect with fellow community members.',
     },
     {
       number: '02',
-      header: 'Content Monetization',
-      body: 'Leveraging partnerships with Major League Sports and enabling advertisers to align with fans',
+      header: 'Monetization',
+      body: 'Leverage partnerships with Major League Sports to enable advertisers to align with fans.',
     },
     {
       number: '03',
       header: 'Innovation',
-      body: 'Integrating live media including video highlights, player AMAs, and behind-the-scenes videos',
+      body: 'Integrate media including highlights, player AMAs, and behind-the-scenes videos.',
     },
   ];
 
