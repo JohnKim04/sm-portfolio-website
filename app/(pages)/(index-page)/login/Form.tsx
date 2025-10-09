@@ -55,12 +55,12 @@ export default function Form({ callBackURL, password }: FormProps) {
     <div
       className="flex flex-col items-center justify-center bg-[#F7F7F8] text-black h-[100vh] gap-6 pl-[11%] pr-[11%]"
       style={{
-        backgroundImage: "url('/paperIndex.png')",
+        backgroundImage: "url('/footer/paperIndex.png')",
         backgroundSize: 'cover',
       }}
     >
       <Image
-        src="/blob.svg"
+        src="/landing/blob.svg"
         width={1000}
         height={1000}
         alt="blob"
@@ -88,7 +88,7 @@ export default function Form({ callBackURL, password }: FormProps) {
         {errorMessage && (
           <div className="flex flex-row items-center w-full gap-1">
             <Image
-              src="/error.svg"
+              src="/landing/error.svg"
               width={1000}
               height={1000}
               alt="blob"

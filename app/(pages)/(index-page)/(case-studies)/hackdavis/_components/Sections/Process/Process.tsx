@@ -20,7 +20,7 @@ export default function Process() {
 
   const profiles: UserProfileProps[] = [
     {
-      imgSrc: '/hackdavis/process/frogCircle.svg',
+      imgSrc: '/hackdavis/process/frog.webp',
       imgAlt: 'log frog',
       title: 'The beginning hacker',
       listItems: [
@@ -29,7 +29,7 @@ export default function Process() {
       ],
     },
     {
-      imgSrc: '/hackdavis/process/cowCircle.svg',
+      imgSrc: '/hackdavis/process/cow.webp',
       imgAlt: 'cow',
       title: 'The potential sponsor',
       listItems: [

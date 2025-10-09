@@ -2,10 +2,10 @@ import { RevealWrapper } from '@/app/(pages)/(index-page)/_components/Reveal/Rev
 import { ImageWithModal } from '@/app/(pages)/_components/ImageModal/ImageModal';
 
 const sketches = [
-  { src: '/sageImages/prototype/sketch1.jpg', alt: 'sketch1' },
-  { src: '/sageImages/prototype/sketch2.jpg', alt: 'sketch2' },
-  { src: '/sageImages/prototype/sketch3.jpg', alt: 'sketch3' },
-  { src: '/sageImages/prototype/sketch4.jpg', alt: 'sketch4' },
+  { src: '/sage/prototype/sketch1.jpg', alt: 'sketch1' },
+  { src: '/sage/prototype/sketch2.jpg', alt: 'sketch2' },
+  { src: '/sage/prototype/sketch3.jpg', alt: 'sketch3' },
+  { src: '/sage/prototype/sketch4.jpg', alt: 'sketch4' },
 ];
 
 const sketchesGridBlocks: SketchesGridBlocksProps[] = [

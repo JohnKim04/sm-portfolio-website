@@ -3,7 +3,7 @@ import { ImageWithModal } from '@/app/(pages)/_components/ImageModal/ImageModal'
 // TODO: remove images of just headspace and calm squares
 const competitiveAnalysisData: CompetitorAnalysisProps[] = [
   {
-    logoUrl: '/sageImages/research/calmLogo.png',
+    logoUrl: '/sage/research/calmLogo.png',
     mission: `"Support every step of
           their mental health journey."`,
     advantage: '#1 app for sleep, meditation, and relaxation',
@@ -11,7 +11,7 @@ const competitiveAnalysisData: CompetitorAnalysisProps[] = [
       'Goals are pre-set to daily practice, and user can only maintain their streak by completing at least one session per day',
   },
   {
-    logoUrl: '/sageImages/research/headspaceLogo.png',
+    logoUrl: '/sage/research/headspaceLogo.png',
     mission: `"Provide every person access to lifelong mental health support"`,
     advantage:
       'Provides personalized recommendations and information about skills practiced',

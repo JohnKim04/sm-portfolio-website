@@ -5,7 +5,7 @@ export default function SageCaseStudyThumbnail() {
   const org = 'Sage';
   const purpose = 'Passion Project';
   const desc = "Equipping individuals to navigate life's stressors";
-  const src = '/caseStudies/sage2.png';
+  const src = '/nextCaseStudy/sage.png';
   const alt = 'Sage App';
   const linkurl = '/sage';
 

@@ -3,9 +3,9 @@ import { ImageWithModal } from '@/app/(pages)/_components/ImageModal/ImageModal'
 
 export default function Feedback() {
   const wireframes = [
-    { src: '/sageImages/prototype/feedback1.png', alt: 'feedback1' },
-    { src: '/sageImages/prototype/feedback2.png', alt: 'feedback2' },
-    { src: '/sageImages/prototype/feedback3.png', alt: 'feedback3' },
+    { src: '/sage/prototype/feedback1.png', alt: 'feedback1' },
+    { src: '/sage/prototype/feedback2.png', alt: 'feedback2' },
+    { src: '/sage/prototype/feedback3.png', alt: 'feedback3' },
   ];
   const bulletPoints = [
     'Improve visibility by making key features more apparent',

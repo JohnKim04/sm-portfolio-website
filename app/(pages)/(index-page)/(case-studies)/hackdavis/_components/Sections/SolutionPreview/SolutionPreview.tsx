@@ -16,7 +16,7 @@ export default function SolutionPreview() {
           <ScrollToSolution />
 
           <Link href="https://2024.hackdavis.io/" target="_blank">
-            <button className="flex items-center gap-2 bg-white text-[#173A52] p-4 rounded-lg border border-[#005271]">
+            <button className="flex items-center gap-2 bg-white text-[#173A52] p-3 rounded-lg border border-[#005271]">
               <p>Launch hackdavis.io</p>
               <Image
                 src="/hackdavis/linkArrow.svg"

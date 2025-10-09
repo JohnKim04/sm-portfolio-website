@@ -26,7 +26,7 @@ export default function Header() {
           </ul>
         </div>
         <ImageWithModal
-          src="/sageImages/research/sleepy.png"
+          src="/sage/research/sleepy.png"
           alt="sleepy"
           width={1000}
           height={1000}

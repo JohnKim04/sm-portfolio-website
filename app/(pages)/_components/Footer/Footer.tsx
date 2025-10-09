@@ -17,11 +17,11 @@ export default function Footer() {
   const linkIconElements: LinkIconProps[] = [
     {
       linkUrl: 'https://www.linkedin.com/in/sam-mah/',
-      imgUrl: '/linkedinLogo.svg',
+      imgUrl: '/footer/linkedinLogo.svg',
     },
     {
       linkUrl: '',
-      imgUrl: '/mailLogo.svg',
+      imgUrl: '/footer/mailLogo.svg',
     },
   ];
 
@@ -48,7 +48,7 @@ export default function Footer() {
   const bgColor = darkMode ? 'bg-dark-bg' : 'bg-white';
   const textColor = darkMode ? 'text-white' : 'text-black';
 
-  const includeBackgroundImage = darkMode ? '' : "url('/paperFooter.png')";
+  const includeBackgroundImage = darkMode ? '' : "url('/footer/paperFooter.png')";
 
   return !invisible ? (
     <footer
@@ -127,7 +127,7 @@ export default function Footer() {
       </nav>
 
       <Image
-        src="/blob.png"
+        src="/landing/blob.svg"
         width={1000}
         height={1000}
         alt="blob"

@@ -6,7 +6,7 @@ export default function Responses() {
     <div className="flex flex-col gap-20">
       <RevealWrapper>
         <ImageWithModal
-          src="/sageImages/research/messageFeedback.jpg"
+          src="/sage/research/messageFeedback.jpg"
           alt="messages"
           width={1000}
           height={1000}

@@ -10,12 +10,12 @@ export default function CardSort() {
     {
       number: '01',
       header: 'About',
-      body: "Caters to potential sponsors and includes KPIs such as participants headcount and projects submitted. Showcases HackDavis' key values and successful track record.",
+      body: "Caters to potential sponsors and includes KPIs such as participant headcount and projects submitted. Showcases HackDavis' values and successful track record.",
     },
     {
       number: '02',
       header: 'Registration',
-      body: 'Serves as the first point-of-contact where potential participants begin their journey. Encourages participant registration and provides information about what a hackathon is.',
+      body: 'Serves as the first point-of-contact for potential participants. Encourages registration and provides information about what a hackathon is.',
     },
     {
       number: '03',
@@ -43,7 +43,7 @@ export default function CardSort() {
 
         <div className="flex flex-col items-center gap-2">
           <ImageWithModal
-            src="/hackdavis/cardSort.svg"
+            src="/hackdavis/process/cardSort.webp"
             alt="card sort"
             width={2000}
             height={1000}

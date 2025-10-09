@@ -16,14 +16,14 @@ export default function Intro() {
           <div className="flex flex-col gap-2">
             <h3>Timeline</h3>
             <p>
-              6 months <br></br> Nov 2023 - Apr 2024{' '}
+              Nov 2023 - Apr 2024<br></br>6 months{' '}
             </p>
           </div>
 
           <div className="flex flex-col gap-2">
             <h3>Tools</h3>
             <p>
-              Figma<br></br>Chrome DevTools
+              Figma<br></br>Figjam<br></br>Chrome DevTools{' '}
             </p>
           </div>
 

@@ -21,7 +21,7 @@ export default function Ideation() {
       scale: useTransform(scrollYProgress, [0, 1], [0.5, 1]),
       x: useTransform(scrollYProgress, [0, 1], [200, 0]),
       y: useTransform(scrollYProgress, [0, 1], [100, 0]),
-      cardSrc: '/sageImages/ideation/note1.png',
+      cardSrc: '/sage/ideation/note1.png',
       alt: 'note 1',
     },
     {
@@ -29,7 +29,7 @@ export default function Ideation() {
       scale: useTransform(scrollYProgress, [0, 1], [0.5, 1]),
       x: useTransform(scrollYProgress, [0, 1], [-70, 0]),
       y: useTransform(scrollYProgress, [0, 1], [60, 0]),
-      cardSrc: '/sageImages/ideation/note2.png',
+      cardSrc: '/sage/ideation/note2.png',
       alt: 'note 2',
     },
     {
@@ -37,7 +37,7 @@ export default function Ideation() {
       scale: useTransform(scrollYProgress, [0, 1], [0.5, 1]),
       x: useTransform(scrollYProgress, [0, 1], [250, 0]),
       y: useTransform(scrollYProgress, [0, 1], [-160, 0]),
-      cardSrc: '/sageImages/ideation/note3.png',
+      cardSrc: '/sage/ideation/note3.png',
       alt: 'note 3',
     },
     {
@@ -45,7 +45,7 @@ export default function Ideation() {
       scale: useTransform(scrollYProgress, [0, 1], [0.5, 1]),
       x: useTransform(scrollYProgress, [0, 1], [-150, 0]),
       y: useTransform(scrollYProgress, [0, 1], [100, 0]),
-      cardSrc: '/sageImages/ideation/note4.png',
+      cardSrc: '/sage/ideation/note4.png',
       alt: 'note 4',
     },
   ];
@@ -53,13 +53,13 @@ export default function Ideation() {
   return (
     <section
       className="flex flex-col items-center justify-center pt-12 bg-contain text-center px-[40%] mx-[-40%]"
-      style={{ backgroundImage: "url('/sageImages/ideation/dots.png')" }}
+      style={{ backgroundImage: "url('/sage/ideation/dots.png')" }}
       id="Ideation"
     >
       <RevealWrapper>
         <Heading h1="Ideation & Synthesis" p="Identifying key insights" />
         <ImageWithModal
-          src="/sageImages/ideation/manyNotes.png"
+          src="/sage/ideation/manyNotes.png"
           alt="many notes image"
           width={1000}
           height={1000}

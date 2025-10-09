@@ -4,27 +4,27 @@ import { ImageWithModal } from '@/app/(pages)/_components/ImageModal/ImageModal'
 const finalDesigns: FinalDesignWithTitlesProps[] = [
   {
     titles: ['Home', 'Explore'],
-    imageSrc: '/sageImages/finalDesigns/sageDesign1.png',
+    imageSrc: '/sage/finalDesigns/sageDesign1.png',
     imageAlt: 'Sage Final Design 1',
   },
   {
     titles: ['Schedule', 'Personal Garden'],
-    imageSrc: '/sageImages/finalDesigns/sageDesign2.png',
+    imageSrc: '/sage/finalDesigns/sageDesign2.png',
     imageAlt: 'Sage Final Design 2',
   },
   {
     titles: ['Special Collections'],
-    imageSrc: '/sageImages/finalDesigns/sageDesign3.png',
+    imageSrc: '/sage/finalDesigns/sageDesign3.png',
     imageAlt: 'Sage Final Design 3',
   },
   {
     titles: ['Inclusive Meditation'],
-    imageSrc: '/sageImages/finalDesigns/sageDesign4.png',
+    imageSrc: '/sage/finalDesigns/sageDesign4.png',
     imageAlt: 'Sage Final Design 4',
   },
   {
     titles: ['Tech-free Journaling'],
-    imageSrc: '/sageImages/finalDesigns/sageDesign5.png',
+    imageSrc: '/sage/finalDesigns/sageDesign5.png',
     imageAlt: 'Sage Final Design 5',
   },
 ];

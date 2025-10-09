@@ -52,7 +52,7 @@ export default function Landing() {
     <section
       className="flex flex-col gap-4 items-center justify-center h-screen -mx-[40%] bg-[#F7F7F8]"
       style={{
-        backgroundImage: "url('/paperIndex.png')",
+        backgroundImage: "url('/footer/paperIndex.png')",
         backgroundSize: 'cover',
       }}
     >
@@ -94,7 +94,7 @@ export default function Landing() {
               </a>
             </h4>
             <Image
-              src="/navLinkArrow.svg"
+              src="/landing/navLinkArrow.svg"
               width={1000}
               height={1000}
               alt="down arrow"
@@ -112,7 +112,7 @@ export default function Landing() {
                 Coinbase
               </a>
               <Image
-              src="/navLinkArrow.svg"
+              src="/landing/navLinkArrow.svg"
               width={1000}
               height={1000}
               alt="down arrow"
@@ -127,7 +127,7 @@ export default function Landing() {
                 Reddit
               </a>
               <Image
-              src="/navLinkArrow.svg"
+              src="/landing/navLinkArrow.svg"
               width={1000}
               height={1000}
               alt="down arrow"
@@ -144,7 +144,7 @@ export default function Landing() {
               </a>
             </h4>
             <Image
-              src="/navLinkArrow.svg"
+              src="/landing/navLinkArrow.svg"
               width={1000}
               height={1000}
               alt="down arrow"

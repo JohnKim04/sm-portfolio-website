@@ -5,7 +5,7 @@ export default function HackDavisCaseStudyThumbnail() {
   const org = 'HackDavis 2024';
   const purpose = 'Client project';
   const desc = 'Empowering students to create for social good';
-  const src = '/caseStudies/hackdavis2.png';
+  const src = '/landing/caseStudies/hackdavis.webp';
   const alt = 'Hackdavis Image';
   const linkurl = '/hackdavis';
 

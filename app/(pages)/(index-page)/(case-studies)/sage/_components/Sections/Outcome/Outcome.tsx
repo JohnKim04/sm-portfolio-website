@@ -18,7 +18,7 @@ export default function Outcome() {
           <h3>How likely are you to use this application?</h3>
 
           <Image
-            src="/sageImages/outcome.svg"
+            src="/sage/outcome.svg"
             width={1000}
             height={1000}
             alt="outcomes graph"

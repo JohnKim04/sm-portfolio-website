@@ -10,7 +10,7 @@ export default function ScrollToSolution() {
 
   return (
     <button
-      className="bg-[#005271] text-white p-4 rounded-lg"
+      className="bg-[#005271] text-white p-3 rounded-lg"
       onClick={handleScroll}
     >
       <p> Jump to Final Solution</p>

@@ -18,7 +18,7 @@ export default function Ideation() {
         <div className="flex gap-6 pt-10 pb-[100px]">
           <div className="flex flex-col items-center gap-2">
             <ImageWithModal
-              src="/hackdavis/ideation/prize1.png"
+              src="/hackdavis/ideation/prize1.webp"
               alt="prize image 1"
               width={1000}
               height={1000}
@@ -27,7 +27,7 @@ export default function Ideation() {
           </div>
           <div className="flex flex-col items-center gap-2">
             <ImageWithModal
-              src="/hackdavis/ideation/prize2.png"
+              src="/hackdavis/ideation/prize2.webp"
               alt="prize image 2"
               width={1000}
               height={1000}
@@ -43,7 +43,7 @@ export default function Ideation() {
           />
           <div className="flex flex-col items-center gap-2">
             <ImageWithModal
-              src="/hackdavis/ideation/prize3.png"
+              src="/hackdavis/ideation/prize3.webp"
               alt="prize image 3"
               width={1000}
               height={1000}
@@ -67,7 +67,7 @@ export default function Ideation() {
         <div className="flex gap-8 pt-10 pb-[100px] justify-center pl-[7%] pr-[7%]">
           <div className="flex flex-col items-center gap-2">
             <ImageWithModal
-              src="/hackdavis/ideation/teamBefore.png"
+              src="/hackdavis/ideation/about1.webp"
               alt="team section before image"
               width={1000}
               height={1000}
@@ -83,7 +83,7 @@ export default function Ideation() {
           />
           <div className="flex flex-col items-center gap-2">
             <ImageWithModal
-              src="/hackdavis/ideation/teamAfter.png"
+              src="/hackdavis/ideation/about2.webp"
               alt="team section after image"
               width={1000}
               height={1000}
@@ -106,7 +106,7 @@ export default function Ideation() {
         <div className="flex gap-2 pt-10 pb-[100px] justify-center">
           <div className="flex flex-col items-center gap-2">
             <ImageWithModal
-              src="/hackdavis/ideation/mbBefore.png"
+              src="/hackdavis/ideation/values1.webp"
               alt="web before image"
               width={1000}
               height={1000}
@@ -123,7 +123,7 @@ export default function Ideation() {
           />
           <div className="flex flex-col items-center gap-2">
             <ImageWithModal
-              src="/hackdavis/ideation/mbAfter.png"
+              src="/hackdavis/ideation/values2.webp"
               alt="web after image"
               width={1000}
               height={1000}
@@ -144,17 +144,17 @@ export default function Ideation() {
           will appear."
         />
 
-        <div className="flex gap-2 pt-10 justify-center">
+        <div className="flex items-center gap-2 pt-10 justify-center">
           <ImageWithModal
-            src="/hackdavis/ideation/winMessage.svg"
+            src="/hackdavis/ideation/slackMessage.webp"
             alt="teammate message"
             width={1000}
             height={1000}
-            className="w-[160%]"
+            className="w-[40%] h-[40%]"
           />
           <div className="flex flex-col items-center gap-2">
             <ImageWithModal
-              src="/hackdavis/ideation/loader.png"
+              src="/hackdavis/ideation/loader.webp"
               alt="loader image"
               width={1000}
               height={1000}

@@ -24,22 +24,22 @@ export default function Landing() {
   const parallaxImages: ParallaxImageProps[] = [
     {
       speed: 15,
-      src: '/sageImages/hero/appImage1.png',
+      src: '/sage/hero/appImage1.png',
       alt: 'app image 1',
     },
     {
       speed: 17,
-      src: '/sageImages/hero/appImage2.png',
+      src: '/sage/hero/appImage2.png',
       alt: 'app image 2',
     },
     {
       speed: 19,
-      src: '/sageImages/hero/appImage3.png',
+      src: '/sage/hero/appImage3.png',
       alt: 'app image 3',
     },
     {
       speed: 19,
-      src: '/sageImages/hero/appImage4.png',
+      src: '/sage/hero/appImage4.png',
       alt: 'app image 3',
     },
   ];
@@ -49,12 +49,12 @@ export default function Landing() {
     <header
       className="flex flex-col gap-6 h-[100vh] items-center justify-end overflow-clip bg-[#E2EDEB] mx-[-40%]"
       style={{
-        backgroundImage: "url('/sageImages/hero/sageHeroBG.png')",
+        backgroundImage: "url('/sage/hero/sageHeroBG.png')",
         backgroundSize: 'cover',
       }}
     >
       <ImageWithModal
-        src="/sageImages/sageLogo.png"
+        src="/sage/sageLogo.png"
         alt="Sage Logo"
         width={1000}
         height={1000}

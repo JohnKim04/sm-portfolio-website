@@ -12,7 +12,7 @@ export default function Question() {
       </RevealWrapper>
 
       <ImageWithModal
-        src="/hackdavis/process/charstack3.svg"
+        src="/hackdavis/process/characterStack.webp"
         alt="char stack"
         width={1000}
         height={1000}
