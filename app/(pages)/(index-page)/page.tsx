@@ -14,23 +14,23 @@ export default async function Home() {
     {
       org: 'Reddit',
       purpose: 'Contract Work',
-      desc: 'Driving conversation and engagement amongst Major League Baseball fans',
-      src: '/reddit/finalDesigns/desktop10.webp',
+      desc: 'Driving conversation amongst baseball fans',
+      src: '/reddit/redditTile.webp',
       alt: 'Reddit Project',
       linkurl: '/reddit',
     },
     {
       org: 'Coinbase',
       purpose: 'Internship',
-      desc: 'Creating world class app experiences through high craft design systems',
-      src: '/coinbase/landingHeroImage.webp',
+      desc: 'Creating high craft and unified design systems',
+      src: '/coinbase/coinbaseTile.webp',
       alt: 'Coinbase case study',
       linkurl: '/coinbase',
     },
     {
       org: 'Paramount+',
       purpose: 'Internship',
-      desc: 'Reimagining the live sports streaming experience',
+      desc: 'Reimagining live sports streaming',
       src: '/landing/caseStudies/desktopEPG.webp',
       alt: 'Paramount Logo',
       linkurl: '/paramount/EPG',
@@ -38,7 +38,7 @@ export default async function Home() {
     {
       org: 'Paramount+',
       purpose: 'Internship',
-      desc: 'Guiding users to resolution during video playback error',
+      desc: 'Guiding users during video playback error',
       src: getImageUrl(images, 'landingEM.svg'),
       alt: 'Paramount Logo',
       linkurl: '/paramount/errorMessaging',
@@ -62,11 +62,11 @@ export default async function Home() {
   ];
 
   return (
-    <main className="flex flex-col px-[15%] pb-20 overflow-clip relative font-dm-sans gap-20">
+    <main className="flex flex-col px-[8%] pb-20 overflow-clip relative font-dm-sans gap-12">
       <Landing />
 
       {/* Case Studies */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8" id="Case Studies">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-16" id="Case Studies">
 
         {caseStudyInformation.map((study, index) => {
           if (index === 0) {

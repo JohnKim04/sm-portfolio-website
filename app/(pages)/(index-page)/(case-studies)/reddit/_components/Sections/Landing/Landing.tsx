@@ -13,7 +13,7 @@ export default function Landing() {
     <section
       className="h-[100vh] overflow-clip text-white flex flex-col justify-start items-center gap-6 -mx-[40%] -mt-[80px] pt-[calc(80px+2.5rem)]"
       style={{
-        backgroundImage: 'url(/reddit/heroImage.png)',
+            backgroundImage: 'url(/reddit/heroImage.webp)',
         backgroundSize: '100% auto',
         backgroundPosition: 'center top',
         backgroundRepeat: 'no-repeat',
