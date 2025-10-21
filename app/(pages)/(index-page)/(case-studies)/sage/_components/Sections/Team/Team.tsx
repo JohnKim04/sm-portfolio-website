@@ -7,7 +7,7 @@ export default function Team() {
       <section className="flex flex-col items-center justify-center">
         <div className="flex flex-row items-center gap-10">
           <ImageWithModal
-            src="/sageImages/sageTeam.png"
+            src="/sage/sageTeam.webp"
             width={1000}
             height={1000}
             alt="team photo"

@@ -22,7 +22,7 @@ export default async function Home() {
     {
       org: 'Coinbase',
       purpose: 'Internship',
-      desc: 'Creating high craft and unified design systems',
+      desc: 'Crafting unified and efficient design systems',
       src: '/coinbase/coinbaseTile.webp',
       alt: 'Coinbase case study',
       linkurl: '/coinbase',

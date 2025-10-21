@@ -8,7 +8,7 @@ export default async function EMCaseStudyThumbnail() {
 
   const org = 'Paramount+';
   const purpose = 'Internship';
-  const desc = 'Guiding users towards resolution during video playback error';
+  const desc = 'Guiding users during video playback error';
   const src = getImageUrl(images, 'EMThumbnail2.png');
   const alt = 'Paramount Logo';
   const linkurl = '/paramount/errorMessaging';
@@ -16,7 +16,7 @@ export default async function EMCaseStudyThumbnail() {
   return (
     <Link
       href={linkurl}
-      className="flex flex-col w-[488px] h-[529px] py-12 mb-20 p-10 bg-[#F1F1F1] rounded-3xl border-[#CCC] border overflow-clip relative group hover:shadow-perimeter duration-500"
+      className="flex flex-col w-[488px] h-[529px] py-12 mb-20 p-10 bg-[#F9F9FB] rounded-3xl overflow-clip relative group hover:shadow-perimeter duration-500"
     >
       <div className="flex gap-2 w-full">
         <h4 className="font-spaceGrotesk text-black">{org}</h4>

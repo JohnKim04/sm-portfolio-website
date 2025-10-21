@@ -1,6 +1,6 @@
 import { RevealWrapper } from '@/app/(pages)/(index-page)/_components/Reveal/RevealWrapper';
-import EPGCaseStudyThumbnail from '../../../../_components/OtherCaseStudies/EPGOtherCaseStudy';
-import EMCaseStudyThumbnail from '../../../../_components/OtherCaseStudies/EMOtherCaseStudy';
+import RedditCaseStudyThumbnail from '../../../../_components/OtherCaseStudies/RedditOtherCaseStudy';
+import CoinbaseCaseStudyThumbnail from '../../../../_components/OtherCaseStudies/CoinbaseOtherCaseStudy';
 
 export default function NextCaseStudies() {
   return (
@@ -8,8 +8,8 @@ export default function NextCaseStudies() {
       <RevealWrapper>
         <h2>Discover More</h2>
         <div className="flex justify-around gap-8">
-          <EPGCaseStudyThumbnail />
-          <EMCaseStudyThumbnail />
+          <RedditCaseStudyThumbnail />
+          <CoinbaseCaseStudyThumbnail />
         </div>
       </RevealWrapper>
     </section>

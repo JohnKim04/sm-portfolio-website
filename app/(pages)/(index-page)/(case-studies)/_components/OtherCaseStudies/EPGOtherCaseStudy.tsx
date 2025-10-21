@@ -8,7 +8,7 @@ export default async function EPGCaseStudyThumbnail() {
 
   const org = 'Paramount+';
   const purpose = 'Internship';
-  const desc = 'Reimagining the live television streaming experience';
+  const desc = 'Reimagining live sports streaming';
   const desktopImage = getImageUrl(images, 'EPGDesktopHQ.png');
   const phoneImage = getImageUrl(images, 'EPGPhoneHQ.png');
 
@@ -18,7 +18,7 @@ export default async function EPGCaseStudyThumbnail() {
   return (
     <Link
       href={linkurl}
-      className="flex flex-col w-[488px] h-[529px] py-12 mb-20 p-10 bg-[#F1F1F1] rounded-3xl border-[#CCC] border overflow-clip relative group hover:shadow-perimeter duration-500"
+      className="flex flex-col w-[488px] h-[529px] py-12 mb-20 p-10 bg-[#F9F9FB] rounded-3xl overflow-clip relative group hover:shadow-perimeter duration-500"
     >
       <div className="flex gap-2 w-full">
         <h4 className="font-spaceGrotesk text-black">{org}</h4>
