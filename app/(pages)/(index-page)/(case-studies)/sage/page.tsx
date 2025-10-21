@@ -33,7 +33,7 @@ export default async function Sage() {
   const videos = videosRaw.filter((v): v is { key: string; url: string } => v !== undefined);
 
   return (
-    <main className="bg-white text-black flex flex-col px-case-study overflow-hidden gap-20">
+    <main className="bg-white text-black flex flex-col px-case-study overflow-hidden gap-20 pt-[80px]">
       <TableOfContents sections={pageContents} />
       <Landing />
       <Summary />

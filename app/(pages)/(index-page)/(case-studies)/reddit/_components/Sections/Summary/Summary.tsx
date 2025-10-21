@@ -19,7 +19,7 @@ export default function Summary() {
   ];
 
   return (
-    <section className="flex flex-col gap-10" id="Context">
+    <section className="flex flex-col gap-10">
       <RevealWrapper>
         <div className="grid grid-cols-3 grid-rows-2 gap-10">
           <HeadingBody h="My Role" p="Contract Product Designer" />

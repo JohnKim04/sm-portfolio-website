@@ -32,7 +32,7 @@ export default async function HackDavis() {
   const images = await getImageData('HackDavis/');
 
   return (
-    <main className="bg-white text-black flex flex-col gap-20 px-case-study overflow-clip">
+    <main className="bg-white text-black flex flex-col gap-20 px-case-study overflow-clip pt-[80px]">
       <TableOfContents sections={pageContents} />
       <Landing />
       <Intro />

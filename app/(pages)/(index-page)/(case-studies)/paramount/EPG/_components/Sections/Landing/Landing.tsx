@@ -14,7 +14,7 @@ export default function Landing(content: contentProps) {
 
   return (
     <section
-      className="flex flex-col h-[100vh] items-center justify-end gap-6 -mx-[40%] relative overflow-clip"
+      className="flex flex-col h-[100vh] items-center justify-start pt-40 gap-6 -mx-[40%] relative overflow-clip -mt-[80px] pt-[calc(80px+2.5rem)]"
       style={{
         backgroundImage:
           'radial-gradient(67.21% 51.52% at 67.71% 57.25%, #0064FF 0%, #000 73.44%)',

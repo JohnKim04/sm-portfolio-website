@@ -14,7 +14,7 @@ export default function Landing(content: contentProps) {
 
   return (
     <section
-      className="flex flex-col items-center justify-end h-[100vh] gap-6 -mx-[40%]"
+      className="flex flex-col items-center justify-start pt-40 h-[100vh] gap-6 -mx-[40%] -mt-[80px] pt-[calc(80px+2.5rem)]"
       style={{
         backgroundImage:
           "url('/paramount/landingBlur.png'), radial-gradient(circle, #0064FF 0%, #000A3B 100%)",

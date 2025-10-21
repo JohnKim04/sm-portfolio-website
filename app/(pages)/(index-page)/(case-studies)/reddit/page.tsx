@@ -14,39 +14,69 @@ import UserFeedback from './_components/Sections/UserFeedback/UserFeedback';
 import FinalDesigns from './_components/Sections/FinalDesigns/FinalDesigns';
 import Reflection from './_components/Sections/Reflection/Reflection';
 import NextCaseStudies from './_components/Sections/NextCaseStudies/NextCaseStudies';
+import TableOfContents from '../_components/TableOfContents/TableOfContents';
 
 export default function RedditCaseStudy() {
+  const pageContents = [
+    { sectionName: 'Overview', level: 0 },
+    { sectionName: 'App Preview', level: 0 },
+    { sectionName: 'Strategy & KPIs', level: 0 },
+    { sectionName: 'Iterations', level: 0 },
+    { sectionName: 'Next Steps', level: 0 },
+    { sectionName: 'Final Designs', level: 0 },
+    { sectionName: 'Reflection', level: 0 },
+  ];
+
   return (
-    <div>
+    <main className="bg-white text-black flex flex-col px-case-study gap-20 pt-[80px]">
+      <TableOfContents sections={pageContents} />
       <Landing />
-      <main className="flex flex-col gap-20 px-case-study overflow-clip pt-20">
+      <section id="Overview">
         <Summary />
+      </section>
+      <section id="App Preview">
         <AppPreview />
-      </main>
+      </section>
       <div className="py-20">
         <Banner />
       </div>
-      <main className="flex flex-col gap-20 px-case-study overflow-clip">
+      <section id="Target Audience">
         <TargetAudience />
+      </section>
+      <section id="Strategy & KPIs">
         <StrategyKpis />
-        <DividerLine />
+      </section>
+      <DividerLine />
+      <section id="Content Consumption">
         <ContentConsumption />
+      </section>
+      <section id="Iterations">
         <Iterations />
+      </section>
+      <section id="Visibility">
         <Visibility />
-        <DividerLine />
+      </section>
+      <DividerLine />
+      <section id="Beta Testing">
         <BetaTesting />
-        <DividerLine />
+      </section>
+      <DividerLine />
+      <section id="Next Steps">
         <NextSteps />
+      </section>
+      <section id="User Feedback">
         <UserFeedback />
-        <DividerLine />
-      </main>
-      <FinalDesigns />
-      <main className="flex flex-col gap-20 px-case-study overflow-clip py-20">
-        <DividerLine />
+      </section>
+      <DividerLine />
+      <section id="Final Designs">
+        <FinalDesigns />
+      </section>
+      <DividerLine />
+      <section id="Reflection">
         <Reflection />
-        <DividerLine />
-        <NextCaseStudies />
-      </main>
-    </div>
+      </section>
+      <DividerLine />
+      <NextCaseStudies />
+    </main>
   );
 }

@@ -1,15 +1,23 @@
-import Link from 'next/link';
+'use client';
 
 export default function AppPreview() {
+  const handleScroll = () => {
+    const finalDesignsSection = document.getElementById('final-designs');
+    if (finalDesignsSection) {
+      finalDesignsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="flex flex-col items-center gap-10">
       <h3 className="text-center">App Preview</h3>
       <div className="flex gap-4">
-        <Link href="#final-designs">
-          <button className="bg-[#FF4500] text-white px-6 py-2 rounded-lg hover:bg-[#ff5a1f] transition-colors">
-            Jump to final designs
-          </button>
-        </Link>
+        <button 
+          onClick={handleScroll}
+          className="bg-[#FF4500] text-white px-6 py-2 rounded-lg hover:bg-[#ff5a1f] transition-colors"
+        >
+          Jump to final designs
+        </button>
         <a
           href="https://www.reddit.com/r/tampabayrays/comments/1m3we6c/mlb_game_scorecard_july_19th_2025_orioles_rays/"
           target="_blank"

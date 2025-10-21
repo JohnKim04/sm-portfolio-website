@@ -29,7 +29,7 @@ export default async function ParamountP1() {
   const images = await getImageData('EPG/');
 
   return (
-    <main className="flex flex-col gap-20 px-case-study overflow-clip">
+    <main className="flex flex-col gap-20 px-case-study overflow-clip pt-[80px]">
       <TableOfContents sections={pageContents} />
       <Landing h2={h2Data.slice(0, 1)} images={images} />
       <Summary body={bodyData.slice(0, 7)} h3={h3Data.slice(0, 7)} />

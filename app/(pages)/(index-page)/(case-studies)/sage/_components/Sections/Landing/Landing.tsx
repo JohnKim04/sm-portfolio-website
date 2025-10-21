@@ -47,7 +47,7 @@ export default function Landing() {
   return (
     // <Providers>
     <header
-      className="flex flex-col gap-6 h-[100vh] items-center justify-end overflow-clip bg-[#E2EDEB] mx-[-40%]"
+      className="flex flex-col gap-6 h-[100vh] items-center justify-start pt-40 overflow-clip bg-[#E2EDEB] mx-[-40%] -mt-[80px] pt-[calc(80px+2.5rem)]"
       style={{
         backgroundImage: "url('/sage/hero/sageHeroBG.png')",
         backgroundSize: 'cover',

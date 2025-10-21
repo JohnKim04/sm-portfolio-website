@@ -95,8 +95,9 @@ export default function FinalDesigns() {
   );
 
   return (
-    <section className="bg-gray-100 py-20 px-case-study">
-      <RevealWrapper>
+    <section className="bg-gray-100 py-20 w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
+      <div className="px-case-study">
+        <RevealWrapper>
         <div className="flex flex-col items-center gap-4">
           <h2 className="text-4xl font-bold">Final Designs</h2>
           <div className="flex flex-row items-start gap-2">
@@ -125,7 +126,8 @@ export default function FinalDesigns() {
             </>
           )}
         </div>
-      </RevealWrapper>
+        </RevealWrapper>
+      </div>
     </section>
   );
 }

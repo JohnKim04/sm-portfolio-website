@@ -39,7 +39,7 @@ export default async function Home() {
       org: 'Paramount+',
       purpose: 'Internship',
       desc: 'Guiding users to resolution during video playback error',
-      src: getImageUrl(images, 'landingEM.svg'),
+      src: '/landing/caseStudies/hackdavis.webp',
       alt: 'Paramount Logo',
       linkurl: '/paramount/errorMessaging',
     },

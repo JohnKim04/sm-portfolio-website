@@ -8,26 +8,39 @@ import Reflection from './_components/Sections/Reflection/Reflection';
 import PhotoCarousel from './_components/Sections/PhotoCarousel/PhotoCarousel';
 import DividerLine from '../_components/DividerLine/DividerLine';
 import NextCaseStudies from './_components/Sections/NextCaseStudies/NextCaseStudies';
+import TableOfContents from '../_components/TableOfContents/TableOfContents';
 
 export default function CoinbaseCaseStudy() {
+  const pageContents = [
+    { sectionName: 'Overview', level: 0 },
+    { sectionName: 'The Work', level: 0 },
+    { sectionName: 'Impact', level: 0 },
+    { sectionName: 'Reflection', level: 0 },
+  ];
+
   return (
-    <div>
+    <main className="bg-white text-black flex flex-col px-case-study gap-20 pt-[80px]">
+      <TableOfContents sections={pageContents} />
       <Landing />
-      <main className="px-case-study py-20 flex flex-col gap-20">
-        <Confidentiality />
+      <Confidentiality />
+      <section id="Overview">
         <Summary />
+      </section>
+      <section id="The Work">
         <TheWork />
-      </main>
-      <Impact />
-      <main className="px-case-study py-20 flex flex-col gap-20">
+      </section>
+      <section id="Impact">
+        <Impact />
+      </section>
+      <section id="Internship Celebration">
         <InternshipCelebration />
+      </section>
+      <section id="Reflection">
         <Reflection />
-      </main>
+      </section>
       <PhotoCarousel />
-      <main className="px-case-study py-20 flex flex-col gap-20">
-        <DividerLine />
-        <NextCaseStudies />
-      </main>
-    </div>
+      <DividerLine />
+      <NextCaseStudies />
+    </main>
   );
 }

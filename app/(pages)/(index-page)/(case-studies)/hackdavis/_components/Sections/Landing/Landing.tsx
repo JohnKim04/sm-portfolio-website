@@ -13,7 +13,7 @@ export default function Landing() {
 
   return (
     <section
-      className="h-[100vh] overflow-clip text-white flex flex-col justify-end items-center gap-6 -mx-[40%]"
+      className="h-[100vh] overflow-clip text-white flex flex-col justify-start items-center gap-6 -mx-[40%] -mt-[80px] pt-[calc(80px+2.5rem)]"
       style={{
         backgroundImage:
           'radial-gradient(62.5% 100% at 50% 100%, #005271 0%, #112636 100%)',

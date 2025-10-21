@@ -19,28 +19,45 @@ export default function TableOfContents({ sections }: TableOfContentsProps) {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setCurrentSection(entry.target.id); // Update current section when it's visible
+            setCurrentSection(entry.target.id);
           }
         });
       },
       {
-        threshold: 0.1, // Consider an element visible when 10% of it is in view
+        threshold: 0.3,
       }
     );
 
-    // Automatically observe all section elements inside the container
-    const sections = document.querySelectorAll('section[id]');
-    sections?.forEach((section) => observer.observe(section));
-    // console.log(sections);
+    // Use setTimeout to ensure DOM is fully rendered
+    const setupObserver = () => {
+      const sections = document.querySelectorAll('section[id]');
+      console.log('Found sections:', Array.from(sections).map(s => s.id));
+      sections?.forEach((section) => observer.observe(section));
+    };
+
+    // Try immediately and also after a short delay
+    setupObserver();
+    const timeoutId = setTimeout(setupObserver, 100);
 
     // Cleanup observer on unmount
     return () => {
+      clearTimeout(timeoutId);
+      const sections = document.querySelectorAll('section[id]');
       sections?.forEach((section) => observer.unobserve(section));
     };
   }, []);
 
   const scrollToSection = (sectionId: string) => {
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - 60; // 60px padding above content
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
   };
 
   const [isHovered, setIsHovered] = useState(false);

@@ -36,7 +36,7 @@ export default async function ParamountP2() {
   const images = await getImageData('errorMessaging/');
 
   return (
-    <main className="flex flex-col gap-20 px-case-study overflow-clip">
+    <main className="flex flex-col gap-20 px-case-study overflow-clip pt-[80px]">
       <TableOfContents sections={pageContents} />
 
       <Landing h2={h2Data.slice(0, 1)} images={images} />
