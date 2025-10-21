@@ -12,20 +12,20 @@ export default async function Home() {
 
   const caseStudyInformation: CaseStudyProps[] = [
     {
-      org: 'Coinbase',
-      purpose: 'Internship',
-      desc: 'Creating world class app experiences through high craft design systems',
-      src: '/coinbase/landingHeroImage.webp',
-      alt: 'Coinbase case study',
-      linkurl: '/coinbase',
-    },
-    {
       org: 'Reddit',
       purpose: 'Contract Work',
       desc: 'Driving conversation and engagement amongst Major League Baseball fans',
       src: '/reddit/finalDesigns/desktop10.webp',
       alt: 'Reddit Project',
       linkurl: '/reddit',
+    },
+    {
+      org: 'Coinbase',
+      purpose: 'Internship',
+      desc: 'Creating world class app experiences through high craft design systems',
+      src: '/coinbase/landingHeroImage.webp',
+      alt: 'Coinbase case study',
+      linkurl: '/coinbase',
     },
     {
       org: 'Paramount+',
