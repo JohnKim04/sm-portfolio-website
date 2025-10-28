@@ -24,7 +24,7 @@ export default function CoinbaseCaseStudyThumbnail() {
         alt={alt}
         height={1000}
         width={1000}
-        className={`w-full h-auto absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 translate-y-4 pt-4 group-hover:scale-105 duration-500 origin-center`}
+        className={`w-full h-auto absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 -translate-y-12 group-hover:scale-105 duration-500 origin-center`}
         unoptimized
       ></Image>
     </Link>
