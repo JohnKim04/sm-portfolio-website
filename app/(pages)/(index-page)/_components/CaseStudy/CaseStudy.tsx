@@ -23,19 +23,15 @@ export default function CaseStudy(props: CaseStudyProps) {
     <div className="flex flex-col items-start w-full">
       <Link
         href={linkurl}
-        className={`flex flex-col relative items-center bg-[#F9F9FB] w-full rounded-xl group ${linkurl === '/paramount/EPG' ? 'pl-[5%] pr-0' : 'px-[5%]'}`}
+        className={`flex flex-col relative items-center bg-[#F9F9FB] w-full rounded-xl group ${linkurl === '/paramount/EPG' || linkurl === '/paramount/errorMessaging' ? 'pl-[5%] pr-0' : 'px-[5%]'}`}
       >
         {/* Images */}
-        <div className={`w-full aspect-[8/7] relative ${linkurl === '/hackdavis' || linkurl === '/reddit' || linkurl === '/paramount/EPG' ? 'overflow-hidden' : ''}`}>
+        <div className={`w-full aspect-[8/7] relative ${linkurl === '/hackdavis' || linkurl === '/reddit' || linkurl === '/paramount/EPG' || linkurl === '/paramount/errorMessaging' ? 'overflow-hidden' : ''}`}>
           <Image
             src={src}
             alt={alt}
             fill
-            className={`${linkurl === '/hackdavis' ? 'object-cover object-top translate-y-32' : linkurl === '/reddit' ? 'object-contain object-center scale-90' : linkurl === '/coinbase' ? 'object-contain object-center' : linkurl === '/paramount/errorMessaging' ? 'object-contain translate-x-4' : linkurl === '/paramount/EPG' ? 'object-contain object-right translate-y-4' : 'object-contain'} hover:cursor-pointer z-10 ${linkurl === '/reddit' ? 'group-hover:scale-95' : 'group-hover:scale-105'} duration-500 ${linkurl === '/paramount/EPG' ? 'origin-bottom-right' : 'origin-bottom'}`}
-            style={linkurl === '/hackdavis' ? { 
-              transform: 'translateY(128px) scale(1.2)',
-              transition: 'transform 0.5s ease'
-            } : {}}
+            className={`${linkurl === '/hackdavis' ? 'object-cover object-top translate-y-40 scale-[1.2] group-hover:scale-[1.26]' : linkurl === '/reddit' ? 'object-contain object-center scale-90' : linkurl === '/coinbase' ? 'object-contain object-center' : linkurl === '/paramount/errorMessaging' ? 'object-contain translate-x-4' : linkurl === '/paramount/EPG' ? 'object-contain object-right translate-y-4' : 'object-contain'} hover:cursor-pointer z-10 ${linkurl === '/reddit' ? 'group-hover:scale-95' : linkurl !== '/hackdavis' ? 'group-hover:scale-105' : ''} duration-500 ${linkurl === '/paramount/EPG' ? 'origin-bottom-right' : 'origin-bottom'}`}
             unoptimized
           />
         </div>
