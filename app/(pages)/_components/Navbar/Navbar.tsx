@@ -3,16 +3,15 @@
 import { usePathname } from 'next/navigation';
 import NavItem from './NavItem';
 import { useDisplayNav } from '../../_hooks/useDisplayNav';
-// import { useDarkModeSwitch } from '../../_hooks/useDarkModeSwitch';
+import { useDarkModeSwitch } from '../../_hooks/useDarkModeSwitch';
 
 export default function Navbar() {
   const pathname = usePathname();
+  const darkMode = useDarkModeSwitch();
 
-  // const darkMode = useDarkModeSwitch();
-
-  // const bgColor = darkMode ? 'bg-black' : 'bg-white';
   const bgColor = 'bg-black';
 
+  // On about page, always use white text for About nav item
   const bgAboutText = pathname === '/about' ? bgColor : '';
   const bgAboutTextColor = pathname === '/about' ? 'text-white' : 'text-black';
 
@@ -36,10 +35,12 @@ export default function Navbar() {
     pathname === '/reddit' ||
     pathname === '/coinbase'
       ? 'text-white'
+      : pathname === '/about' && darkMode
+      ? 'text-white'
       : 'text-black';
 
   const bgPlayText = pathname === '/play' ? bgColor : '';
-  const bgPlayTexColor = pathname === '/play' ? 'text-white' : 'text-black';
+  const bgPlayTexColor = pathname === '/play' ? 'text-white' : pathname === '/about' && darkMode ? 'text-white' : 'text-black';
 
   const invisible = pathname === '/login';
 
@@ -72,11 +73,11 @@ export default function Navbar() {
       className={`fixed top-0 z-50 flex w-full justify-center bg-transparent pt-6 transition-all duration-300  ${isVisible ? 'opacity-1 translate-y-0' : 'opacity-0 -translate-y-full'}`}
     >
       <nav
-        className={`flex items-center justify-center w-fit bg-white text-white rounded-2xl font-dm-sans shadow-navbar`}
+        className={`flex items-center justify-center w-fit bg-white/40 backdrop-blur-[32px] border border-white/20 ${pathname === '/about' && darkMode ? 'text-white' : 'text-black'} rounded-full font-dm-sans shadow-navbar`}
       >
         <ul className="flex items-center gap-6 p-2 h-[64px] font-dm-sans text-xl leading-none">
           {navItems.map((item, index) => (
-            <NavItem key={index} {...item} />
+            <NavItem key={item.href} {...item} customSpacing={index === 0 ? '-mr-3' : ''} />
           ))}
         </ul>
       </nav>

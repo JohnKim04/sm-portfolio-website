@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import ScrollArrow, { ScrollArrowProps } from './ScrollArrow';
 export default function Landing() {
   const floatingImages = [
@@ -70,7 +71,7 @@ export default function Landing() {
       <div className="flex flex-col gap-8 max-w-[1008px] w-[45vw] pt-[30px]">
         <div className="flex relative">
           <h2 className="font-dmsans z-10 animate-slide-header-down font-[500] tracking-[-0.4px] text-neutral-500">
-            Hi, I’m <span className="text-black">Sam</span>—empathetic product
+            Hi, I'm <Link href="/about" className="text-black hover:text-[#4185F4] transition-colors duration-300 cursor-pointer">Sam</Link>—empathetic product
             designer, joyful collaborator & creative problem solver.
           </h2>
           <Image

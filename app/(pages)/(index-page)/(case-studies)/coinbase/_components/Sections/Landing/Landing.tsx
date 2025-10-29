@@ -25,10 +25,9 @@ export default function Landing() {
         className="h-[30px] w-auto z-10"
       />
       <h2 className="text-center text-white w-[1000px]">
-        Creating world class app experiences through high craft, unified, and
-        efficient design systems
+        Crafting unified and efficient design systems
       </h2>
-      <h4 className="text-white text-center">7 min read</h4>
+      <h4 className="text-white text-center">3 min read</h4>
       <LoadingImage
         src="/coinbase/landingHeroImage.webp"
         width={1000}

@@ -26,10 +26,10 @@ export default function Landing() {
         height={100}
         className="h-[40px] w-auto z-10"
       />
-      <h2 className="text-center text-white w-[800px]">
-        Driving conversation and engagement amongst Major League Baseball fans
+      <h2 className="text-center text-white whitespace-nowrap">
+        Driving conversation amongst baseball fans
       </h2>
-      <h4 className="text-white text-center">7 min read</h4>
+      <h4 className="text-white text-center">6 min read</h4>
       <div className="w-[1120px] -mb-[100px] border border-white/10 rounded-[16px] overflow-hidden">
         <LoadingImage
           src="/reddit/finalDesigns/desktop1.webp"
@@ -46,7 +46,7 @@ export default function Landing() {
             marginRight: '-1.5px'
           }}
         />
-      </div>n
+      </div>
       <div className="absolute top-[85vh] z-50">
         <ScrollArrow {...scrollArrowProps} />
       </div>

@@ -1,6 +1,7 @@
 // components/NavItem.tsx
 
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 interface NavItemProps {
   href: string;
@@ -8,6 +9,7 @@ interface NavItemProps {
   bgColor: string;
   textColor: string;
   newTab?: boolean;
+  customSpacing?: string;
 }
 
 export default function NavItem({
@@ -16,23 +18,39 @@ export default function NavItem({
   bgColor,
   textColor,
   newTab,
+  customSpacing = '',
 }: NavItemProps) {
+  const isSelected = bgColor !== '';
+  const roundedClass = isSelected ? 'rounded-full' : 'rounded-xl';
+
   if (newTab) {
     return (
-      <li
-        className={`${bgColor} ${textColor} flex items-center py-2 px-6 pl-0 h-[48px] rounded-xl text-[18px]`}
-      >
-        <a href={href} target="_blank">
+      <li className={`relative flex items-center py-2 px-6 pl-0 h-[48px] ${roundedClass} text-[18px] ${customSpacing}`}>
+        {isSelected && (
+          <motion.div
+            layoutId="activeNavBg"
+            className={`absolute inset-0 ${bgColor} ${roundedClass}`}
+            transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+          />
+        )}
+        <a href={href} target="_blank" className={`relative z-10 ${textColor}`}>
           {label}
         </a>
       </li>
     );
   } else {
     return (
-      <li
-        className={`${bgColor} ${textColor} flex items-center py-2 px-6 h-[48px] rounded-xl text-[18px]`}
-      >
-        <Link href={href}>{label}</Link>
+      <li className={`relative flex items-center py-2 px-6 h-[48px] ${roundedClass} text-[18px] ${customSpacing}`}>
+        {isSelected && (
+          <motion.div
+            layoutId="activeNavBg"
+            className={`absolute inset-0 ${bgColor} ${roundedClass}`}
+            transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+          />
+        )}
+        <Link href={href} className={`relative z-10 ${textColor}`}>
+          {label}
+        </Link>
       </li>
     );
   }

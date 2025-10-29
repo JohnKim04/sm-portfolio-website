@@ -35,7 +35,7 @@ export default function Landing(content: contentProps) {
         height={1000}
         className="w-[30%] absolute left-0 bottom-0 z-0"
       />
-      <h2 className="text-center text-white w-[800px]">{content.h2?.at(0)}</h2>
+      <h2 className="text-center text-white w-[800px]">Reimagining live sports streaming</h2>
       <h4 className="text-white text-center">7 min read</h4>
 
       <div className="relative z-10 -mb-[10px]">

@@ -25,8 +25,7 @@ export default function Form({ callBackURL, password }: FormProps) {
         if (!result?.ok) {
           setErrorMessage('Sorry, but that url is incorrect.');
         } else {
-          router.push('/');
-          router.refresh();
+          router.replace('/');
         }
       }
     };
@@ -46,8 +45,7 @@ export default function Form({ callBackURL, password }: FormProps) {
     if (!result?.ok) {
       setErrorMessage('Sorry, but that password is incorrect.');
     } else {
-      router.push(callBackURL);
-      router.refresh();
+      router.replace(callBackURL);
     }
   };
 
