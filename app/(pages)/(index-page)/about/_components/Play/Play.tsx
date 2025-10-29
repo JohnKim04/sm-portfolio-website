@@ -25,7 +25,7 @@ function BookShelf() {
       <div className="flex flex-col items-center gap-4">
         <h3 className="text-4xl tracking-[0.72px]">On my bookshelf</h3>
         <p>
-          Every year since 2021, I set a goal to read 52 books. Here are some of
+          Since 2021, I've set a goal to read 52 books a year. Here are some of
           the standouts:
         </p>
       </div>
@@ -35,35 +35,35 @@ function BookShelf() {
           alt="book 1"
           width={1000}
           height={1000}
-          className="w-auto h-[257px] rounded-xl z-[5] transition-transform duration-500 translate-x-[95%] -rotate-[18deg] group-hover:translate-x-0 group-hover:rotate-0"
+          className="w-auto h-[257px] rounded-lg z-[5] transition-transform duration-500 translate-x-[95%] -rotate-[18deg] group-hover:translate-x-0 group-hover:rotate-0"
         />
         <Image
           src="/about/books/book2.png"
           alt="book 2"
           width={1000}
           height={1000}
-          className="w-auto h-[257px] rounded-xl z-[4] transition-transform duration-500 translate-x-[40%] -rotate-[10deg] group-hover:translate-x-0 group-hover:rotate-0"
+          className="w-auto h-[257px] rounded-lg z-[4] transition-transform duration-500 translate-x-[40%] -rotate-[10deg] group-hover:translate-x-0 group-hover:rotate-0"
         />
         <Image
           src="/about/books/book3.png"
           alt="book 3"
           width={1000}
           height={1000}
-          className="w-auto h-[257px] rounded-xl z-[3] transition-transform duration-500 -rotate-[2deg] group-hover:translate-x-0 group-hover:rotate-0"
+          className="w-auto h-[257px] rounded-lg z-[3] transition-transform duration-500 -rotate-[2deg] group-hover:translate-x-0 group-hover:rotate-0"
         />
         <Image
           src="/about/books/book4.png"
           alt="book 4"
           width={1000}
           height={1000}
-          className="w-auto h-[257px] rounded-xl z-[2] transition-transform duration-500 -translate-x-[50%] rotate-[5deg] group-hover:translate-x-0 group-hover:rotate-0"
+          className="w-auto h-[257px] rounded-lg z-[2] transition-transform duration-500 -translate-x-[50%] rotate-[5deg] group-hover:translate-x-0 group-hover:rotate-0"
         />
         <Image
           src="/about/books/book5.png"
           alt="book 5"
           width={1000}
           height={1000}
-          className="w-auto h-[257px] rounded-xl z-[1] transition-transform duration-500 -translate-x-[85%] rotate-[13deg] group-hover:translate-x-0 group-hover:rotate-0"
+          className="w-auto h-[257px] rounded-lg z-[1] transition-transform duration-500 -translate-x-[85%] rotate-[13deg] group-hover:translate-x-0 group-hover:rotate-0"
         />
       </div>
     </div>
@@ -71,46 +71,48 @@ function BookShelf() {
 }
 
 function CameraRoll() {
-  const [emblaRef, _] = useEmblaCarousel({ loop: true }, [
-    AutoScroll({
-      playOnInit: true,
-      speed: 2,
-      stopOnInteraction: false,
-      stopOnMouseEnter: true,
-      startDelay: 0,
-    }),
-  ]);
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    { 
+      loop: true,
+      align: 'start',
+      duration: 35,
+      dragFree: false,
+    },
+    [
+      AutoScroll({
+        playOnInit: true,
+        speed: 1.5,
+        stopOnInteraction: false,
+        stopOnMouseEnter: true,
+        startDelay: 0,
+      }),
+    ]
+  );
 
-  const carouselPhotos = [
-    {
-      imgUrl: '/about/photoCarousel/photo0.png',
-      imgCaption: 'Half Moon Bay, cA',
-    },
-    {
-      imgUrl: '/about/photoCarousel/photo1.png',
-      imgCaption: 'Half Moon Bay, CA',
-    },
-    {
-      imgUrl: '/about/photoCarousel/photo2.png',
-      imgCaption: 'Pebble Beach, CA',
-    },
-    {
-      imgUrl: '/about/photoCarousel/photo3.png',
-      imgCaption: 'Kamakura, Japan',
-    },
-    {
-      imgUrl: '/about/photoCarousel/photo4.png',
-      imgCaption: 'Arashiyama, Japan',
-    },
-    {
-      imgUrl: '/about/photoCarousel/photo5.png',
-      imgCaption: 'Hiroshima, Japan',
-    },
-    {
-      imgUrl: '/about/photoCarousel/photo6.png',
-      imgCaption: 'Santa Barbara, CA',
-    },
-  ];
+  // Define captions for each photo - update this if you add more photos
+  const photoCaptions: Record<number, string> = {
+    0: 'Half Moon Bay, California',
+    1: 'Copenhagen, Denmark',
+    2: 'Copenhagen, Denmark',
+    3: 'Stockholm, Sweden',
+    4: 'Humlebaek, Denmark',
+    5: 'Pebble Beach, California',
+    6: 'Half Moon Bay, California',
+    7: 'Mount Tam, California',
+    8: 'Santa Barbara, California',
+    9: 'Kamakura, Japan',
+    10: 'Hiroshima, Japan',
+    11: 'Arashiyama, Japan',
+  };
+
+  // Get the total number of photos based on the highest index in photoCaptions
+  const totalPhotos = Math.max(...Object.keys(photoCaptions).map(Number)) + 1;
+
+  // Generate carousel photos array in correct numeric order (0, 1, 2, ...)
+  const carouselPhotos = Array.from({ length: totalPhotos }, (_, i) => ({
+    imgUrl: `/about/photoCarousel/photo${i}.png`,
+    imgCaption: photoCaptions[i] || `Photo ${i}`,
+  }));
 
   return (
     <div className="flex flex-col items-center gap-10 pb-[80px] -mt-[220px]">
@@ -123,10 +125,15 @@ function CameraRoll() {
       </div>
 
       <div className="overflow-hidden w-[100vw]" ref={emblaRef}>
-        <div className="flex">
-          {carouselPhotos.map((slide, index) => (
+        <div 
+          className="flex" 
+          style={{ 
+            willChange: 'transform'
+          }}
+        >
+          {carouselPhotos.map((slide) => (
             <CarouselSlide
-              key={index}
+              key={slide.imgUrl}
               imgUrl={slide.imgUrl}
               imgCaption={slide.imgCaption}
             />
@@ -144,13 +151,13 @@ type CarouselSlideProps = {
 
 function CarouselSlide({ imgUrl, imgCaption }: CarouselSlideProps) {
   return (
-    <div className="ml-10 flex-none group relative">
+    <div className="ml-10 flex-none min-w-fit group relative">
       <Image
         src={imgUrl}
         alt="photography image"
         width={1000}
         height={1000}
-        className="w-auto h-[360px] z-20 relative"
+        className="w-auto h-[360px] rounded-lg z-20 relative"
       />
       <h4 className="text-center font-spaceGrotesk pt-2 transition-all opacity-0 -translate-y-8 group-hover:opacity-100 group-hover:translate-y-0 z-10 relative">
         {imgCaption}

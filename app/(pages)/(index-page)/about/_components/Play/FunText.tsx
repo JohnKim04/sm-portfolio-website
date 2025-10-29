@@ -18,7 +18,7 @@ export default function FunText() {
   return (
     <div className="flex flex-col items-center gap-10">
       <div>
-        <h3>Don't want the fun to end?</h3>
+        <h3>Work hard, play hard</h3>
         <p
           className="text-[80px] tracking-[1.6px] -rotate-[8deg] text-center hover:cursor-pointer"
           onClick={() => scrollToSection('bookshelf')}

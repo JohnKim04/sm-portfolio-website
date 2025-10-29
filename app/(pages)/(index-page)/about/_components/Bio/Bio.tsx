@@ -40,13 +40,13 @@ export default function Bio() {
             />
           ))}
 
-        <div className="flex relative w-[40%] h-full -mt-14">
+        <div className="flex relative w-[40%] h-full -mt-14 items-start">
           <Image
             src="/about/SamTMah.png"
             alt="Sam Photo"
             width={1000}
             height={1000}
-            className="w-[371px] h-[458px] z-10"
+            className="w-auto max-w-[371px] min-w-[240px] h-auto self-start z-10"
           />
 
           {floatingImages

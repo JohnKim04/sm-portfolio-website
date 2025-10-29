@@ -26,7 +26,7 @@ export default function Hobbies() {
     {
       colSpan: '2',
       src: '/about/hobbies/designathon.png',
-      caption: 'Hosting the first designathon at uc davis',
+      caption: 'Hosting the first designathon at UC Davis',
     },
   ];
   return (

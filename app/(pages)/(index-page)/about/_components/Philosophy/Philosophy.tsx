@@ -13,7 +13,7 @@ export default function Philosophy() {
     {
       number: '02',
       header: 'Stay curious and open-minded',
-      body: "I surrounded myself with diverse teammates who help me look at problems from all angles",
+      body: "I surround myself with diverse teammates who help me look at problems from all angles",
     },
     {
       number: '03',
