@@ -1,6 +1,7 @@
 import AutoScroll from 'embla-carousel-auto-scroll';
 import useEmblaCarousel from 'embla-carousel-react';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 import { RevealWrapper } from '../../../_components/Reveal/RevealWrapper';
 import FunText from './FunText';
 
@@ -71,23 +72,7 @@ function BookShelf() {
 }
 
 function CameraRoll() {
-  const [emblaRef, emblaApi] = useEmblaCarousel(
-    { 
-      loop: true,
-      align: 'start',
-      duration: 35,
-      dragFree: false,
-    },
-    [
-      AutoScroll({
-        playOnInit: true,
-        speed: 1.5,
-        stopOnInteraction: false,
-        stopOnMouseEnter: true,
-        startDelay: 0,
-      }),
-    ]
-  );
+  const [imagesLoaded, setImagesLoaded] = useState(false);
 
   // Define captions for each photo - update this if you add more photos
   const photoCaptions: Record<number, string> = {
@@ -114,6 +99,45 @@ function CameraRoll() {
     imgCaption: photoCaptions[i] || `Photo ${i}`,
   }));
 
+  // Duplicate photos for seamless infinite scrolling
+  const duplicatedPhotos = [...carouselPhotos, ...carouselPhotos];
+
+  // Preload all images
+  useEffect(() => {
+    const preloadImages = async () => {
+      const imagePromises = carouselPhotos.map((photo) => {
+        return new Promise<void>((resolve) => {
+          const img = new window.Image();
+          img.onload = () => resolve();
+          img.onerror = () => resolve(); // Resolve even on error to not block
+          img.src = photo.imgUrl;
+        });
+      });
+
+      await Promise.all(imagePromises);
+      setImagesLoaded(true);
+    };
+
+    preloadImages();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const [emblaRef, _] = useEmblaCarousel(
+    { 
+      loop: true,
+      watchDrag: imagesLoaded,
+    },
+    [
+      AutoScroll({
+        playOnInit: imagesLoaded,
+        speed: 1.5,
+        stopOnInteraction: false,
+        stopOnMouseEnter: true,
+        startDelay: 0,
+      }),
+    ]
+  );
+
   return (
     <div className="flex flex-col items-center gap-10 pb-[80px] -mt-[220px]">
       <div className="flex flex-col items-center gap-4">
@@ -125,15 +149,10 @@ function CameraRoll() {
       </div>
 
       <div className="overflow-hidden w-[100vw]" ref={emblaRef}>
-        <div 
-          className="flex" 
-          style={{ 
-            willChange: 'transform'
-          }}
-        >
-          {carouselPhotos.map((slide) => (
+        <div className="flex gap-0">
+          {duplicatedPhotos.map((slide, index) => (
             <CarouselSlide
-              key={slide.imgUrl}
+              key={index}
               imgUrl={slide.imgUrl}
               imgCaption={slide.imgCaption}
             />
@@ -151,13 +170,16 @@ type CarouselSlideProps = {
 
 function CarouselSlide({ imgUrl, imgCaption }: CarouselSlideProps) {
   return (
-    <div className="ml-10 flex-none min-w-fit group relative">
+    <div className="flex-none ml-10 first:ml-0 group relative shrink-0">
       <Image
         src={imgUrl}
         alt="photography image"
         width={1000}
         height={1000}
-        className="w-auto h-[360px] rounded-lg z-20 relative"
+        className="h-[360px] w-auto rounded-lg z-20 block"
+        unoptimized
+        loading="eager"
+        priority={false}
       />
       <h4 className="text-center font-spaceGrotesk pt-2 transition-all opacity-0 -translate-y-8 group-hover:opacity-100 group-hover:translate-y-0 z-10 relative">
         {imgCaption}
