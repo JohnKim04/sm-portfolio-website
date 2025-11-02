@@ -8,7 +8,29 @@ import PlaceholderTile from './_components/CaseStudy/PlaceholderTile';
 import { getImageUrl } from '@/app/_lib/getImageUrl';
 
 export default async function Home() {
-  const images = await getImageData('landingPage/');
+  let images: ({ key: string; url: string } | undefined)[] | undefined;
+  
+  try {
+    images = await getImageData('landingPage/');
+  } catch (error) {
+    console.error('[Home] Failed to fetch images from S3:', error);
+    images = undefined;
+  }
+
+  // Get image URLs with fallback and logging
+  const epgImageUrl = getImageUrl(images, 'EPGDesktopHQ.png');
+  const emImageUrl = getImageUrl(images, 'EMThumbnail2.png');
+
+  // Log warnings if images are missing
+  if (!epgImageUrl) {
+    console.warn('[Home] EPGDesktopHQ.png not found in S3 images');
+    if (images) {
+      console.log('[Home] Available image keys:', images.filter(Boolean).map(img => img?.key));
+    }
+  }
+  if (!emImageUrl) {
+    console.warn('[Home] EMThumbnail2.png not found in S3 images');
+  }
 
   const caseStudyInformation: CaseStudyProps[] = [
     {
@@ -31,7 +53,7 @@ export default async function Home() {
       org: 'Paramount+',
       purpose: 'Internship',
       desc: 'Reimagining live sports streaming',
-      src: getImageUrl(images, 'EPGDesktopHQ.png'),
+      src: epgImageUrl || '/paramount/placeholder.png', // Fallback placeholder
       alt: 'Paramount Logo',
       linkurl: '/paramount/EPG',
     },
@@ -39,7 +61,7 @@ export default async function Home() {
       org: 'Paramount+',
       purpose: 'Internship',
       desc: 'Guiding users during video playback error',
-      src: getImageUrl(images, 'EMThumbnail2.png'),
+      src: emImageUrl || '/paramount/placeholder.png', // Fallback placeholder
       alt: 'Paramount Logo',
       linkurl: '/paramount/errorMessaging',
     },

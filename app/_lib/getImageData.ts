@@ -15,6 +15,16 @@ const s3Client = new S3Client({
 
 export default async function getImageData(folderName: string) {
   console.log(`[getImageData] Starting fetch for folder: ${folderName}`);
+  
+  // Check if required environment variables are set
+  if (!process.env.AWS_REGION || !process.env.S3_BUCKET_NAME) {
+    console.error(`[getImageData] Missing required environment variables`);
+    console.error(`[getImageData] AWS_REGION: ${process.env.AWS_REGION ? 'set' : 'MISSING'}`);
+    console.error(`[getImageData] S3_BUCKET_NAME: ${process.env.S3_BUCKET_NAME ? 'set' : 'MISSING'}`);
+    console.error(`[getImageData] AWS_ACCESS_KEY_ID: ${process.env.AWS_ACCESS_KEY_ID ? 'set' : 'MISSING'}`);
+    throw new Error('Missing required AWS environment variables');
+  }
+  
   console.log(`[getImageData] S3 Config - Region: ${process.env.AWS_REGION}, Bucket: ${process.env.S3_BUCKET_NAME}`);
   
   const listCommand = new ListObjectsV2Command({
