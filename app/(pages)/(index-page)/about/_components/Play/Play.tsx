@@ -149,7 +149,7 @@ function CameraRoll() {
       </div>
 
       <div className="overflow-hidden w-[100vw]" ref={emblaRef}>
-        <div className="flex gap-0">
+        <div className="flex gap-0 pl-[40px]">
           {duplicatedPhotos.map((slide, index) => (
             <CarouselSlide
               key={index}
@@ -170,7 +170,7 @@ type CarouselSlideProps = {
 
 function CarouselSlide({ imgUrl, imgCaption }: CarouselSlideProps) {
   return (
-    <div className="flex-none ml-10 first:ml-0 group relative shrink-0">
+    <div className="flex-none ml-10 group relative shrink-0">
       <Image
         src={imgUrl}
         alt="photography image"
