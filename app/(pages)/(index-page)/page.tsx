@@ -25,11 +25,29 @@ export default async function Home() {
   if (!epgImageUrl) {
     console.warn('[Home] EPGDesktopHQ.png not found in S3 images');
     if (images) {
-      console.log('[Home] Available image keys:', images.filter(Boolean).map(img => img?.key));
+      const availableKeys = images.filter(Boolean).map(img => img?.key);
+      console.log('[Home] Available image keys:', availableKeys);
+      // Try to find similar filenames
+      const epgMatches = availableKeys.filter(key => 
+        key?.toLowerCase().includes('epg') && key?.toLowerCase().includes('desktop')
+      );
+      if (epgMatches.length > 0) {
+        console.log('[Home] Found similar EPG files:', epgMatches);
+      }
     }
   }
   if (!emImageUrl) {
     console.warn('[Home] EMThumbnail2.png not found in S3 images');
+    if (images) {
+      const availableKeys = images.filter(Boolean).map(img => img?.key);
+      const emMatches = availableKeys.filter(key => 
+        key?.toLowerCase().includes('error') || 
+        (key?.toLowerCase().includes('em') && key?.toLowerCase().includes('thumbnail'))
+      );
+      if (emMatches.length > 0) {
+        console.log('[Home] Found similar EM files:', emMatches);
+      }
+    }
   }
 
   const caseStudyInformation: CaseStudyProps[] = [
@@ -53,7 +71,7 @@ export default async function Home() {
       org: 'Paramount+',
       purpose: 'Internship',
       desc: 'Reimagining live sports streaming',
-      src: epgImageUrl || '/paramount/placeholder.png', // Fallback placeholder
+      src: epgImageUrl || '/paramount/logo.svg', // Fallback to logo if S3 image not found
       alt: 'Paramount Logo',
       linkurl: '/paramount/EPG',
     },
@@ -61,7 +79,7 @@ export default async function Home() {
       org: 'Paramount+',
       purpose: 'Internship',
       desc: 'Guiding users during video playback error',
-      src: emImageUrl || '/paramount/placeholder.png', // Fallback placeholder
+      src: emImageUrl || '/paramount/logo.svg', // Fallback to logo if S3 image not found
       alt: 'Paramount Logo',
       linkurl: '/paramount/errorMessaging',
     },
