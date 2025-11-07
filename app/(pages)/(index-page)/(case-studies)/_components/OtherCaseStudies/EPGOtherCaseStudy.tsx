@@ -1,16 +1,12 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import getImageData from '@/app/_lib/getImageData';
-import { getImageUrl } from '@/app/_lib/getImageUrl';
 
-export default async function EPGCaseStudyThumbnail() {
-  const images = await getImageData('landingPage/');
-
+export default function EPGCaseStudyThumbnail() {
   const org = 'Paramount+';
   const purpose = 'Internship';
   const desc = 'Reimagining live sports streaming';
-  const desktopImage = getImageUrl(images, 'EPGDesktopHQ.png');
-  const phoneImage = getImageUrl(images, 'EPGPhoneHQ.png');
+  const desktopImage = '/landing/caseStudies/desktopEPG.webp';
+  const phoneImage = '/landing/caseStudies/mobileEPG.webp';
 
   const alt = 'Paramount Logo';
   const linkurl = '/paramount/EPG';
