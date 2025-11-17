@@ -23,21 +23,22 @@ export default async function EMCaseStudyThumbnail() {
   return (
     <Link
       href={linkurl}
-      className="flex flex-col w-[488px] h-[529px] py-12 mb-20 p-10 bg-[#F9F9FB] rounded-3xl overflow-clip relative group hover:shadow-perimeter duration-500"
+      className="flex flex-col w-[488px] h-[529px] py-12 mb-20 p-10 bg-[#F9F9FB] rounded-3xl overflow-clip relative group hover:shadow-perimeter duration-500 pl-[5%] pr-0"
     >
       <div className="flex gap-2 w-full">
         <h4 className="font-spaceGrotesk text-black">{org}</h4>
         <h4 className="font-spaceGrotesk">{purpose}</h4>
       </div>
       <h3 className="pt-2 pb-20">{desc}</h3>
-      <Image
-        src={src}
-        alt={alt}
-        height={1000}
-        width={1000}
-        className={`w-full h-auto absolute right-0 bottom-0 group-hover:scale-105 duration-500 origin-bottom mt-auto`}
-        unoptimized
-      ></Image>
+      <div className="w-full aspect-[8/7] relative overflow-hidden">
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          className="object-contain translate-x-4 hover:cursor-pointer z-10 group-hover:scale-105 duration-500 origin-bottom"
+          unoptimized
+        />
+      </div>
     </Link>
   );
 }
