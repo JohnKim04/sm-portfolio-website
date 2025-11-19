@@ -30,7 +30,7 @@ export default async function EMCaseStudyThumbnail() {
         <h4 className="font-spaceGrotesk">{purpose}</h4>
       </div>
       <h3 className="pt-2 pb-20">{desc}</h3>
-      <div className="w-full aspect-[8/7] relative overflow-hidden">
+      <div className="w-full flex-1 relative overflow-hidden">
         <Image
           src={src}
           alt={alt}
