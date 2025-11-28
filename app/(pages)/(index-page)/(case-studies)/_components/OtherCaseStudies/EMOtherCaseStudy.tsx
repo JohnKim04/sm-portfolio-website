@@ -29,8 +29,8 @@ export default async function EMCaseStudyThumbnail() {
         <h4 className="font-spaceGrotesk text-black">{org}</h4>
         <h4 className="font-spaceGrotesk">{purpose}</h4>
       </div>
-      <h3 className="pt-2 pb-20">{desc}</h3>
-      <div className="absolute bottom-0 left-0 right-0 h-[60%] pl-[5%] pr-0 overflow-hidden">
+      <h3 className="pt-2 pb-20 relative z-20">{desc}</h3>
+      <div className="absolute bottom-0 left-0 right-0 h-[320px] pl-[5%] pr-0 overflow-hidden">
         <Image
           src={src}
           alt={alt}

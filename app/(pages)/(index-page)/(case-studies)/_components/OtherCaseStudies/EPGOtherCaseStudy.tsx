@@ -36,7 +36,7 @@ export default function EPGCaseStudyThumbnail() {
           alt={alt}
           height={1000}
           width={1000}
-          className={`w-[90%] h-auto absolute bottom-0 right-0 group-hover:scale-105 duration-500 origin-bottom z-0`}
+          className={`w-[130%] h-[320px] absolute bottom-0 right-0 translate-x-16 group-hover:scale-105 duration-500 origin-bottom z-0`}
           unoptimized
         ></Image>
       </div>
