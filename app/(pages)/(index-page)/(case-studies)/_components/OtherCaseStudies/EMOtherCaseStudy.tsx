@@ -1,22 +1,11 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import getImageData from '@/app/_lib/getImageData';
-import { getImageUrl } from '@/app/_lib/getImageUrl';
 
-export default async function EMCaseStudyThumbnail() {
-  let images;
-  try {
-    images = await getImageData('landingPage/');
-  } catch (error) {
-    console.error('[EMOtherCaseStudy] Failed to fetch images from S3:', error);
-    images = undefined;
-  }
-
+export default function EMCaseStudyThumbnail() {
   const org = 'Paramount+';
   const purpose = 'Internship';
   const desc = 'Guiding users during video playback error';
-  const emImageUrl = getImageUrl(images, 'EMThumbnail2.png');
-  const src = emImageUrl || '/paramount/landingBlur.png'; // Fallback to landingBlur if S3 image not found
+  const src = '/landing/caseStudies/errorMessaging.png';
   const alt = 'Paramount Logo';
   const linkurl = '/paramount/errorMessaging';
 
