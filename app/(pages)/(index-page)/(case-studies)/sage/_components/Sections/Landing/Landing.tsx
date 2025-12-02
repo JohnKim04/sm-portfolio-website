@@ -64,7 +64,7 @@ export default function Landing() {
         Equipping individuals to navigate life's stressors
       </h2>
       <p className="text-base text-[#1B454F]">6 min read</p>
-      <div className="flex gap-[60px] -mb-10">
+      <div className="flex gap-[60px] mt-auto mb-0">
         {parallaxImages.map((image, index) => {
           if (index === 0) {
             return (
