@@ -85,13 +85,13 @@ export default function Landing() {
         <div className="flex flex-col gap-4">            
           <div className="flex items-center gap-1 animate-slide-header-down-delayed">
             <h4 className="">
-              Recently graduated from{' '}
+              Currently at{' '}
               <a
                 className="underline underline-offset-2 text-black"
-                href="https://www.ucdavis.edu/"
+                href="https://figma.com/"
                 target="_blank"
               >
-                UC Davis
+                Figma
               </a>
             </h4>
             <Image

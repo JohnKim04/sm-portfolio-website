@@ -30,10 +30,6 @@ export default function PhotoCarousel() {
       imgCaption: '@ Salesforce Tower',
     },
     {
-      imgUrl: '/coinbase/4carousel.webp',
-      imgCaption: 'Lit intern cruise!',
-    },
-    {
       imgUrl: '/coinbase/5carousel.webp',
       imgCaption: 'Dim sum with Design + Research team',
     },
